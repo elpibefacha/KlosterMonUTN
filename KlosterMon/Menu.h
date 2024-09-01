@@ -8,7 +8,7 @@ class Menu
 	Texture imageFondo;
 public:
 	Menu();
-	void DibujarMenu();
+	void DibujarMenu(RenderWindow&);
 	void UpdateMenu();
 };
 
