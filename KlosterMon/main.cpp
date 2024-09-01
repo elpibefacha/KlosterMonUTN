@@ -16,8 +16,10 @@ int main()
             if (event.type == Event::Closed)
                 window.close();
         }
-        window.clear();
+        //CMD
+        menu.UpdateMenu();
 
+        window.clear();
         //DRAW
         menu.DibujarMenu(window);
 

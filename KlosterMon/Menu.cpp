@@ -27,9 +27,10 @@ Menu::Menu()
 		textoOpciones[i].setFont(fuenteOpciones);
 		textoOpciones[i].setFillColor(Color::Black);
 	}
+	opcionSeleccionada = 0;
+	frameWait = 30;
 	PosicionarTextos();
 	CambiarSeleccion();
-
 }
 
 void Menu::DibujarMenu(RenderWindow& window)
@@ -45,7 +46,15 @@ void Menu::DibujarMenu(RenderWindow& window)
 
 void Menu::UpdateMenu()
 {
-
+	if (Keyboard::isKeyPressed(Keyboard::Up) && frameWait >= 15)
+	{
+		Subir();
+	}
+	if (Keyboard::isKeyPressed(Keyboard::Down) && frameWait >= 15)
+	{
+		Bajar();
+	}
+	frameWait++;
 }
 
 void Menu::PosicionarTextos()
@@ -59,12 +68,16 @@ void Menu::PosicionarTextos()
 
 void Menu::CambiarSeleccion()
 {
-	opcionSeleccionada = 0;
+	for (int i = 0; i < 4; i++)
+	{
+		textoOpciones[i].setFillColor(Color::Black);
+	}
 	textoOpciones[opcionSeleccionada].setFillColor(Color::Red);
 }
 
 void Menu::Bajar()
 {
+	frameWait = 0;
 	if (opcionSeleccionada + 1 >= 4)
 	{
 		opcionSeleccionada = 0;
@@ -73,10 +86,12 @@ void Menu::Bajar()
 	{
 		opcionSeleccionada++;
 	}
+	CambiarSeleccion();
 }
 
 void Menu::Subir()
 {
+	frameWait = 0;
 	if (opcionSeleccionada - 1 <= -1)
 	{
 		opcionSeleccionada = 3;
@@ -85,4 +100,5 @@ void Menu::Subir()
 	{
 		opcionSeleccionada--;
 	}
+	CambiarSeleccion();
 }
