@@ -6,18 +6,43 @@ Menu::Menu()
 	fondoMenu.setTexture(imageFondo);
 	fuente.loadFromFile("Fonts/Ketchum.otf");
 	menuNombreJuego = "Klostermon";
-
 	textoTitulo.setFont(fuente);
 	textoTitulo.setFillColor(Color::Black);
 	textoTitulo.setString(menuNombreJuego);
-	textoTitulo.setPosition(180, 100);
+	textoTitulo.setPosition(180, 50);
 	textoTitulo.setCharacterSize(85);
+	//DemasOpciones
+	fuenteOpciones.loadFromFile("Fonts/Pokemon Classic.ttf");
+
+	textoOpciones[0].setString("Jugar");
+	textoOpciones[1].setString("Nueva Partida");
+	textoOpciones[2].setString("Creditos");
+	textoOpciones[3].setString("Salir");
+
+
+	for (int i = 0; i < 4; i++)
+	{
+		//Pone el estilo a cada texto
+		textoOpciones[i].setCharacterSize(20);
+		textoOpciones[i].setFont(fuenteOpciones);
+		textoOpciones[i].setFillColor(Color::Black);
+	}
+	//Posiciona las opciones
+	textoOpciones[0].setPosition(100, 200);
+	textoOpciones[1].setPosition(100, 300);
+	textoOpciones[2].setPosition(100, 400);
+	textoOpciones[3].setPosition(100, 500);
 }
 
 void Menu::DibujarMenu(RenderWindow& window)
 {
 	window.draw(fondoMenu);
 	window.draw(textoTitulo);
+	for (int i = 0; i < 4;i++)
+	{
+		//Dibuja cada texto dentro de textoOpciones
+		window.draw(textoOpciones[i]);
+	}
 }
 
 void Menu::UpdateMenu()
