@@ -6,7 +6,9 @@ class Menu
 {
 	Sprite fondoMenu;
 	Texture imageFondo;
-	String 
+	Font fuente;
+	Text textoTitulo;
+	String menuNombreJuego;
 public:
 	Menu();
 	void DibujarMenu(RenderWindow&);
