@@ -27,11 +27,9 @@ Menu::Menu()
 		textoOpciones[i].setFont(fuenteOpciones);
 		textoOpciones[i].setFillColor(Color::Black);
 	}
-	//Posiciona las opciones
-	textoOpciones[0].setPosition(100, 200);
-	textoOpciones[1].setPosition(100, 300);
-	textoOpciones[2].setPosition(100, 400);
-	textoOpciones[3].setPosition(100, 500);
+	PosicionarTextos();
+	CambiarSeleccion();
+
 }
 
 void Menu::DibujarMenu(RenderWindow& window)
@@ -48,4 +46,43 @@ void Menu::DibujarMenu(RenderWindow& window)
 void Menu::UpdateMenu()
 {
 
+}
+
+void Menu::PosicionarTextos()
+{
+	//Posiciona las opciones
+	textoOpciones[0].setPosition(100, 200);
+	textoOpciones[1].setPosition(100, 300);
+	textoOpciones[2].setPosition(100, 400);
+	textoOpciones[3].setPosition(100, 500);
+}
+
+void Menu::CambiarSeleccion()
+{
+	opcionSeleccionada = 0;
+	textoOpciones[opcionSeleccionada].setFillColor(Color::Red);
+}
+
+void Menu::Bajar()
+{
+	if (opcionSeleccionada + 1 >= 4)
+	{
+		opcionSeleccionada = 0;
+	}
+	else
+	{
+		opcionSeleccionada++;
+	}
+}
+
+void Menu::Subir()
+{
+	if (opcionSeleccionada - 1 <= -1)
+	{
+		opcionSeleccionada = 3;
+	}
+	else
+	{
+		opcionSeleccionada--;
+	}
 }

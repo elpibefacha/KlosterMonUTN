@@ -15,9 +15,17 @@ class Menu
 
 	Text textoOpciones[4];
 
+	int opcionSeleccionada;
+
+
+
+	void PosicionarTextos();
+	void UpdateMenu();
+	void CambiarSeleccion();
 public:
 	Menu();
 	void DibujarMenu(RenderWindow&);
-	void UpdateMenu();
+	void Bajar();
+	void Subir();
 };
 
