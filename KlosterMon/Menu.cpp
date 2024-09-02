@@ -54,6 +54,11 @@ void Menu::UpdateMenu()
 	{
 		Bajar();
 	}
+	if (Keyboard::isKeyPressed(Keyboard::Enter))
+	{
+		ActivarSeleccion();
+	}
+
 	frameWait++;
 }
 
@@ -101,4 +106,14 @@ void Menu::Subir()
 		opcionSeleccionada--;
 	}
 	CambiarSeleccion();
+}
+
+void Menu::ActivarSeleccion()
+{
+	switch (opcionSeleccionada)
+	{
+	case 3:
+		exit(0);
+		break;
+	}
 }

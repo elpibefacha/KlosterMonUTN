@@ -23,6 +23,7 @@ class Menu
 	void CambiarSeleccion();
 	void Bajar();
 	void Subir();
+	void ActivarSeleccion();
 public:
 	Menu();
 	void UpdateMenu();
