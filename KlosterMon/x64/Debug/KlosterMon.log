@@ -1,2 +1,4 @@
-﻿  main.cpp
+﻿  Menu.cpp
+C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMon\Menu.cpp(123,49): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMon\Menu.cpp(123,45): warning C4305: 'argumento': truncamiento de 'double' a 'float'
   KlosterMon.vcxproj -> C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\x64\Debug\KlosterMon.exe

@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include "Menu.h"
+#include "JugadorMapa.h"
 #include "Funciones.h"
 using namespace sf;
 
@@ -10,6 +11,7 @@ int main()
     RenderWindow window(VideoMode(800, 600), "KlosterMon");
     window.setFramerateLimit(60);
     Menu menu;
+    JugadorMapa player;
     while (window.isOpen())
     {
         Event event;
@@ -26,18 +28,18 @@ int main()
             menu.DibujarMenu(window);
 
         }
-        else if(gameState == JUEGO)
+        else if(gameState == JUEGO)//EN EL MAPA
         {
             //CMD
+            player.UpdatePlayer();//DETECTA EL MOVIMiENTO
+            //VUELVE AL MENU
             if (Keyboard::isKeyPressed(Keyboard::Escape))
             {
                 gameState = MENU;
             }
             window.clear();
             //DRAW
-            CircleShape circulo(100.f);
-            circulo.setFillColor(Color::Red);
-            window.draw(circulo);
+            player.DrawPlayer(window);
         }
         
         window.display();

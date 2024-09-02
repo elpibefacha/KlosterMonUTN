@@ -117,8 +117,10 @@ void Menu::CambiarSeleccion()
 	for (int i = 0; i < 4; i++)
 	{
 		textoOpciones[i].setFillColor(Color::Black);
+		textoOpciones[i].setScale(1, 1);
 	}
 	textoOpciones[opcionSeleccionada].setFillColor(Color::Red);
+	textoOpciones[opcionSeleccionada].setScale(1.3,1.3);
 }
 
 void Menu::Bajar()
