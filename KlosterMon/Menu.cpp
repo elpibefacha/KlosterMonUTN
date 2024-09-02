@@ -9,7 +9,9 @@ Menu::Menu()
 	fuente.loadFromFile("Fonts/Ketchum.otf");
 	menuNombreJuego = "Klostermon";
 	textoTitulo.setFont(fuente);
-	textoTitulo.setFillColor(Color::Black);
+	textoTitulo.setOutlineThickness(8);
+	textoTitulo.setOutlineColor(Color::Black);
+	textoTitulo.setFillColor(Color::Yellow);
 	textoTitulo.setString(menuNombreJuego);
 	textoTitulo.setPosition(180, 50);
 	textoTitulo.setCharacterSize(85);
@@ -42,8 +44,9 @@ Menu::Menu()
 
 	textoNombresCreditos.setFont(fuenteOpciones);
 	textoNombresCreditos.setFillColor(Color::Black);
+	textoNombresCreditos.setOrigin(textoNombresCreditos.getPosition().x/2, textoNombresCreditos.getPosition().y / 2);
 	textoNombresCreditos.setPosition(90, 950);
-	textoNombresCreditos.setString("Juego hecho por Mateo Scataglini y Joaquin Sanchez");
+	textoNombresCreditos.setString("Juego hecho por:\n Mateo Scataglini y Joaquin Sanchez");
 	textoNombresCreditos.setCharacterSize(15);
 }
 
@@ -103,10 +106,10 @@ void Menu::UpdateMenu()
 void Menu::PosicionarTextos()
 {
 	//Posiciona las opciones
-	textoOpciones[0].setPosition(100, 200);
-	textoOpciones[1].setPosition(100, 300);
-	textoOpciones[2].setPosition(100, 400);
-	textoOpciones[3].setPosition(100, 500);
+	textoOpciones[0].setPosition(50, 200);
+	textoOpciones[1].setPosition(50, 300);
+	textoOpciones[2].setPosition(50, 400);
+	textoOpciones[3].setPosition(50, 500);
 }
 
 void Menu::CambiarSeleccion()
