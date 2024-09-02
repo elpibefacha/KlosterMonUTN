@@ -1,6 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "Funciones.h"
 using namespace sf;
+
 
 class Menu
 {
@@ -9,7 +11,9 @@ class Menu
 		MenuCreditos
 	};
 	//MENU PRINCIPAL
+
 	Estado estadoMenu;
+
 
 	Sprite fondoMenu;
 	Texture imageFondo;

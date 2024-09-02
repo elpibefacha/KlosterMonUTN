@@ -153,6 +153,9 @@ void Menu::ActivarSeleccion()
 {
 	switch (opcionSeleccionada)
 	{
+	case 0:
+		gameState = JUEGO;
+		break;
 	case 2:
 		estadoMenu = MenuCreditos;
 		break;

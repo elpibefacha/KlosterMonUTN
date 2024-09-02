@@ -1,13 +1,15 @@
 #include <SFML/Graphics.hpp>
 #include "Menu.h"
+#include "Funciones.h"
 using namespace sf;
+
+
 
 int main()
 {
     RenderWindow window(VideoMode(800, 600), "KlosterMon");
     window.setFramerateLimit(60);
     Menu menu;
-
     while (window.isOpen())
     {
         Event event;
@@ -16,13 +18,28 @@ int main()
             if (event.type == Event::Closed)
                 window.close();
         }
-        //CMD
-        menu.UpdateMenu();
+        if (gameState == MENU) {
+            //CMD
+            menu.UpdateMenu();
+            window.clear();
+            //DRAW
+            menu.DibujarMenu(window);
 
-        window.clear();
-        //DRAW
-        menu.DibujarMenu(window);
-
+        }
+        else if(gameState == JUEGO)
+        {
+            //CMD
+            if (Keyboard::isKeyPressed(Keyboard::Escape))
+            {
+                gameState = MENU;
+            }
+            window.clear();
+            //DRAW
+            CircleShape circulo(100.f);
+            circulo.setFillColor(Color::Red);
+            window.draw(circulo);
+        }
+        
         window.display();
     }
 
