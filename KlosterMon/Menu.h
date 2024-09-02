@@ -4,6 +4,13 @@ using namespace sf;
 
 class Menu
 {
+	enum Estado {
+		MenuPrincipal,
+		MenuCreditos
+	};
+	//MENU PRINCIPAL
+	Estado estadoMenu;
+
 	Sprite fondoMenu;
 	Texture imageFondo;
 	Font fuente;
@@ -17,13 +24,19 @@ class Menu
 
 	int opcionSeleccionada;
 	int frameWait;
-
-
 	void PosicionarTextos();
 	void CambiarSeleccion();
 	void Bajar();
 	void Subir();
 	void ActivarSeleccion();
+
+	//Menu Creditos
+
+	Text textoCreditos;
+	String stringCreditos;
+
+	Text textoNombresCreditos;
+
 public:
 	Menu();
 	void UpdateMenu();

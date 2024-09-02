@@ -2,6 +2,8 @@
 
 Menu::Menu()
 {
+	//MENU PRINCIPAL
+	estadoMenu = MenuPrincipal;
 	imageFondo.loadFromFile("Sprites/fondoMenu.jpg");
 	fondoMenu.setTexture(imageFondo);
 	fuente.loadFromFile("Fonts/Ketchum.otf");
@@ -31,35 +33,71 @@ Menu::Menu()
 	frameWait = 30;
 	PosicionarTextos();
 	CambiarSeleccion();
+	//MENU CREDITO
+	textoCreditos.setFont(fuente);
+	textoCreditos.setFillColor(Color::Black);
+	textoCreditos.setPosition(300, 850);
+	stringCreditos = "CREDITOS";
+	textoCreditos.setString(stringCreditos);
+
+	textoNombresCreditos.setFont(fuenteOpciones);
+	textoNombresCreditos.setFillColor(Color::Black);
+	textoNombresCreditos.setPosition(90, 950);
+	textoNombresCreditos.setString("Juego hecho por Mateo Scataglini y Joaquin Sanchez");
+	textoNombresCreditos.setCharacterSize(15);
 }
 
 void Menu::DibujarMenu(RenderWindow& window)
 {
-	window.draw(fondoMenu);
-	window.draw(textoTitulo);
-	for (int i = 0; i < 4;i++)
+	if (estadoMenu == MenuPrincipal)
 	{
-		//Dibuja cada texto dentro de textoOpciones
-		window.draw(textoOpciones[i]);
+		window.draw(fondoMenu);
+		window.draw(textoTitulo);
+		for (int i = 0; i < 4;i++)
+		{
+			//Dibuja cada texto dentro de textoOpciones
+			window.draw(textoOpciones[i]);
+		}
+	}
+	else if(estadoMenu == MenuCreditos)
+	{
+		window.draw(fondoMenu);
+		window.draw(textoCreditos);
+		window.draw(textoNombresCreditos);
 	}
 }
 
 void Menu::UpdateMenu()
 {
-	if (Keyboard::isKeyPressed(Keyboard::Up) && frameWait >= 15)
+	if (estadoMenu == MenuPrincipal)
 	{
-		Subir();
-	}
-	if (Keyboard::isKeyPressed(Keyboard::Down) && frameWait >= 15)
-	{
-		Bajar();
-	}
-	if (Keyboard::isKeyPressed(Keyboard::Enter))
-	{
-		ActivarSeleccion();
-	}
 
-	frameWait++;
+
+		if (Keyboard::isKeyPressed(Keyboard::Up) && frameWait >= 15)
+		{
+			Subir();
+		}
+		if (Keyboard::isKeyPressed(Keyboard::Down) && frameWait >= 15)
+		{
+			Bajar();
+		}
+		if (Keyboard::isKeyPressed(Keyboard::Enter))
+		{
+			ActivarSeleccion();
+		}
+		frameWait++;
+	}
+	else if (estadoMenu == MenuCreditos)
+	{
+		textoCreditos.move(0, -2);
+		textoNombresCreditos.move(0,-2);
+		if (Keyboard::isKeyPressed(Keyboard::Escape))
+		{
+			estadoMenu = MenuPrincipal;
+			textoNombresCreditos.setPosition(90, 1000);
+			textoCreditos.setPosition(300, 900);
+		}
+	}
 }
 
 void Menu::PosicionarTextos()
@@ -112,6 +150,9 @@ void Menu::ActivarSeleccion()
 {
 	switch (opcionSeleccionada)
 	{
+	case 2:
+		estadoMenu = MenuCreditos;
+		break;
 	case 3:
 		exit(0);
 		break;
