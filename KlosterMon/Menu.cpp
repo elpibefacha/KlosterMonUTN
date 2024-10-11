@@ -44,7 +44,7 @@ Menu::Menu()
 
 	textoNombresCreditos.setFont(fuenteOpciones);
 	textoNombresCreditos.setFillColor(Color::Black);
-	textoNombresCreditos.setOrigin(textoNombresCreditos.getPosition().x/2, textoNombresCreditos.getPosition().y / 2);
+	textoNombresCreditos.setOrigin(textoNombresCreditos.getPosition().x / 2, textoNombresCreditos.getPosition().y / 2);
 	textoNombresCreditos.setPosition(90, 950);
 	textoNombresCreditos.setString("Juego hecho por:\n Mateo Scataglini y Joaquin Sanchez");
 	textoNombresCreditos.setCharacterSize(15);
@@ -62,7 +62,7 @@ void Menu::DibujarMenu(RenderWindow& window)
 			window.draw(textoOpciones[i]);
 		}
 	}
-	else if(estadoMenu == MenuCreditos)
+	else if (estadoMenu == MenuCreditos)
 	{
 		window.draw(fondoMenu);
 		window.draw(textoCreditos);
@@ -93,7 +93,7 @@ void Menu::UpdateMenu()
 	else if (estadoMenu == MenuCreditos)
 	{
 		textoCreditos.move(0, -2);
-		textoNombresCreditos.move(0,-2);
+		textoNombresCreditos.move(0, -2);
 		if (Keyboard::isKeyPressed(Keyboard::Escape))
 		{
 			estadoMenu = MenuPrincipal;
@@ -120,7 +120,7 @@ void Menu::CambiarSeleccion()
 		textoOpciones[i].setScale(1, 1);
 	}
 	textoOpciones[opcionSeleccionada].setFillColor(Color::Red);
-	textoOpciones[opcionSeleccionada].setScale(1.3,1.3);
+	textoOpciones[opcionSeleccionada].setScale(1.3, 1.3);
 }
 
 void Menu::Bajar()

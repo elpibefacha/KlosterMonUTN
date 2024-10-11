@@ -46,4 +46,3 @@ public:
 	void UpdateMenu();
 	void DibujarMenu(RenderWindow&);
 };
-

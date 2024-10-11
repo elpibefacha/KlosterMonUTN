@@ -1,17 +1,18 @@
 #include <SFML/Graphics.hpp>
 #include "Menu.h"
-#include "JugadorMapa.h"
+#include "Combate.h" 
 #include "Funciones.h"
+#include "SceneManager.h"
 using namespace sf;
 
 
 
 int main()
 {
-    RenderWindow window(VideoMode(800, 600), "KlosterMon");
+    /*RenderWindow window(VideoMode(800, 600), "KlosterMon");
     window.setFramerateLimit(60);
     Menu menu;
-    JugadorMapa player;
+    Combate combate;
     while (window.isOpen())
     {
         Event event;
@@ -31,7 +32,7 @@ int main()
         else if(gameState == JUEGO)//EN EL MAPA
         {
             //CMD
-            player.UpdatePlayer();//DETECTA EL MOVIMiENTO
+            combate.IniciarEnfrentamiento();
             //VUELVE AL MENU
             if (Keyboard::isKeyPressed(Keyboard::Escape))
             {
@@ -39,11 +40,14 @@ int main()
             }
             window.clear();
             //DRAW
-            player.DrawPlayer(window);
+            combate.Draw(window);
         }
         
         window.display();
-    }
+    }*/
+
+    SceneManager sceneManager;
+    sceneManager.Iniciar();
 
     return 0;
 }
