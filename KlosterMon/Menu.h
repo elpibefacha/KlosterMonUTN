@@ -1,11 +1,15 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "Funciones.h"
+#include "SceneManager.h"
+
 using namespace sf;
 
 
 class Menu
 {
+	SceneManager sceneManager;
+
 	enum Estado {
 		MenuPrincipal,
 		MenuCreditos

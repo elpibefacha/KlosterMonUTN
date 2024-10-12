@@ -2,7 +2,7 @@
 #include "Menu.h"
 #include "Combate.h" 
 #include "Funciones.h"
-#include "SceneManager.h"
+#include "GameLoopManager.h"
 using namespace sf;
 
 
@@ -46,8 +46,8 @@ int main()
         window.display();
     }*/
 
-    SceneManager sceneManager;
-    sceneManager.Iniciar();
+    GameLoopManager GameLoop;
+    GameLoop.Iniciar();
 
     return 0;
 }

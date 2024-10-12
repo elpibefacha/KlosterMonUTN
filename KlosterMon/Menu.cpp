@@ -156,7 +156,7 @@ void Menu::ActivarSeleccion()
 	switch (opcionSeleccionada)
 	{
 	case 0:
-		gameState = JUEGO;
+		sceneManager.setScene(1);
 		break;
 	case 2:
 		estadoMenu = MenuCreditos;

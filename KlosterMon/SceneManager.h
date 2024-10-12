@@ -1,24 +1,11 @@
 #pragma once
-#include <SFML/Graphics.hpp>
-#include "Menu.h"
-#include "Combate.h"
-
-using namespace sf;
-
 class SceneManager
 {
 private:
-	Menu menu;
-	Combate combate;
-	void GameLoop();
+	static int scene;
 public:
-	enum GameState
-	{
-		MENU,
-		JUEGO
-	};
-	GameState gameState;
-	void SetGameState(GameState);
 	void Iniciar();
+	int getScene();
+	void setScene(int);
 };
 

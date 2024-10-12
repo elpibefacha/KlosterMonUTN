@@ -137,6 +137,7 @@
     <ClCompile Include="JugadorMapa.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="GameLoopManager.cpp" />
     <ClCompile Include="SceneManager.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -144,6 +145,7 @@
     <ClInclude Include="Funciones.h" />
     <ClInclude Include="JugadorMapa.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="GameLoopManager.h" />
     <ClInclude Include="SceneManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
