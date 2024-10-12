@@ -133,6 +133,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Combate.cpp" />
+    <ClCompile Include="GenerarTexto.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="GameLoopManager.cpp" />
@@ -140,6 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Combate.h" />
+    <ClInclude Include="GenerarTexto.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="GameLoopManager.h" />
     <ClInclude Include="SceneManager.h" />

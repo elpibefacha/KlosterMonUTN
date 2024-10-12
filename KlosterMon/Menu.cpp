@@ -8,13 +8,9 @@ Menu::Menu()
 	fondoMenu.setTexture(imageFondo);
 	fuente.loadFromFile("Fonts/Ketchum.otf");
 	menuNombreJuego = "Klostermon";
-	textoTitulo.setFont(fuente);
-	textoTitulo.setOutlineThickness(8);
-	textoTitulo.setOutlineColor(Color::Black);
-	textoTitulo.setFillColor(Color::Yellow);
-	textoTitulo.setString(menuNombreJuego);
+
+	configTexto.ConfigurarTexto(textoTitulo, fuente, menuNombreJuego, 85, Color::Yellow,Color::Black,8);
 	textoTitulo.setPosition(180, 50);
-	textoTitulo.setCharacterSize(85);
 	//DemasOpciones
 	fuenteOpciones.loadFromFile("Fonts/Pokemon Classic.ttf");
 
@@ -35,19 +31,13 @@ Menu::Menu()
 	frameWait = 30;
 	PosicionarTextos();
 	CambiarSeleccion();
+	
 	//MENU CREDITO
-	textoCreditos.setFont(fuente);
-	textoCreditos.setFillColor(Color::Black);
+	configTexto.ConfigurarTexto(textoCreditos, fuente, "CREDITOS", 30, Color::Black);
 	textoCreditos.setPosition(300, 850);
-	stringCreditos = "CREDITOS";
-	textoCreditos.setString(stringCreditos);
 
-	textoNombresCreditos.setFont(fuenteOpciones);
-	textoNombresCreditos.setFillColor(Color::Black);
-	textoNombresCreditos.setOrigin(textoNombresCreditos.getPosition().x / 2, textoNombresCreditos.getPosition().y / 2);
+	configTexto.ConfigurarTexto(textoNombresCreditos, fuenteOpciones, "Juego hecho por:\n Mateo Scataglini y Joaquin Sanchez", 15, Color::Black);
 	textoNombresCreditos.setPosition(90, 950);
-	textoNombresCreditos.setString("Juego hecho por:\n Mateo Scataglini y Joaquin Sanchez");
-	textoNombresCreditos.setCharacterSize(15);
 }
 
 void Menu::DibujarMenu(RenderWindow& window)
