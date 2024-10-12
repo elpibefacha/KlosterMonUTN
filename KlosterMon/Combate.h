@@ -1,6 +1,5 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "Funciones.h"
 #include "iostream"
 using namespace sf;
 

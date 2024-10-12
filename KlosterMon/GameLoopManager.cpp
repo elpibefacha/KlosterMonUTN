@@ -33,7 +33,7 @@ void GameLoopManager::GameLoop()
             //VUELVE AL MENU
             if (Keyboard::isKeyPressed(Keyboard::Escape))
             {
-                gameState = MENU;
+                sceneManager.setScene(0);//VUELVE AL MENU
             }
             window.clear();
             //DRAW
@@ -46,7 +46,6 @@ void GameLoopManager::GameLoop()
 
 void GameLoopManager::Iniciar()
 {
-    gameState = MENU;
     sceneManager.setScene(0);
     GameLoop();
 }

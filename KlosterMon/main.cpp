@@ -1,7 +1,4 @@
 #include <SFML/Graphics.hpp>
-#include "Menu.h"
-#include "Combate.h" 
-#include "Funciones.h"
 #include "GameLoopManager.h"
 using namespace sf;
 

@@ -1,6 +1,5 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "Funciones.h"
 #include "SceneManager.h"
 
 using namespace sf;

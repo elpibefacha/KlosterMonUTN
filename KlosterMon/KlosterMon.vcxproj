@@ -133,8 +133,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Combate.cpp" />
-    <ClCompile Include="Funciones.cpp" />
-    <ClCompile Include="JugadorMapa.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="GameLoopManager.cpp" />
@@ -142,8 +140,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Combate.h" />
-    <ClInclude Include="Funciones.h" />
-    <ClInclude Include="JugadorMapa.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="GameLoopManager.h" />
     <ClInclude Include="SceneManager.h" />
