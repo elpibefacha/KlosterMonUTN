@@ -1,4 +1,10 @@
-﻿  Menu.cpp
-C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\Menu.cpp(128,50): warning C4305: 'argumento': truncamiento de 'double' a 'float'
-C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\Menu.cpp(128,45): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+﻿  GameLoopManager.cpp
+  Menu.cpp
+C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\Menu.cpp(107,50): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\Menu.cpp(107,45): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  MenuCreditos.cpp
+  MenuManager.cpp
+  MenuNuevaPartida.cpp
+  main.cpp
+  Generando código...
   KlosterMon.vcxproj -> C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\x64\Debug\KlosterMon.exe

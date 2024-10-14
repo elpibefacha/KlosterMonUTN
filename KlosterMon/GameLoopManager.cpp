@@ -13,6 +13,7 @@ void GameLoopManager::GameLoop()
         sceneActual = sceneManager.getScene();
 
 		Event event;
+        menuManager.setEvent(event);
 		while (window.pollEvent(event))
 		{
 			if (event.type == Event::Closed)

@@ -5,6 +5,7 @@ using namespace sf;
 class GenerarTexto
 {
 	public:
+		GenerarTexto();
 		void ConfigurarTexto(Text& texto, 
 							const Font& fuente, 
 							const String& contenido,
@@ -13,7 +14,8 @@ class GenerarTexto
 							const Color outlineColor = Color::Black,
 							float outlineThickness = 0.0f		
 							);
-
-
+		
+		Font gameTitleFont;
+		Font gameplayFont;
 };
 

@@ -3,7 +3,6 @@
 Menu::Menu()
 {
 	//MENU PRINCIPAL
-	estadoMenu = MenuPrincipal;
 	imageFondo.loadFromFile("Sprites/fondoMenu.jpg");
 	fondoMenu.setTexture(imageFondo);
 	fuente.loadFromFile("Fonts/Ketchum.otf");
@@ -31,18 +30,11 @@ Menu::Menu()
 	frameWait = 30;
 	PosicionarTextos();
 	CambiarSeleccion();
-	
-	//MENU CREDITO
-	configTexto.ConfigurarTexto(textoCreditos, fuente, "CREDITOS", 30, Color::Black);
-	textoCreditos.setPosition(300, 850);
-
-	configTexto.ConfigurarTexto(textoNombresCreditos, fuenteOpciones, "Juego hecho por:\n Mateo Scataglini y Joaquin Sanchez", 15, Color::Black);
-	textoNombresCreditos.setPosition(90, 950);
 }
 
 void Menu::DibujarMenu(RenderWindow& window)
 {
-	if (estadoMenu == MenuPrincipal)
+	if (menuManager.getMenuID()==0)
 	{
 		window.draw(fondoMenu);
 		window.draw(textoTitulo);
@@ -52,20 +44,25 @@ void Menu::DibujarMenu(RenderWindow& window)
 			window.draw(textoOpciones[i]);
 		}
 	}
-	else if (estadoMenu == MenuCreditos)
+	else if (menuManager.getMenuID() == 1)
 	{
-		window.draw(fondoMenu);
-		window.draw(textoCreditos);
-		window.draw(textoNombresCreditos);
+		menuCreditos.drawCreditos(window);
 	}
+	else if (menuManager.getMenuID() == 2)
+	{
+		menuNuevaPartida.Draw(window);
+	}
+}
+
+void Menu::getEvent(Event& evento)
+{
+	menuManager.setEvent(evento);
 }
 
 void Menu::UpdateMenu()
 {
-	if (estadoMenu == MenuPrincipal)
+	if (menuManager.getMenuID() == 0)
 	{
-
-
 		if (Keyboard::isKeyPressed(Keyboard::Up) && frameWait >= 15)
 		{
 			Subir();
@@ -80,16 +77,13 @@ void Menu::UpdateMenu()
 		}
 		frameWait++;
 	}
-	else if (estadoMenu == MenuCreditos)
+	else if(menuManager.getMenuID()==1)
 	{
-		textoCreditos.move(0, -2);
-		textoNombresCreditos.move(0, -2);
-		if (Keyboard::isKeyPressed(Keyboard::Escape))
-		{
-			estadoMenu = MenuPrincipal;
-			textoNombresCreditos.setPosition(90, 1000);
-			textoCreditos.setPosition(300, 900);
-		}
+		menuCreditos.Update();
+	}
+	else if (menuManager.getMenuID()== 2)
+	{
+		menuNuevaPartida.Update();
 	}
 }
 
@@ -148,8 +142,11 @@ void Menu::ActivarSeleccion()
 	case 0:
 		sceneManager.setScene(1);
 		break;
+	case 1:
+		menuManager.setMenuID(2);
+		break;
 	case 2:
-		estadoMenu = MenuCreditos;
+		menuManager.setMenuID(1);
 		break;
 	case 3:
 		exit(0);

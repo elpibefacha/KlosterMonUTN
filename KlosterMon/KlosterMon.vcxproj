@@ -137,6 +137,9 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="GameLoopManager.cpp" />
+    <ClCompile Include="MenuCreditos.cpp" />
+    <ClCompile Include="MenuManager.cpp" />
+    <ClCompile Include="MenuNuevaPartida.cpp" />
     <ClCompile Include="SceneManager.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -144,6 +147,9 @@
     <ClInclude Include="GenerarTexto.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="GameLoopManager.h" />
+    <ClInclude Include="MenuCreditos.h" />
+    <ClInclude Include="MenuManager.h" />
+    <ClInclude Include="MenuNuevaPartida.h" />
     <ClInclude Include="SceneManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

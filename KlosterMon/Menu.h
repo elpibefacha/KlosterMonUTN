@@ -1,22 +1,19 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "SceneManager.h"
+#include "MenuManager.h"
 #include "GenerarTexto.h"
 
+#include "MenuCreditos.h"
+#include "MenuNuevaPartida.h"
 using namespace sf;
 
 
 class Menu
 {
+	MenuManager menuManager;
 	SceneManager sceneManager;
 	GenerarTexto configTexto;
-
-	enum Estado {
-		MenuPrincipal,
-		MenuCreditos
-	};
-	Estado estadoMenu;
-
 	//MENU PRINCIPAL
 	Sprite fondoMenu;
 	Texture imageFondo;
@@ -37,12 +34,13 @@ class Menu
 	void ActivarSeleccion();
 
 	//Menu Creditos
-
-	Text textoCreditos;
-	Text textoNombresCreditos;
+	MenuCreditos menuCreditos;
+	//Menu Nueva Partida
+	MenuNuevaPartida menuNuevaPartida;
 
 public:
 	Menu();
 	void UpdateMenu();
 	void DibujarMenu(RenderWindow&);
+	void getEvent(Event&);
 };
