@@ -9,7 +9,7 @@ Menu::Menu()
 	menuNombreJuego = "Klostermon";
 
 	configTexto.ConfigurarTexto(textoTitulo, fuente, menuNombreJuego, 85, Color::Yellow,Color::Black,8);
-	textoTitulo.setPosition(180, 50);
+	configTexto.CentrarTexto(textoTitulo, -200);
 	//DemasOpciones
 	fuenteOpciones.loadFromFile("Fonts/Pokemon Classic.ttf");
 

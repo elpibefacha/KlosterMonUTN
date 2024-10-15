@@ -3,14 +3,19 @@
 void MenuNuevaPartida::Iniciar()
 {
 	fuente = configTexto.gameplayFont;
-	configTexto.ConfigurarTexto(playerNameText, fuente, "", 30, Color::Black);
+	fuenteTitle = configTexto.gameTitleFont;
 
+	configTexto.ConfigurarTexto(playerNameText, fuente, "", 30, Color::Black);
+	configTexto.ConfigurarTexto(title, fuenteTitle, "Ingresa tu nombre!", 50, Color::Black);
+	configTexto.CentrarTexto(title, -200);
 	//Fondo
 	imageFondo.loadFromFile("Sprites/fondoMenu.jpg");
 	fondoMenu.setTexture(imageFondo);
 	//Importante
 	framesCooldown = 0;
 	cout << "inicio";
+
+	configTexto.CentrarTexto(playerNameText);
 }
 
 MenuNuevaPartida::MenuNuevaPartida()
@@ -23,7 +28,7 @@ void MenuNuevaPartida::Update()
 	event = menuManager.getEvent();
 	if (playerInputName.getSize() > 3 && Keyboard::isKeyPressed(Keyboard::Enter))
 	{
-		menuManager.setMenuID(0);
+		sceneManager.setScene(1);
 		return;
 	}
 	if (event.type == Event::TextEntered && framesCooldown > 10)
@@ -44,6 +49,7 @@ void MenuNuevaPartida::Update()
 			playerNameText.setString(playerInputName);
 		}
 		framesCooldown = 0;
+		configTexto.CentrarTexto(playerNameText, -150);
 	}
 	framesCooldown++;
 
@@ -53,6 +59,7 @@ void MenuNuevaPartida::Draw(RenderWindow& window)
 {
 	window.draw(fondoMenu);
 	window.draw(playerNameText);
+	window.draw(title);
 }
 
 void MenuNuevaPartida::setEvent(Event& evento)

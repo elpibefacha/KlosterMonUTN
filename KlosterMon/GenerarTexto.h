@@ -17,5 +17,7 @@ class GenerarTexto
 		
 		Font gameTitleFont;
 		Font gameplayFont;
+
+		void CentrarTexto(Text& texto, const float yOffSet = 0, const float xOffSet = 0);
 };
 
