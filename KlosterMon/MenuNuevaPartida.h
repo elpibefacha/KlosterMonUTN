@@ -3,6 +3,9 @@
 #include "GenerarTexto.h"
 #include "MenuManager.h"
 #include "SceneManager.h"
+#include "Player.h"
+#include "ArchivoPlayer.h"
+
 #include <iostream>
 
 using namespace sf;
@@ -11,6 +14,10 @@ using namespace std;
 class MenuNuevaPartida
 {
 private:
+	//Player INFO
+	Player player;
+	ArchivoPlayer archivo;
+	//Managers
 	SceneManager sceneManager;
 	MenuManager menuManager;
 	//Texto
@@ -33,6 +40,5 @@ public:
 	MenuNuevaPartida();
 	void Update();
 	void Draw(RenderWindow&);
-	void setEvent(Event&);
 };
 

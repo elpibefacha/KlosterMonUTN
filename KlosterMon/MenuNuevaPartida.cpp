@@ -13,10 +13,10 @@ void MenuNuevaPartida::Iniciar()
 	fondoMenu.setTexture(imageFondo);
 	//Importante
 	framesCooldown = 0;
-	cout << "inicio";
-
 	configTexto.CentrarTexto(playerNameText);
 }
+
+
 
 MenuNuevaPartida::MenuNuevaPartida()
 {
@@ -26,8 +26,19 @@ MenuNuevaPartida::MenuNuevaPartida()
 void MenuNuevaPartida::Update()
 {
 	event = menuManager.getEvent();
-	if (playerInputName.getSize() > 3 && Keyboard::isKeyPressed(Keyboard::Enter))
+	if (Keyboard::isKeyPressed(Keyboard::Escape))
 	{
+		playerInputName = "";
+		playerNameText.setString("");
+		menuManager.setMenuID(0);
+		return;
+	}
+	if (playerInputName.getSize() >= 3 && Keyboard::isKeyPressed(Keyboard::Enter))
+	{
+		player.SetName(playerInputName);
+		archivo.grabarArchivo(player);
+		
+
 		sceneManager.setScene(1);
 		return;
 	}
@@ -62,7 +73,3 @@ void MenuNuevaPartida::Draw(RenderWindow& window)
 	window.draw(title);
 }
 
-void MenuNuevaPartida::setEvent(Event& evento)
-{
-	event = evento;
-}

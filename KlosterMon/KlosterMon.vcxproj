@@ -106,7 +106,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -132,6 +132,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ArchivoPlayer.cpp" />
     <ClCompile Include="Combate.cpp" />
     <ClCompile Include="GenerarTexto.cpp" />
     <ClCompile Include="main.cpp" />
@@ -140,9 +141,12 @@
     <ClCompile Include="MenuCreditos.cpp" />
     <ClCompile Include="MenuManager.cpp" />
     <ClCompile Include="MenuNuevaPartida.cpp" />
+    <ClCompile Include="MenuPartidas.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="SceneManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ArchivoPlayer.h" />
     <ClInclude Include="Combate.h" />
     <ClInclude Include="GenerarTexto.h" />
     <ClInclude Include="Menu.h" />
@@ -150,6 +154,8 @@
     <ClInclude Include="MenuCreditos.h" />
     <ClInclude Include="MenuManager.h" />
     <ClInclude Include="MenuNuevaPartida.h" />
+    <ClInclude Include="MenuPartidas.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="SceneManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

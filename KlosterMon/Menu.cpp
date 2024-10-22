@@ -5,13 +5,13 @@ Menu::Menu()
 	//MENU PRINCIPAL
 	imageFondo.loadFromFile("Sprites/fondoMenu.jpg");
 	fondoMenu.setTexture(imageFondo);
-	fuente.loadFromFile("Fonts/Ketchum.otf");
+	fuente = configTexto.gameTitleFont;
 	menuNombreJuego = "Klostermon";
 
 	configTexto.ConfigurarTexto(textoTitulo, fuente, menuNombreJuego, 85, Color::Yellow,Color::Black,8);
 	configTexto.CentrarTexto(textoTitulo, -200);
 	//DemasOpciones
-	fuenteOpciones.loadFromFile("Fonts/Pokemon Classic.ttf");
+	fuenteOpciones = configTexto.gameplayFont;
 
 	textoOpciones[0].setString("Jugar");
 	textoOpciones[1].setString("Nueva Partida");
@@ -52,11 +52,10 @@ void Menu::DibujarMenu(RenderWindow& window)
 	{
 		menuNuevaPartida.Draw(window);
 	}
-}
-
-void Menu::getEvent(Event& evento)
-{
-	menuManager.setEvent(evento);
+	else if (menuManager.getMenuID() == 3)
+	{
+		menuPartidas.Draw(window);
+	}
 }
 
 void Menu::UpdateMenu()
@@ -84,6 +83,10 @@ void Menu::UpdateMenu()
 	else if (menuManager.getMenuID()== 2)
 	{
 		menuNuevaPartida.Update();
+	}
+	else if (menuManager.getMenuID() == 3)
+	{
+		menuPartidas.Update();
 	}
 }
 
@@ -140,7 +143,7 @@ void Menu::ActivarSeleccion()
 	switch (opcionSeleccionada)
 	{
 	case 0:
-		sceneManager.setScene(1);
+		menuManager.setMenuID(3);
 		break;
 	case 1:
 		menuManager.setMenuID(2);

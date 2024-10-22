@@ -6,7 +6,7 @@ void GameLoopManager::GameLoop()
 {
     RenderWindow window(VideoMode(800, 600), "KlosterMon");
     window.setFramerateLimit(60);
-
+    
 	while (window.isOpen())
 	{
 
@@ -20,6 +20,8 @@ void GameLoopManager::GameLoop()
 				window.close();
 		}
         if (sceneActual == 0) {//Menu
+            //Load
+            
             //CMD
             menu.UpdateMenu();
             window.clear();
@@ -27,8 +29,12 @@ void GameLoopManager::GameLoop()
             menu.DibujarMenu(window);
 
         }
-        else if (sceneActual == 1)//EN EL MAPA
+        else if (sceneActual == 1)//En el combate
         {
+            if (!sceneManager.getBoolLoad())
+            {
+                combate.IniciarNombre();
+            }
             //CMD
             combate.IniciarEnfrentamiento();
             //VUELVE AL MENU

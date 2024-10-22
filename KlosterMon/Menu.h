@@ -6,6 +6,7 @@
 
 #include "MenuCreditos.h"
 #include "MenuNuevaPartida.h"
+#include "MenuPartidas.h"
 using namespace sf;
 
 
@@ -37,10 +38,11 @@ class Menu
 	MenuCreditos menuCreditos;
 	//Menu Nueva Partida
 	MenuNuevaPartida menuNuevaPartida;
+	//Menu Partidas
+	MenuPartidas menuPartidas;
 
 public:
 	Menu();
 	void UpdateMenu();
 	void DibujarMenu(RenderWindow&);
-	void getEvent(Event&);
 };
