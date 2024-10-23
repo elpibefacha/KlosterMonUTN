@@ -5,7 +5,7 @@ void Combate::CargarInterfaz()
 	fuenteCombate.loadFromFile("Fonts/Pokemon Classic.ttf");
 	textoBatalla.setFont(fuenteCombate);
 	
-	enfrentamientoString = nombreJugador + " saca un Pokemon!";
+	enfrentamientoString = nombreJugador + " saca un Klostermon!";
 	textoBatalla.setString(enfrentamientoString);
 	textoBatalla.setCharacterSize(20);
 	textoBatalla.setFillColor(Color::Black);

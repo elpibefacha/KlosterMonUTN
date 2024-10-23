@@ -4,6 +4,7 @@
 #include "SceneManager.h"
 #include "Player.h"
 #include "ArchivoPlayer.h"
+#include "GenerarTexto.h"
 using namespace sf;
 
 class Combate
@@ -21,6 +22,7 @@ private:
 	Text textoBatalla;
 	Font fuenteCombate;
 	String nombreJugador;
+	GenerarTexto configTexto;
 public:
 	Combate();
 	void IniciarEnfrentamiento();
