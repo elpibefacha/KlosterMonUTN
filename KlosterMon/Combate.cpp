@@ -23,8 +23,16 @@ void Combate::CargarInterfaz()
 	Sombra2.setTexture(imageSombra);
 	Sombra2.setPosition(505, 230);
 	Sombra3.setTexture(imageSombra);
+	Sombra3.setScale(2, 2); 
+	Sombra3.setPosition(117, 30);
 	fuenteCombate.loadFromFile("Fonts/Pokemon Classic.ttf");
 	textoBatalla.setFont(fuenteCombate);
+
+	// Microestadio
+	imageMicroestadio.loadFromFile("Sprites/utn_microestadio.png");
+	microestadio.setTexture(imageMicroestadio);
+	microestadio.setScale(4, 4); 
+	microestadio.setPosition(300, 120);
 	
 	enfrentamientoString = nombreJugador + " saca un Klostermon!";
 	textoBatalla.setString(enfrentamientoString);
@@ -53,6 +61,8 @@ void Combate::IniciarEnfrentamiento()
 void Combate::Draw(RenderWindow& window)
 {
 	window.draw(fondoGris);
+	window.draw(Sombra3);
+	window.draw(microestadio);
 	window.draw(Sombra2);
 	window.draw(Laras);
 	window.draw(Sombra); 

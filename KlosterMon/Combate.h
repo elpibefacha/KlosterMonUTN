@@ -29,6 +29,9 @@ private:
 	Sprite Sombra2;
 	Sprite Sombra3; 
 	Texture imageSombra; 
+	// microestadio
+	Sprite microestadio;
+	Texture imageMicroestadio; 
 	CircleShape circulo;
 	void CargarInterfaz();
 	String enfrentamientoString;
