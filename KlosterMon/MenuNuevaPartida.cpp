@@ -68,7 +68,7 @@ void MenuNuevaPartida::SlotUpdate()
 	{
 		Bajar();
 	}
-	if (Keyboard::isKeyPressed(Keyboard::Enter) && framesCooldown >= 60)
+	if (Keyboard::isKeyPressed(Keyboard::Enter) && framesCooldown >= 45)
 	{
 		seleccionSlot = false;
 		gameplayManager.setSaveSlot(slotSeleccionado);
@@ -79,7 +79,6 @@ void MenuNuevaPartida::SlotUpdate()
 		seleccionSlot = false;
 	}
 	framesCooldown++;
-	std::cerr << framesCooldown<<endl;
 }
 
 void MenuNuevaPartida::Subir()
