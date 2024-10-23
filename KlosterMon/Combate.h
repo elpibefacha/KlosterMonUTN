@@ -4,11 +4,13 @@
 #include "SceneManager.h"
 #include "Player.h"
 #include "ArchivoPlayer.h"
+#include "GameplayManager.h"
 using namespace sf;
 
 class Combate
 {
 private:
+	GameplayManager gameplayManager;
 	SceneManager sceneManager;
 	//Player
 	Player player;

@@ -134,6 +134,7 @@
   <ItemGroup>
     <ClCompile Include="ArchivoPlayer.cpp" />
     <ClCompile Include="Combate.cpp" />
+    <ClCompile Include="GameplayManager.cpp" />
     <ClCompile Include="GenerarTexto.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
@@ -148,6 +149,7 @@
   <ItemGroup>
     <ClInclude Include="ArchivoPlayer.h" />
     <ClInclude Include="Combate.h" />
+    <ClInclude Include="GameplayManager.h" />
     <ClInclude Include="GenerarTexto.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="GameLoopManager.h" />

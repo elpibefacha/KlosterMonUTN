@@ -2,15 +2,15 @@
 
 void MenuPartidas::SeleccionarOpcion()
 {
-	switch (opcionSeleccionada)
+	Player playerGame;
+	playerGame = archivoPlayer.leerArchivo(opcionSeleccionada);
+
+	if (playerGame.getName() == "")
 	{
-	case 0:
-		break;
-	case 1:
-		break;
-	case 2:
-		break;
+		return;
 	}
+	gameplayManager.setSaveSlot(opcionSeleccionada);
+	sceneManager.setScene(1);
 }
 
 void MenuPartidas::ActualizarSeleccion()
@@ -57,27 +57,38 @@ MenuPartidas::MenuPartidas()
 	Iniciar();
 }
 
-void MenuPartidas::Iniciar()
+void MenuPartidas::Load()
 {
-	fuenteGuardados = configTexto.gameplayFont;
+	archivoPlayer.ArchiveExist();
 	for (int i = 0; i < 3;i++)
 	{
-		configTexto.ConfigurarTexto(textoSave[i],fuenteGuardados,"",25,Color::Black);
-		//Se verifica si hay save
-		int cant = archivoPlayer.contarRegistros();
-		if (cant < i)//Por ahora asi porque no contamos con saves
+		configTexto.ConfigurarTexto(textoSave[i], fuenteGuardados, "", 25, Color::Black);
+
+		player = archivoPlayer.leerArchivo(i);
+		if (player.getName() != "")
 		{
-			textoSave[i].setString(std::to_string(i + 1) + " - Sin Datos");
+			textoSave[i].setString(std::to_string(i + 1) + " - " + player.getName());
 		}
 		else
 		{
-			
-
-			player = archivoPlayer.leerArchivo(i);
-			textoSave[i].setString(std::to_string(i + 1) + " - " + player.getName());
-			std::cerr << "NUMERO " << i << " - " << player.getName()<<endl;
+			textoSave[i].setString(std::to_string(i + 1) + " - " + "Sin Datos");
 		}
+
+		//Se fija el nombre del jugador, si es uno no registrado lo pone como Sin Datos
 	}
+	configTexto.CentrarTexto(textoSave[0], -200);
+	configTexto.CentrarTexto(textoSave[1], -100);
+	configTexto.CentrarTexto(textoSave[2], 0);
+	frameCooldown = 0;
+
+	opcionSeleccionada = 0;
+	ActualizarSeleccion();
+}
+
+void MenuPartidas::Iniciar()
+{
+	fuenteGuardados = configTexto.gameplayFont;
+	
 	configTexto.CentrarTexto(textoSave[0], - 200);
 	configTexto.CentrarTexto(textoSave[1], -100);
 	configTexto.CentrarTexto(textoSave[2], 0);
@@ -104,7 +115,7 @@ void MenuPartidas::Update()
 	{
 		Bajar();
 	}
-	if (Keyboard::isKeyPressed(Keyboard::Enter))
+	if (Keyboard::isKeyPressed(Keyboard::Enter) && frameCooldown >=45)
 	{
 		SeleccionarOpcion();
 	}

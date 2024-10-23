@@ -5,6 +5,7 @@
 #include "SceneManager.h"
 #include "Player.h"
 #include "ArchivoPlayer.h"
+#include "GameplayManager.h"
 
 #include <iostream>
 
@@ -14,6 +15,9 @@ using namespace std;
 class MenuNuevaPartida
 {
 private:
+	GameplayManager gameplayManager;
+	bool seleccionSlot;
+	int slotSeleccionado;
 	//Player INFO
 	Player player;
 	ArchivoPlayer archivo;
@@ -24,6 +28,10 @@ private:
 	Font fuente;
 	Font fuenteTitle;
 	Text title;
+
+	Text titleSelect;
+	Text savesText[3];
+
 	GenerarTexto configTexto;
 	//INPUT TEXT VARIABLES
 	Event event;
@@ -35,10 +43,22 @@ private:
 	Sprite fondoMenu;
 	Texture imageFondo;
 	//METODOS PRIVADOS
-	void Iniciar();
+	void IniciarName();
+	void IniciarSlots();
+
+	void SlotUpdate();
+	void NameUpdate();
+
+	void SlotDraw(RenderWindow&);
+	void NameDraw(RenderWindow&);
+	//Slots Metodos
+	void Subir();
+	void Bajar();
+	void ActualizarSeleccion();
 public:
 	MenuNuevaPartida();
 	void Update();
+	void Load();
 	void Draw(RenderWindow&);
 };
 

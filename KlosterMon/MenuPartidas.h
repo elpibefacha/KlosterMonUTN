@@ -5,6 +5,7 @@
 #include "SceneManager.h"
 #include "ArchivoPlayer.h"
 #include "Player.h"
+#include "GameplayManager.h"
 
 using namespace sf;
 
@@ -13,6 +14,7 @@ class MenuPartidas
 private:
 	ArchivoPlayer archivoPlayer;
 	Player player;
+	GameplayManager gameplayManager;
 
 	MenuManager menuManager;
 	SceneManager sceneManager;
@@ -34,6 +36,7 @@ private:
 	void Bajar();
 public:
 	MenuPartidas();
+	void Load();
 	void Iniciar();
 	void Update();
 	void Draw(RenderWindow&);

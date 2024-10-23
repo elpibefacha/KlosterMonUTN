@@ -39,10 +39,10 @@ void Combate::Draw(RenderWindow& window)
 
 void Combate::IniciarNombre()
 {
-	int cant;
-	cant = archivoPlayer.contarRegistros();
+	int pos;
+	pos = gameplayManager.getSaveSlot();
 
-	player = archivoPlayer.leerArchivo(cant - 1);
+	player = archivoPlayer.leerArchivo(pos);
 
 	cout << "IniciarNombre" << endl;
 

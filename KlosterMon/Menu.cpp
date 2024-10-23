@@ -82,10 +82,12 @@ void Menu::UpdateMenu()
 	}
 	else if (menuManager.getMenuID()== 2)
 	{
+		if (!menuManager.getLoaded()) { menuNuevaPartida.Load(); menuManager.loadMenu();}//CARGA
 		menuNuevaPartida.Update();
 	}
 	else if (menuManager.getMenuID() == 3)
 	{
+		if (!menuManager.getLoaded()) { menuPartidas.Load(); menuManager.loadMenu();}//CARGA
 		menuPartidas.Update();
 	}
 }

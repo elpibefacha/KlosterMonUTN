@@ -2,7 +2,7 @@
 
 ArchivoPlayer::ArchivoPlayer()
 {
-	strcpy(nombreArchivo, "archivoFinalTest.dat");
+	strcpy(nombreArchivo, "ArchivoPlayer.dat");
     //leerArchivo(1);
 }
 
@@ -39,3 +39,60 @@ bool ArchivoPlayer::grabarArchivo(Player reg)
 	fclose(p);
 	return escribio;
 }
+
+bool ArchivoPlayer::sobreEscribir(int pos, Player reg)
+{
+    FILE* p = nullptr;
+
+	p = fopen(nombreArchivo, "rb+");
+    if (p == nullptr)
+    {
+		std::cerr << "error al abrir el archivo " << endl;
+        return false;
+    }
+
+    if (fseek(p, pos * sizeof(Player), SEEK_SET) != 0)
+    {
+        std::cerr << "Hubo un error en el fseek" << std::endl;
+        fclose(p);
+        return false;
+    }
+
+    int escribio = fwrite(&reg, sizeof(reg), 1, p);
+    if (escribio != 1)
+    {
+        std::cerr << "Hubo un error al usar fwrite" << std::endl;
+        fclose(p);
+        return false;
+    }
+
+    fclose(p);
+    return true;
+}
+
+bool ArchivoPlayer::ArchiveExist()
+{
+	FILE* p;
+	p = fopen(nombreArchivo, "rb");
+	if (p == nullptr)
+	{
+		p = fopen(nombreArchivo, "wb");
+		if (p == nullptr)
+		{
+			std::cerr << "Error al crear un archivo"<<endl;
+			return false;
+		}
+		Player vacio;
+		vacio.SetName("");
+		for (int i = 0;i < 3;i++)
+		{
+			fseek(p, i * sizeof(Player), SEEK_SET);
+			fwrite(&vacio, sizeof(vacio),1, p);
+		}
+		fclose(p);
+		return true;
+	}
+	fclose(p);
+	return true;
+}
+

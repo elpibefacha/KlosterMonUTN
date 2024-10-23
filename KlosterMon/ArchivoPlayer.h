@@ -17,5 +17,7 @@ public:
 	Player leerArchivo(int);
 	int contarRegistros();
 	bool grabarArchivo(Player);
+	bool sobreEscribir(int, Player);
+	bool ArchiveExist();
 };
 
