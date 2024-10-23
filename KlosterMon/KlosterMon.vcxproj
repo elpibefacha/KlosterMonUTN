@@ -134,8 +134,10 @@
   <ItemGroup>
     <ClCompile Include="ArchivoPlayer.cpp" />
     <ClCompile Include="Combate.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="GameplayManager.cpp" />
     <ClCompile Include="GenerarTexto.cpp" />
+    <ClCompile Include="Klostermon.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="GameLoopManager.cpp" />
@@ -149,8 +151,10 @@
   <ItemGroup>
     <ClInclude Include="ArchivoPlayer.h" />
     <ClInclude Include="Combate.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="GameplayManager.h" />
     <ClInclude Include="GenerarTexto.h" />
+    <ClInclude Include="Klostermon.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="GameLoopManager.h" />
     <ClInclude Include="MenuCreditos.h" />
