@@ -17,6 +17,8 @@ private:
 	//Interfaz
 	Sprite  fondoContenedor; 
 	Texture imageContenedor;
+	Sprite fondoGris;
+	Texture imagefondoGris; 
 	CircleShape circulo;
 	void CargarInterfaz();
 	String enfrentamientoString;

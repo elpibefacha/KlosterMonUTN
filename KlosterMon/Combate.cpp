@@ -2,6 +2,10 @@
 
 void Combate::CargarInterfaz()
 {
+	/// FONDO 
+	imagefondoGris.loadFromFile("Sprites/fondoGris.jpg");
+	fondoGris.setTexture(imagefondoGris);
+
 	fuenteCombate.loadFromFile("Fonts/Pokemon Classic.ttf");
 	textoBatalla.setFont(fuenteCombate);
 	
@@ -31,6 +35,7 @@ void Combate::IniciarEnfrentamiento()
 
 void Combate::Draw(RenderWindow& window)
 {
+	window.draw(fondoGris);
 	window.draw(fondoContenedor);
 	window.draw(textoBatalla);
 }
