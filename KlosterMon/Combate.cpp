@@ -13,10 +13,8 @@ void Combate::CargarInterfaz()
 	textoBatalla.setPosition(30, 375);
 
 	//RECTANGULO
-	Contenedor.setSize(Vector2f(800, 300));
-	Contenedor.setOrigin(400, 150);
-	Contenedor.setPosition(400, 500);
-	Contenedor.setFillColor(Color::White);
+	imageContenedor.loadFromFile("Sprites/rectangulo.png");
+	fondoContenedor.setTexture(imageContenedor);
 }
 
 Combate::Combate()
@@ -33,7 +31,7 @@ void Combate::IniciarEnfrentamiento()
 
 void Combate::Draw(RenderWindow& window)
 {
-	window.draw(Contenedor);
+	window.draw(fondoContenedor);
 	window.draw(textoBatalla);
 }
 

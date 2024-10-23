@@ -15,7 +15,8 @@ private:
 	Player player;
 	ArchivoPlayer archivoPlayer;
 	//Interfaz
-	RectangleShape Contenedor;
+	Sprite  fondoContenedor; 
+	Texture imageContenedor;
 	CircleShape circulo;
 	void CargarInterfaz();
 	String enfrentamientoString;
