@@ -19,6 +19,11 @@ private:
 	Texture imageContenedor;
 	Sprite fondoGris;
 	Texture imagefondoGris; 
+	// Klostermons
+	Sprite Urkos; 
+	Texture imageUrkos; 
+	Sprite Laras; 
+	Texture imageLaras;   
 	CircleShape circulo;
 	void CargarInterfaz();
 	String enfrentamientoString;

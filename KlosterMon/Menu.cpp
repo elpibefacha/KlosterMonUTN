@@ -50,7 +50,7 @@ void Menu::DibujarMenu(RenderWindow& window)
 	}
 	else if (menuManager.getMenuID() == 2)
 	{
-		menuNuevaPartida.Draw(window);
+		combate.Draw(window);
 	}
 	else if (menuManager.getMenuID() == 3)
 	{

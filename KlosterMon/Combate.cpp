@@ -3,9 +3,18 @@
 void Combate::CargarInterfaz()
 {
 	/// FONDO 
-	imagefondoGris.loadFromFile("Sprites/fondoGris.jpg");
+	imagefondoGris.loadFromFile("Sprites/fondoGris.png");
 	fondoGris.setTexture(imagefondoGris);
 
+	/// Laras y urkos 
+	imageLaras.loadFromFile("Sprites/laras.png"); 
+	Laras.setTexture(imageLaras);
+	Laras.setScale(6,6);
+	Laras.setPosition(550, 150); 
+	imageUrkos.loadFromFile("Sprites/urkos.png");
+	Urkos.setTexture(imageUrkos);
+	Urkos.setScale(6,6);
+	Urkos.setPosition(60, 150);
 	fuenteCombate.loadFromFile("Fonts/Pokemon Classic.ttf");
 	textoBatalla.setFont(fuenteCombate);
 	
@@ -36,8 +45,8 @@ void Combate::IniciarEnfrentamiento()
 void Combate::Draw(RenderWindow& window)
 {
 	window.draw(fondoGris);
-	window.draw(fondoContenedor);
-	window.draw(textoBatalla);
+	window.draw(Laras);
+	window.draw(Urkos);
 }
 
 void Combate::IniciarNombre()

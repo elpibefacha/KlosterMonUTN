@@ -1,3 +1,2 @@
-﻿  ArchivoPlayer.cpp
-C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\ArchivoPlayer.cpp(38,15): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
-  KlosterMon.vcxproj -> C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\x64\Debug\KlosterMon.exe
+﻿  Combate.cpp
+  KlosterMon.vcxproj -> D:\KlosterMonUTN\x64\Debug\KlosterMon.exe

@@ -7,11 +7,13 @@
 #include "MenuCreditos.h"
 #include "MenuNuevaPartida.h"
 #include "MenuPartidas.h"
+#include "Combate.h"
 using namespace sf;
 
 
 class Menu
 {
+private:
 	MenuManager menuManager;
 	SceneManager sceneManager;
 	GenerarTexto configTexto;
@@ -40,6 +42,8 @@ class Menu
 	MenuNuevaPartida menuNuevaPartida;
 	//Menu Partidas
 	MenuPartidas menuPartidas;
+	// combate
+	Combate combate; 
 
 public:
 	Menu();
