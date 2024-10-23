@@ -15,6 +15,14 @@ void Combate::CargarInterfaz()
 	Urkos.setTexture(imageUrkos);
 	Urkos.setScale(6,6);
 	Urkos.setPosition(60, 150);
+
+	// Sombras 
+	imageSombra.loadFromFile("Sprites/shadow.png");
+	Sombra.setTexture(imageSombra); 
+	Sombra.setPosition(17, 230);
+	Sombra2.setTexture(imageSombra);
+	Sombra2.setPosition(505, 230);
+	Sombra3.setTexture(imageSombra);
 	fuenteCombate.loadFromFile("Fonts/Pokemon Classic.ttf");
 	textoBatalla.setFont(fuenteCombate);
 	
@@ -45,7 +53,9 @@ void Combate::IniciarEnfrentamiento()
 void Combate::Draw(RenderWindow& window)
 {
 	window.draw(fondoGris);
+	window.draw(Sombra2);
 	window.draw(Laras);
+	window.draw(Sombra); 
 	window.draw(Urkos);
 }
 

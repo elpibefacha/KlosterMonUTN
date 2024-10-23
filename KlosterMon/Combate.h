@@ -24,6 +24,11 @@ private:
 	Texture imageUrkos; 
 	Sprite Laras; 
 	Texture imageLaras;   
+	// Sombras
+	Sprite Sombra; 
+	Sprite Sombra2;
+	Sprite Sombra3; 
+	Texture imageSombra; 
 	CircleShape circulo;
 	void CargarInterfaz();
 	String enfrentamientoString;
