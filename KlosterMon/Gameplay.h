@@ -3,7 +3,7 @@
 #include "Player.h"
 #include "ArchivoPlayer.h"
 #include "GameplayManager.h"
-
+#include "Enemy.h"
 class Gameplay
 {
 private:
@@ -13,6 +13,7 @@ private:
 
 	Player* player;
 	Text* textoCombate;
+	Enemy* enemigo; 
 	//Klostermones
 	Texture enemigoTexture;
 	Texture alidadoTexture;
