@@ -133,6 +133,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ArchivoPlayer.cpp" />
+    <ClCompile Include="C:\Users\joasa\Downloads\Enemy.cpp" />
+    <ClCompile Include="C:\Users\joasa\Downloads\Klostermon.cpp" />
     <ClCompile Include="Combate.cpp" />
     <ClCompile Include="Gameplay.cpp" />
     <ClCompile Include="GameplayManager.cpp" />
@@ -149,6 +151,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArchivoPlayer.h" />
+    <ClInclude Include="C:\Users\joasa\Downloads\Enemy.h" />
+    <ClInclude Include="C:\Users\joasa\Downloads\Klostermon.h" />
     <ClInclude Include="Combate.h" />
     <ClInclude Include="Gameplay.h" />
     <ClInclude Include="GameplayManager.h" />

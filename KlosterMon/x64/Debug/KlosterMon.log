@@ -1,2 +1,27 @@
-﻿  Combate.cpp
-  KlosterMon.vcxproj -> C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\x64\Debug\KlosterMon.exe
+﻿  ArchivoPlayer.cpp
+D:\KlosterMonUTN\KlosterMon\ArchivoPlayer.cpp(38,15): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\ArchivoPlayer.cpp(61,18): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+  Enemy.cpp
+C:\Users\joasa\Downloads\Enemy.cpp(9,11): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+  Klostermon.cpp
+  Combate.cpp
+  Gameplay.cpp
+  GameplayManager.cpp
+  GenerarTexto.cpp
+  main.cpp
+  Menu.cpp
+D:\KlosterMonUTN\KlosterMon\Menu.cpp(112,50): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\KlosterMonUTN\KlosterMon\Menu.cpp(112,45): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  GameLoopManager.cpp
+  MenuCreditos.cpp
+  MenuManager.cpp
+  MenuNuevaPartida.cpp
+D:\KlosterMonUTN\KlosterMon\MenuNuevaPartida.cpp(120,44): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\KlosterMonUTN\KlosterMon\MenuNuevaPartida.cpp(120,39): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  MenuPartidas.cpp
+D:\KlosterMonUTN\KlosterMon\MenuPartidas.cpp(24,46): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\KlosterMonUTN\KlosterMon\MenuPartidas.cpp(24,41): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  Player.cpp
+  SceneManager.cpp
+  Generando código...
+  KlosterMon.vcxproj -> D:\KlosterMonUTN\x64\Debug\KlosterMon.exe

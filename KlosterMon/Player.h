@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <cstring>
 using namespace sf;
 using namespace std;
 class Player
