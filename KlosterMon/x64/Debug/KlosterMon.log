@@ -1,2 +1,3 @@
-﻿  Klostermon.cpp
+﻿  Enemy.cpp
+D:\KlosterMonUTN\KlosterMon\Enemy.cpp(6,11): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
   KlosterMon.vcxproj -> D:\KlosterMonUTN\x64\Debug\KlosterMon.exe
