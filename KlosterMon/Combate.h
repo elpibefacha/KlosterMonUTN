@@ -7,6 +7,7 @@
 #include "ArchivoPlayer.h"
 #include "GameplayManager.h"
 #include "Gameplay.h"
+#include "MusicManager.h"
 using namespace sf;
 
 class Combate
@@ -47,6 +48,8 @@ private:
 	//Contenedor
 	Sprite contenedorSprite;
 	Texture contenedorTexture;
+	// Musica
+	MusicManager musica; 
 
 	
 public:

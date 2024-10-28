@@ -7,7 +7,6 @@ Menu::Menu()
 	fondoMenu.setTexture(imageFondo);
 	fuente = configTexto.gameTitleFont;
 	menuNombreJuego = "Klostermon";
-
 	configTexto.ConfigurarTexto(textoTitulo, fuente, menuNombreJuego, 85, Color::Yellow,Color::Black,8);
 	configTexto.CentrarTexto(textoTitulo, -200);
 	//DemasOpciones
@@ -56,6 +55,14 @@ void Menu::DibujarMenu(RenderWindow& window)
 	{
 		menuPartidas.Draw(window);
 	}
+}
+
+void Menu::loadMenu()
+{
+	musica.stopMusic();
+	musica.setVolumen(50); 
+	musica.playMusic("menu.ogg");
+	sceneManager.sceneLoaded();
 }
 
 void Menu::UpdateMenu()

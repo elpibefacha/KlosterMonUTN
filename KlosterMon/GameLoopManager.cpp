@@ -21,7 +21,10 @@ void GameLoopManager::GameLoop()
 		}
         if (sceneActual == 0) {//Menu
             //Load
-            
+            if (!sceneManager.getBoolLoad())
+            {
+                menu.loadMenu();    
+            }
             //CMD
             menu.UpdateMenu();
             window.clear();

@@ -3,34 +3,92 @@
   "WorkspaceRootPath": "D:\\KlosterMonUTN\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|D:\\KlosterMonUTN\\KlosterMon\\Gameplay.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|solutionrelative:KlosterMon\\Gameplay.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|D:\\KlosterMonUTN\\KlosterMon\\Gameplay.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|solutionrelative:KlosterMon\\Gameplay.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|D:\\KlosterMonUTN\\KlosterMon\\Combate.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|solutionrelative:KlosterMon\\Combate.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|D:\\KlosterMonUTN\\KlosterMon\\GameLoopManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|solutionrelative:KlosterMon\\GameLoopManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|D:\\KlosterMonUTN\\KlosterMon\\MusicManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|solutionrelative:KlosterMon\\MusicManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|D:\\KlosterMonUTN\\KlosterMon\\MusicManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|solutionrelative:KlosterMon\\MusicManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|D:\\KlosterMonUTN\\KlosterMon\\Menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|solutionrelative:KlosterMon\\Menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|D:\\KlosterMonUTN\\KlosterMon\\GameplayManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|solutionrelative:KlosterMon\\GameplayManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|D:\\KlosterMonUTN\\KlosterMon\\SceneManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|solutionrelative:KlosterMon\\SceneManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|D:\\KlosterMonUTN\\KlosterMon\\SceneManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|solutionrelative:KlosterMon\\SceneManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|D:\\KlosterMonUTN\\KlosterMon\\Combate.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|solutionrelative:KlosterMon\\Combate.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|D:\\KlosterMonUTN\\KlosterMon\\Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|solutionrelative:KlosterMon\\Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|D:\\KlosterMonUTN\\KlosterMon\\Gameplay.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|solutionrelative:KlosterMon\\Gameplay.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|D:\\KlosterMonUTN\\KlosterMon\\GameLoopManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|solutionrelative:KlosterMon\\GameLoopManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|C:\\Users\\joasa\\Downloads\\Klostermon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|C:\\Users\\joasa\\Downloads\\Klostermon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|D:\\KlosterMonUTN\\KlosterMon\\Gameplay.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|solutionrelative:KlosterMon\\Gameplay.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|D:\\KlosterMonUTN\\KlosterMon\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|solutionrelative:KlosterMon\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|D:\\KlosterMonUTN\\KlosterMon\\MenuNuevaPartida.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|solutionrelative:KlosterMon\\MenuNuevaPartida.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|D:\\KlosterMonUTN\\KlosterMon\\MenuNuevaPartida.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|solutionrelative:KlosterMon\\MenuNuevaPartida.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|D:\\KlosterMonUTN\\KlosterMon\\GameplayManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|solutionrelative:KlosterMon\\GameplayManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|D:\\KlosterMonUTN\\KlosterMon\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|solutionrelative:KlosterMon\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|D:\\KlosterMonUTN\\KlosterMon\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|solutionrelative:KlosterMon\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|C:\\Users\\joasa\\Downloads\\Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|C:\\Users\\joasa\\Downloads\\Enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|C:\\Users\\joasa\\Downloads\\Klostermon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -40,7 +98,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -48,77 +106,234 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Menu.h",
+              "DocumentMoniker": "D:\\KlosterMonUTN\\KlosterMon\\Menu.h",
+              "RelativeDocumentMoniker": "KlosterMon\\Menu.h",
+              "ToolTip": "D:\\KlosterMonUTN\\KlosterMon\\Menu.h",
+              "RelativeToolTip": "KlosterMon\\Menu.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-28T19:43:53.632Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MusicManager.cpp",
+              "DocumentMoniker": "D:\\KlosterMonUTN\\KlosterMon\\MusicManager.cpp",
+              "RelativeDocumentMoniker": "KlosterMon\\MusicManager.cpp",
+              "ToolTip": "D:\\KlosterMonUTN\\KlosterMon\\MusicManager.cpp",
+              "RelativeToolTip": "KlosterMon\\MusicManager.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-28T19:42:14.619Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MusicManager.h",
+              "DocumentMoniker": "D:\\KlosterMonUTN\\KlosterMon\\MusicManager.h",
+              "RelativeDocumentMoniker": "KlosterMon\\MusicManager.h",
+              "ToolTip": "D:\\KlosterMonUTN\\KlosterMon\\MusicManager.h",
+              "RelativeToolTip": "KlosterMon\\MusicManager.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-28T19:40:10.319Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "GameLoopManager.cpp",
+              "DocumentMoniker": "D:\\KlosterMonUTN\\KlosterMon\\GameLoopManager.cpp",
+              "RelativeDocumentMoniker": "KlosterMon\\GameLoopManager.cpp",
+              "ToolTip": "D:\\KlosterMonUTN\\KlosterMon\\GameLoopManager.cpp",
+              "RelativeToolTip": "KlosterMon\\GameLoopManager.cpp",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACYAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-28T02:44:24.259Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "Gameplay.cpp",
               "DocumentMoniker": "D:\\KlosterMonUTN\\KlosterMon\\Gameplay.cpp",
               "RelativeDocumentMoniker": "KlosterMon\\Gameplay.cpp",
               "ToolTip": "D:\\KlosterMonUTN\\KlosterMon\\Gameplay.cpp",
               "RelativeToolTip": "KlosterMon\\Gameplay.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-28T02:02:25.181Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-28T03:03:57.465Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GameplayManager.h",
+              "DocumentMoniker": "D:\\KlosterMonUTN\\KlosterMon\\GameplayManager.h",
+              "RelativeDocumentMoniker": "KlosterMon\\GameplayManager.h",
+              "ToolTip": "D:\\KlosterMonUTN\\KlosterMon\\GameplayManager.h",
+              "RelativeToolTip": "KlosterMon\\GameplayManager.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-28T03:02:03.741Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SceneManager.cpp",
+              "DocumentMoniker": "D:\\KlosterMonUTN\\KlosterMon\\SceneManager.cpp",
+              "RelativeDocumentMoniker": "KlosterMon\\SceneManager.cpp",
+              "ToolTip": "D:\\KlosterMonUTN\\KlosterMon\\SceneManager.cpp",
+              "RelativeToolTip": "KlosterMon\\SceneManager.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-28T02:18:18.747Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SceneManager.h",
+              "DocumentMoniker": "D:\\KlosterMonUTN\\KlosterMon\\SceneManager.h",
+              "RelativeDocumentMoniker": "KlosterMon\\SceneManager.h",
+              "ToolTip": "D:\\KlosterMonUTN\\KlosterMon\\SceneManager.h",
+              "RelativeToolTip": "KlosterMon\\SceneManager.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-28T02:18:17.322Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "main.cpp",
+              "DocumentMoniker": "D:\\KlosterMonUTN\\KlosterMon\\main.cpp",
+              "RelativeDocumentMoniker": "KlosterMon\\main.cpp",
+              "ToolTip": "D:\\KlosterMonUTN\\KlosterMon\\main.cpp",
+              "RelativeToolTip": "KlosterMon\\main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-01T21:14:15.551Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Gameplay.h",
-              "DocumentMoniker": "D:\\KlosterMonUTN\\KlosterMon\\Gameplay.h",
-              "RelativeDocumentMoniker": "KlosterMon\\Gameplay.h",
-              "ToolTip": "D:\\KlosterMonUTN\\KlosterMon\\Gameplay.h",
-              "RelativeToolTip": "KlosterMon\\Gameplay.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-28T02:02:22.774Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Combate.cpp",
               "DocumentMoniker": "D:\\KlosterMonUTN\\KlosterMon\\Combate.cpp",
               "RelativeDocumentMoniker": "KlosterMon\\Combate.cpp",
               "ToolTip": "D:\\KlosterMonUTN\\KlosterMon\\Combate.cpp",
               "RelativeToolTip": "KlosterMon\\Combate.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADsAAAAAAAAAAADwv1MAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-28T02:01:25.806Z"
+              "WhenOpened": "2024-10-28T02:01:25.806Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "Combate.h",
               "DocumentMoniker": "D:\\KlosterMonUTN\\KlosterMon\\Combate.h",
               "RelativeDocumentMoniker": "KlosterMon\\Combate.h",
               "ToolTip": "D:\\KlosterMonUTN\\KlosterMon\\Combate.h",
               "RelativeToolTip": "KlosterMon\\Combate.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAADMAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-10-28T02:01:10.525Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
+              "Title": "Menu.cpp",
+              "DocumentMoniker": "D:\\KlosterMonUTN\\KlosterMon\\Menu.cpp",
+              "RelativeDocumentMoniker": "KlosterMon\\Menu.cpp",
+              "ToolTip": "D:\\KlosterMonUTN\\KlosterMon\\Menu.cpp",
+              "RelativeToolTip": "KlosterMon\\Menu.cpp",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAD4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-28T19:45:01.338Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "GameLoopManager.h",
+              "DocumentMoniker": "D:\\KlosterMonUTN\\KlosterMon\\GameLoopManager.h",
+              "RelativeDocumentMoniker": "KlosterMon\\GameLoopManager.h",
+              "ToolTip": "D:\\KlosterMonUTN\\KlosterMon\\GameLoopManager.h",
+              "RelativeToolTip": "KlosterMon\\GameLoopManager.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-28T19:13:15.487Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "GameplayManager.cpp",
+              "DocumentMoniker": "D:\\KlosterMonUTN\\KlosterMon\\GameplayManager.cpp",
+              "RelativeDocumentMoniker": "KlosterMon\\GameplayManager.cpp",
+              "ToolTip": "D:\\KlosterMonUTN\\KlosterMon\\GameplayManager.cpp",
+              "RelativeToolTip": "KlosterMon\\GameplayManager.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-28T03:02:09.341Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Klostermon.h",
               "DocumentMoniker": "C:\\Users\\joasa\\Downloads\\Klostermon.h",
               "ToolTip": "C:\\Users\\joasa\\Downloads\\Klostermon.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-10-28T01:43:21.394Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Klostermon.cpp",
-              "DocumentMoniker": "C:\\Users\\joasa\\Downloads\\Klostermon.cpp",
-              "ToolTip": "C:\\Users\\joasa\\Downloads\\Klostermon.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-28T01:43:13.492Z"
+              "DocumentIndex": 10,
+              "Title": "Gameplay.h",
+              "DocumentMoniker": "D:\\KlosterMonUTN\\KlosterMon\\Gameplay.h",
+              "RelativeDocumentMoniker": "KlosterMon\\Gameplay.h",
+              "ToolTip": "D:\\KlosterMonUTN\\KlosterMon\\Gameplay.h",
+              "RelativeToolTip": "KlosterMon\\Gameplay.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-28T02:02:22.774Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 16,
+              "Title": "MenuNuevaPartida.h",
+              "DocumentMoniker": "D:\\KlosterMonUTN\\KlosterMon\\MenuNuevaPartida.h",
+              "RelativeDocumentMoniker": "KlosterMon\\MenuNuevaPartida.h",
+              "ToolTip": "D:\\KlosterMonUTN\\KlosterMon\\MenuNuevaPartida.h",
+              "RelativeToolTip": "KlosterMon\\MenuNuevaPartida.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-28T03:02:24.733Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "MenuNuevaPartida.cpp",
+              "DocumentMoniker": "D:\\KlosterMonUTN\\KlosterMon\\MenuNuevaPartida.cpp",
+              "RelativeDocumentMoniker": "KlosterMon\\MenuNuevaPartida.cpp",
+              "ToolTip": "D:\\KlosterMonUTN\\KlosterMon\\MenuNuevaPartida.cpp",
+              "RelativeToolTip": "KlosterMon\\MenuNuevaPartida.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-28T03:02:26.884Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Player.cpp",
+              "DocumentMoniker": "D:\\KlosterMonUTN\\KlosterMon\\Player.cpp",
+              "RelativeDocumentMoniker": "KlosterMon\\Player.cpp",
+              "ToolTip": "D:\\KlosterMonUTN\\KlosterMon\\Player.cpp",
+              "RelativeToolTip": "KlosterMon\\Player.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-28T03:39:47.124Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "Player.h",
               "DocumentMoniker": "D:\\KlosterMonUTN\\KlosterMon\\Player.h",
               "RelativeDocumentMoniker": "KlosterMon\\Player.h",
@@ -130,15 +345,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "main.cpp",
-              "DocumentMoniker": "D:\\KlosterMonUTN\\KlosterMon\\main.cpp",
-              "RelativeDocumentMoniker": "KlosterMon\\main.cpp",
-              "ToolTip": "D:\\KlosterMonUTN\\KlosterMon\\main.cpp",
-              "RelativeToolTip": "KlosterMon\\main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "DocumentIndex": 20,
+              "Title": "Enemy.h",
+              "DocumentMoniker": "C:\\Users\\joasa\\Downloads\\Enemy.h",
+              "ToolTip": "C:\\Users\\joasa\\Downloads\\Enemy.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-28T02:28:32.108Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Enemy.cpp",
+              "DocumentMoniker": "C:\\Users\\joasa\\Downloads\\Enemy.cpp",
+              "ToolTip": "C:\\Users\\joasa\\Downloads\\Enemy.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-01T21:14:15.551Z"
+              "WhenOpened": "2024-10-28T02:29:54.568Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Klostermon.cpp",
+              "DocumentMoniker": "C:\\Users\\joasa\\Downloads\\Klostermon.cpp",
+              "ToolTip": "C:\\Users\\joasa\\Downloads\\Klostermon.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-28T01:43:13.492Z"
             }
           ]
         }

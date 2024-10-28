@@ -7,6 +7,7 @@
 #include "MenuCreditos.h"
 #include "MenuNuevaPartida.h"
 #include "MenuPartidas.h"
+#include "MusicManager.h"
 using namespace sf;
 
 
@@ -15,6 +16,7 @@ class Menu
 	MenuManager menuManager;
 	SceneManager sceneManager;
 	GenerarTexto configTexto;
+	MusicManager musica; 
 	//MENU PRINCIPAL
 	Sprite fondoMenu;
 	Texture imageFondo;
@@ -45,4 +47,5 @@ public:
 	Menu();
 	void UpdateMenu();
 	void DibujarMenu(RenderWindow&);
+	void loadMenu();
 };

@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "Menu.h"
 #include "Combate.h"
 #include "SceneManager.h"
@@ -14,7 +15,7 @@ private:
 	MenuManager menuManager;
 	Combate combate;
 	SceneManager sceneManager;
-
+	sf::Music musica; 
 	int sceneActual;
 
 	void GameLoop();

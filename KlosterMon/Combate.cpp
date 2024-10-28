@@ -55,7 +55,6 @@ Combate::Combate()
 
 void Combate::IniciarEnfrentamiento()
 {
-
 	enfrentamientoString = nombreJugador;
 	CargarInterfaz();
 }
@@ -81,6 +80,9 @@ void Combate::Draw(RenderWindow& window)
 
 void Combate::IniciarNombre()
 {
+	musica.stopMusic(); 
+	musica.setVolumen(20); 
+	musica.playMusic("combate.ogg");
 	int pos;
 	pos = gameplayManager.getSaveSlot();
 	player = archivoPlayer.leerArchivo(pos);

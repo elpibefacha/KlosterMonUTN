@@ -23,6 +23,6 @@ private:
 	String stringCombate;
 public:
 	void IniciarGameplay(Player& jugador, Text& combateText, Sprite& spriteAliado, Sprite& spriteEnemigo);
-
+	void Update(); 
 };
 
