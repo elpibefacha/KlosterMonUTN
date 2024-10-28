@@ -1,2 +1,6 @@
-﻿  Combate.cpp
+﻿  MenuEleccionKlostermon.cpp
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(39,40): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(39,29): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(42,36): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(42,25): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
   KlosterMon.vcxproj -> D:\KlosterMonUTN\x64\Debug\KlosterMon.exe

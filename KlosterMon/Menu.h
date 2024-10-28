@@ -45,7 +45,7 @@ protected:
 	//Menu Partidas
 	MenuPartidas menuPartidas;
 	//Menu Eleccion Klostermon
-	MenuEleccionKlostermon menuEleccion; 
+	MenuEleccionKlostermon menuEleccion;
 
 public:
 	Menu();

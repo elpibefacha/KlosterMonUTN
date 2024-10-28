@@ -16,7 +16,7 @@ void MenuNuevaPartida::IniciarSlots()
 	//Importante
 	framesCooldown = 0;
 	//FONDO
-	imageFondo.loadFromFile("Sprites/fondoMenu.jpg");
+	imageFondo.loadFromFile("Sprites/fondoGris.png");
 	fondoMenu.setTexture(imageFondo);
 	//FUENTE
 	fuente = configTexto.gameplayFont;
@@ -165,7 +165,7 @@ void MenuNuevaPartida::NameUpdate()
 		archivo.sobreEscribir(slotSeleccionado, player);
 		gameplayManager.setSaveSlot(slotSeleccionado);
 
-		sceneManager.setScene(1);
+		menuManager.setMenuID(4); 
 		return;
 	}
 	if (event.type == Event::TextEntered && framesCooldown > 10)

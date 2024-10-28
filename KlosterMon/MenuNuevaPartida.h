@@ -6,7 +6,6 @@
 #include "Player.h"
 #include "ArchivoPlayer.h"
 #include "GameplayManager.h"
-
 #include <iostream>
 
 using namespace sf;
@@ -55,6 +54,7 @@ private:
 	void Subir();
 	void Bajar();
 	void ActualizarSeleccion();
+	
 public:
 	MenuNuevaPartida();
 	void Update();
