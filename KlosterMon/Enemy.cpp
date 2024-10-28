@@ -1,5 +1,8 @@
 #include "Enemy.h"
-
+Enemy::~Enemy()
+{
+	cout << "Se destruyo un enemy " << nombre << endl;
+}
 void Enemy::randomNameSetter() {
 	FILE* pNombres;
 	pNombres = fopen("listaNombres.dat", "rb");
@@ -17,4 +20,8 @@ void Enemy::randomNameSetter() {
 	for (int i = 0; i < 7; i++) {
 		nombre[i] = nombres[random][i];
 	}
+}
+
+string Enemy::getName() {
+	return nombre; 
 }
