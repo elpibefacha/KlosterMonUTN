@@ -8,11 +8,13 @@
 #include "MenuNuevaPartida.h"
 #include "MenuPartidas.h"
 #include "MusicManager.h"
+#include "MenuEleccionKlostermon.h"
 using namespace sf;
 
 
 class Menu
 {
+protected: 
 	MenuManager menuManager;
 	SceneManager sceneManager;
 	GenerarTexto configTexto;
@@ -42,6 +44,8 @@ class Menu
 	MenuNuevaPartida menuNuevaPartida;
 	//Menu Partidas
 	MenuPartidas menuPartidas;
+	//Menu Eleccion Klostermon
+	MenuEleccionKlostermon menuEleccion; 
 
 public:
 	Menu();
