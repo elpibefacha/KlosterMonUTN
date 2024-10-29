@@ -36,7 +36,7 @@ void GameLoopManager::GameLoop()
         {
             if (!sceneManager.getBoolLoad())
             {
-                gameplay.loadGameplay();
+                tienda.loadTienda();
             }
             //CMD
             
@@ -46,7 +46,7 @@ void GameLoopManager::GameLoop()
             gameplay.Update();
             window.clear();
             //DRAW
-            gameplay.Draw(window);
+            tienda.Draw(window);
         }
 
         window.display();
