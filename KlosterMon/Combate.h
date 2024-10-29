@@ -81,5 +81,8 @@ public:
 	void ChangeAtaque(bool);
 	void ChangeObjeto(int);
 	void MostrarTexto(String);
+	void setNombreAtaques(String pesado, String especial);
+	void setTexture_K_Ally(String path);
+	void setTexture_K_Enemy(String path);
 };
 

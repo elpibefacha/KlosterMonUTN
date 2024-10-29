@@ -204,6 +204,29 @@ void Combate::MostrarTexto(String texto)
 	textoBatalla.setString(stringPartes[0]);
 }
 
+void Combate::setNombreAtaques(String pesado, String especial)
+{
+	AtaquePesado.setString(pesado);
+	AtaqueEspecial.setString(especial);
+	configText.CentrarTexto(AtaqueEspecial, 250, 150);
+	configText.CentrarTexto(AtaquePesado, 250, -150);
+}
+
+void Combate::setTexture_K_Ally(String path)
+{
+	if (!klostermonA.loadFromFile(path))
+	{
+		std::cerr << "Error al cargar la textura desde el path" << path.toAnsiString()<<endl;
+	}else
+	klostermonAliado.setTexture(klostermonA);
+}
+
+void Combate::setTexture_K_Enemy(String path)
+{
+	klostermonE.loadFromFile(path);
+	klostermonEnemigo.setTexture(klostermonE);
+}
+
 
 
 

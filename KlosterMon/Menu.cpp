@@ -83,7 +83,7 @@ void Menu::UpdateMenu()
 		}
 		if (Keyboard::isKeyPressed(Keyboard::P))
 		{
-			//archivoKlostermon.cargarConsola();
+			archivoKlostermon.cargarConsola();
 		}
 		frameWait++;
 	}

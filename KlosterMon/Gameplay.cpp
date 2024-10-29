@@ -76,6 +76,10 @@ void Gameplay::loadGameplay()
 	combate.ChangeAtaque(ataquePesadoSelect);
 	seleccionObj = 0;
 	combate.ChangeObjeto(seleccionObj);
+	//carga los nombres de ataque del klostermon
+	KlostermonAliado = archivoKlostermon.leerArchivo(0);
+	combate.setTexture_K_Ally(KlostermonAliado.getPathTexture());
+	combate.setNombreAtaques(KlostermonAliado.ataquePesado.getNombre(),KlostermonAliado.ataqueEspecial.getNombre());
 }
 
 void Gameplay::UpdateSeleccion()

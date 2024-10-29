@@ -1,10 +1,7 @@
 #include "Klostermon.h"
 
 
-Klostermon::Klostermon()
-{
-	imageKlostermon.loadFromFile("Sprites/fondoGris.png");
-}
+
 
 void Klostermon::setNameKlostermon(String nombre)
 {
@@ -27,7 +24,9 @@ void Klostermon::setVelocidad(int speed) {
 
 void Klostermon::setTexture(String path)
 {
-	imageKlostermon.loadFromFile("Sprites/" + path);
+	String pathCompleto = "Sprites/" + path;
+	std::string stdstring = pathCompleto.toAnsiString();
+	strcpy(pathTexture, stdstring.c_str());
 }
 
 void Klostermon::setVida(int vida) {
@@ -45,6 +44,11 @@ int Klostermon::getEfectividad() {
 
 int Klostermon::getVelocidad() {
 	return _velocidad; 
+}
+
+String Klostermon::getPathTexture()
+{
+	return pathTexture;
 }
 
 void Klostermon::setMaxVida(int maxvida)

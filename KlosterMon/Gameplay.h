@@ -3,6 +3,7 @@
 #include "SceneManager.h"
 #include "Player.h"
 #include "ArchivoPlayer.h"
+#include "ArchivoKlostermon.h"
 #include "Combate.h"
 #include "GameplayManager.h"
 #include "MusicManager.h"
@@ -14,6 +15,7 @@ private:
 	SceneManager sceneManager;
 	GameplayManager gameplayManager;
 	ArchivoPlayer archivo;
+	ArchivoKlostermon archivoKlostermon;
 	MusicManager musica;
 	Combate combate;
 
@@ -21,6 +23,8 @@ private:
 	Text textoCombate;
 	Enemy enemigo; 
 	//Klostermones
+	Klostermon KlostermonAliado;
+
 	Texture enemigoTexture;
 	Texture alidadoTexture;
 	Sprite k_sprite_aliado;

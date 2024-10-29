@@ -6,15 +6,13 @@ class Klostermon
 {
 private: 
 	char _nombre[8];
-	Texture imageKlostermon; 
-	char pathTexture[15];
+	char pathTexture[30];
 	int _vida;
 	int _maxVida;
 	int _velocidad; 
 	int _efectividad; 
 	float multiplicadoDanio;
 public:
-	Klostermon();
 	Ataque ataquePesado;
 	Ataque ataqueEspecial;
 
@@ -24,6 +22,7 @@ public:
 	int getMaxVida();
 	int getEfectividad(); 
 	int getVelocidad();
+	String getPathTexture();
 	void setMaxVida(int);
 	void setVida(int);
 	void setEfectividad(int);

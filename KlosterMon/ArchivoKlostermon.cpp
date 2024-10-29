@@ -4,7 +4,7 @@ ArchivoKlostermon::ArchivoKlostermon()
 {
 	strcpy(nombreArchivo, "KlostermonesCargados.dat");
 }
-/*
+
 Klostermon ArchivoKlostermon::leerArchivo(int pos)
 {
 	FILE* p = fopen(nombreArchivo, "rb");
@@ -64,6 +64,8 @@ void ArchivoKlostermon::cargarConsola()
 	string path;
 	cout << "Nombre del png del klostermon" << endl;
 	cin >> path;
+	creado.setTexture(path);
+	cout << "El path de texture es" << creado.getPathTexture().toAnsiString() << endl;
 	//Ataque pesado
 	cout << "Nombre ataque pesado" << endl;
 	string nombreAtaque;
@@ -131,7 +133,8 @@ void ArchivoKlostermon::cargarConsola()
 	creado.ataquePesado.setMultEnemigo(mult);
 
 	cout << "Random Danio: " << creado.ataqueEspecial.getDanio() << endl;
+	cout << "El path de texture es" << creado.getPathTexture().toAnsiString()<<endl;
 	grabarArchivo(creado);
 
-}*/
+}
 
