@@ -55,6 +55,10 @@ void Menu::DibujarMenu(RenderWindow& window)
 	{
 		menuPartidas.Draw(window);
 	}
+	else if (menuManager.getMenuID() == 4)
+	{
+		menuEleccion.Draw(window);
+	}
 }
 
 void Menu::loadMenu()
@@ -100,6 +104,11 @@ void Menu::UpdateMenu()
 	{
 		if (!menuManager.getLoaded()) { menuPartidas.Load(); menuManager.loadMenu();}//CARGA
 		menuPartidas.Update();
+	}
+	else if (menuManager.getMenuID() == 4)
+	{
+		if (!menuManager.getLoaded()) { menuEleccion.Load(); menuManager.loadMenu(); }//CARGA
+		menuEleccion.Update();
 	}
 }
 

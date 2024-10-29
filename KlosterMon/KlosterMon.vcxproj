@@ -145,6 +145,7 @@
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="GameLoopManager.cpp" />
     <ClCompile Include="MenuCreditos.cpp" />
+    <ClCompile Include="MenuEleccionKlostermon.cpp" />
     <ClCompile Include="MenuManager.cpp" />
     <ClCompile Include="MenuNuevaPartida.cpp" />
     <ClCompile Include="MenuPartidas.cpp" />
@@ -165,6 +166,7 @@
     <ClInclude Include="Menu.h" />
     <ClInclude Include="GameLoopManager.h" />
     <ClInclude Include="MenuCreditos.h" />
+    <ClInclude Include="MenuEleccionKlostermon.h" />
     <ClInclude Include="MenuManager.h" />
     <ClInclude Include="MenuNuevaPartida.h" />
     <ClInclude Include="MenuPartidas.h" />

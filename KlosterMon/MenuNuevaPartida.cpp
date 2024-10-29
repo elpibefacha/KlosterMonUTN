@@ -162,10 +162,10 @@ void MenuNuevaPartida::NameUpdate()
 	if (playerInputName.getSize() >= 3 && Keyboard::isKeyPressed(Keyboard::Enter))
 	{
 		player.SetName(playerInputName);
-		archivo.sobreEscribir(slotSeleccionado, player);
+		archivo.sobreEscribir(slotSeleccionado, player);//ACA NO SE DEBERIA GUARDAR, LUEGO AL TENER LOS KLOSTERMONS ACTUALIZAR
 		gameplayManager.setSaveSlot(slotSeleccionado);
 
-		sceneManager.setScene(1);
+		menuManager.setMenuID(4);//SELECCION DE KLOSTERMON
 		return;
 	}
 	if (event.type == Event::TextEntered && framesCooldown > 10)

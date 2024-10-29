@@ -3,12 +3,14 @@
 #include "SceneManager.h"
 #include "MenuManager.h"
 #include "GenerarTexto.h"
+#include "ArchivoKlostermon.h"
+#include "MusicManager.h"
 
 #include "MenuCreditos.h"
 #include "MenuNuevaPartida.h"
 #include "MenuPartidas.h"
-#include "MusicManager.h"
-#include "ArchivoKlostermon.h"
+#include "MenuEleccionKlostermon.h"
+
 using namespace sf;
 
 
@@ -44,7 +46,8 @@ class Menu
 	MenuNuevaPartida menuNuevaPartida;
 	//Menu Partidas
 	MenuPartidas menuPartidas;
-
+	//Menu Eleccion Klostermon
+	MenuEleccionKlostermon menuEleccion;
 public:
 	Menu();
 	void UpdateMenu();
