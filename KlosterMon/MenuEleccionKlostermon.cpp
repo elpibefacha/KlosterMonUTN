@@ -1,7 +1,10 @@
 #include "MenuEleccionKlostermon.h"
+#include <iostream>
 
 void MenuEleccionKlostermon::Load()
 {
+	player.SetName(archivoPlayer.leerArchivo(gameplayManager.getSaveSlot()).getName());
+	//Lo que hace arriba es que setea el nombre del player de esta clase al mismo que se puso anteriormente
 	elegidos = 0;
 	framescooldown = 0;
 
@@ -56,6 +59,9 @@ void MenuEleccionKlostermon::Load()
 	}
 	imageFondo.loadFromFile("Sprites/fondoGris.png");
 	fondoMenu.setTexture(imageFondo);
+
+	cuadroSeleccionado = 0;
+	actualizarCuadro();
 }
 
 void MenuEleccionKlostermon::Update()
@@ -83,6 +89,24 @@ void MenuEleccionKlostermon::Update()
 			elegido[cuadroSeleccionado] = true;
 			elegidos++;
 			klostermon[cuadroSeleccionado].setColor(Color::Green);
+		}else if (elegidos == 3)
+		{
+			int num = 0;
+			for (int i = 0;i < 8;i++)
+			{
+				if (elegido[i])
+				{
+					std::cout << num << " es la ID " << i << std::endl;
+					klostermonSeleccionado = archivoKlostermon.leerArchivo(i);
+					player.SetKlostermon(klostermonSeleccionado, num);
+					num++;
+				}
+			}
+			cerr <<"1- "<< player.getKlostermon(0).getNameKlostermon().toAnsiString() << endl;
+			cerr << "2- " << player.getKlostermon(1).getNameKlostermon().toAnsiString() << endl;
+			cerr << "3- " << player.getKlostermon(2).getNameKlostermon().toAnsiString() << endl;
+			cerr << "Nombre " << player.getName() << endl;
+			archivoPlayer.sobreEscribir(gameplayManager.getSaveSlot(),player);
 		}
 		framescooldown = 0;
 	}

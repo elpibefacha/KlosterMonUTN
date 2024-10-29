@@ -22,6 +22,12 @@ void Enemy::randomNameSetter() {
 	}
 }
 
+Klostermon Enemy::randomKlostermonSetter()
+{
+	int random = rand() % (2 + 1 - 0) + 0;
+	return archivoKlos.leerArchivo(random);
+}
+
 string Enemy::getName() {
 	return nombre; 
 }

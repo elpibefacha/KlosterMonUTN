@@ -49,9 +49,11 @@ void Combate::CargarInterfaz()
 	configText.ConfigurarTexto(Elige, fuenteCombate, "¡Elige una opción!", 20, Color::Green);
 	configText.ConfigurarTexto(ObjetoSelect, fuenteCombate, "Objetos", 20, Color::Green);
 	configText.ConfigurarTexto(AtacarSelect, fuenteCombate, "Atacar", 20, Color::Green);
+	configText.ConfigurarTexto(CambiarSelect, fuenteCombate, "Cambiar", 20, Color::Green);
 	configText.CentrarTexto(Elige, 100);
-	configText.CentrarTexto(ObjetoSelect, 250, 100);
-	configText.CentrarTexto(AtacarSelect, 250, -100);
+	configText.CentrarTexto(ObjetoSelect, 250, 0);
+	configText.CentrarTexto(AtacarSelect, 250, -200);
+	configText.CentrarTexto(CambiarSelect, 250, 200);
 	//Ataques
 	configText.ConfigurarTexto(AtaqueEspecial, fuenteCombate, "AtaqueEspecial", 20, Color::Green);
 	configText.ConfigurarTexto(AtaquePesado, fuenteCombate, "AtaquePesado", 20, Color::Green);
@@ -66,6 +68,14 @@ void Combate::CargarInterfaz()
 	configText.CentrarTexto(Objetos[1], 125, 150);
 	configText.CentrarTexto(Objetos[2], 225, -150);
 	configText.CentrarTexto(Objetos[3], 225, 150);
+	//Klostermon Sel 
+
+	configText.ConfigurarTexto(k_slot[0], fuenteCombate, "Klos1", 20, Color::Green, Color::Transparent, 2.0f);
+	configText.ConfigurarTexto(k_slot[1], fuenteCombate, "Klos2", 20, Color::Green, Color::Transparent, 2.0f);
+	configText.ConfigurarTexto(k_slot[2], fuenteCombate, "Klos2", 20, Color::Green, Color::Transparent, 2.0f);
+	configText.CentrarTexto(k_slot[0], 200, -150);
+	configText.CentrarTexto(k_slot[1], 200, 0);
+	configText.CentrarTexto(k_slot[2], 200, 150);
 }
 
 Combate::Combate()
@@ -99,6 +109,7 @@ void Combate::Draw(RenderWindow& window)
 		window.draw(Elige);
 		window.draw(ObjetoSelect);
 		window.draw(AtacarSelect);
+		window.draw(CambiarSelect);
 	}
 	else if (interfaz == ATAQUE)
 	{
@@ -110,6 +121,13 @@ void Combate::Draw(RenderWindow& window)
 		for (int i = 0;i < 4;i++)
 		{
 			window.draw(Objetos[i]);
+		}
+	}
+	else if (interfaz == KLOS_SEL)
+	{
+		for (int i = 0;i < 3;i++)
+		{
+			window.draw(k_slot[i]);
 		}
 	}
 }
@@ -161,16 +179,24 @@ void Combate::avanzarDialogo()
 	}
 }
 
-void Combate::ChangeSeleccion(bool ataque)
+void Combate::ChangeSeleccion(int num)
 {
-	if (ataque)
+	if (num == 0)
 	{
 		AtacarSelect.setFillColor(Color::Red);
 		ObjetoSelect.setFillColor(Color::Green);
+		CambiarSelect.setFillColor(Color::Green);
 	}
-	else
+	else if(num == 1)
 	{
 		ObjetoSelect.setFillColor(Color::Red);
+		AtacarSelect.setFillColor(Color::Green);
+		CambiarSelect.setFillColor(Color::Green);
+	}
+	else if (num == 2)
+	{
+		CambiarSelect.setFillColor(Color::Red);
+		ObjetoSelect.setFillColor(Color::Green);
 		AtacarSelect.setFillColor(Color::Green);
 	}
 }
@@ -197,6 +223,15 @@ void Combate::ChangeObjeto(int sel)
 	Objetos[sel].setFillColor(Color::Red);
 }
 
+void Combate::ChangeKlostermon(int sel)
+{
+	for (int i = 0;i < 3; i++)
+	{
+		k_slot[i].setOutlineColor(Color::Transparent);
+	}
+	k_slot[sel].setOutlineColor(Color::Yellow);
+}
+
 void Combate::MostrarTexto(String texto)
 {
 	DividirTexto(texto, stringPartes);
@@ -210,6 +245,17 @@ void Combate::setNombreAtaques(String pesado, String especial)
 	AtaqueEspecial.setString(especial);
 	configText.CentrarTexto(AtaqueEspecial, 250, 150);
 	configText.CentrarTexto(AtaquePesado, 250, -150);
+}
+
+void Combate::setKlostermonNames(String k1, String k2, String k3)
+{
+	k_slot[0].setString(k1);
+	k_slot[1].setString(k2);
+	k_slot[2].setString(k3);
+
+	configText.CentrarTexto(k_slot[0], 200, -150);
+	configText.CentrarTexto(k_slot[1], 200, 0);
+	configText.CentrarTexto(k_slot[2], 200, 150);
 }
 
 void Combate::setTexture_K_Ally(String path)

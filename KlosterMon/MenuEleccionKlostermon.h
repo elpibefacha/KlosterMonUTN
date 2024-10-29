@@ -2,11 +2,20 @@
 #include <SFML/Graphics.hpp>
 #include "GenerarTexto.h"
 #include "MenuManager.h"
+#include "ArchivoKlostermon.h"
+#include "ArchivoPlayer.h";
+#include "GameplayManager.h"
+#include "Player.h"
 using namespace sf;
 class MenuEleccionKlostermon
 {
 private:
+	ArchivoKlostermon archivoKlostermon;
+	ArchivoPlayer archivoPlayer;
+	GameplayManager gameplayManager;
 	MenuManager menumanager;
+	Player player;
+	Klostermon klostermonSeleccionado;
 	Sprite klostermon[8];
 	Texture imageLaras;
 	Texture imageUrkos;

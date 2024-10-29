@@ -49,11 +49,14 @@ private:
 	Text Elige;
 	Text ObjetoSelect;
 	Text AtacarSelect;
+	Text CambiarSelect;
 	//Ataques
 	Text AtaquePesado;
 	Text AtaqueEspecial;
 	//Objetos
 	Text Objetos[4];
+	//Seleccionar Klostermon
+	Text k_slot[3];
 	//DividirTexto
 	String stringPartes[5];//COMO MAX 5
 	int partesEncontradas;
@@ -69,6 +72,7 @@ public:
 		SELECCION,
 		ATAQUE,
 		OBJETO,
+		KLOS_SEL,
 	};
 	Interfaz interfaz;
 	//
@@ -77,11 +81,13 @@ public:
 	void IniciarCombate(String);
 	void DividirTexto(const String& string, String partes[]);
 	void avanzarDialogo();
-	void ChangeSeleccion(bool);
+	void ChangeSeleccion(int);
 	void ChangeAtaque(bool);
 	void ChangeObjeto(int);
+	void ChangeKlostermon(int);
 	void MostrarTexto(String);
 	void setNombreAtaques(String pesado, String especial);
+	void setKlostermonNames(String k1, String k2, String k3);
 	void setTexture_K_Ally(String path);
 	void setTexture_K_Enemy(String path);
 };

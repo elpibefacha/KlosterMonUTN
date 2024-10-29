@@ -20,6 +20,10 @@ private:
 	Combate combate;
 
 	Player player;
+
+	Klostermon playerKlos[3];
+	Klostermon enemyKlos[3];
+
 	Text textoCombate;
 	Enemy enemigo; 
 	//Klostermones
@@ -34,11 +38,14 @@ private:
 	int frameCooldown;
 	String stringCombate;
 	//Seleccion (entre ataque y objeto)
-	bool attackSelect;
+	int SelecctionMenu;
 	//Ataque (entre pesado y especial)
 	bool ataquePesadoSelect;
 	//Objetos
 	int seleccionObj;
+	//KlostermonSelect
+	int k_sel_int;//Se usa para saber cual esta seleccionado en el menu
+	void initKlostermons();
 public:
 	void IniciarGameplay();
 	void Update(); 
@@ -46,6 +53,7 @@ public:
 	void loadGameplay();
 	void UpdateSeleccion();
 	void UpdateAtaque();
+	void UpdateSelKlos();
 	void Atacar(String);
 	void UpdateObjetos();
 };

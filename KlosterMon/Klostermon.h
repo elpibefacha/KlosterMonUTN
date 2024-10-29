@@ -5,8 +5,8 @@ using namespace sf;
 class Klostermon
 {
 private: 
-	char _nombre[8];
-	char pathTexture[30];
+	char _nombre[9]; 
+	char pathTexture[30]; 
 	int _vida;
 	int _maxVida;
 	int _velocidad; 

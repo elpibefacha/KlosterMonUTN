@@ -1,5 +1,22 @@
 #include "Gameplay.h"
 
+void Gameplay::initKlostermons()
+{
+	//Se carga el jugador y sus klostermones (para que estos no se modifiquen fuera de la batalla
+	int pos;
+	pos = gameplayManager.getSaveSlot();
+	player = archivo.leerArchivo(pos);
+
+	for (int i = 0; i < 3;i++)
+	{
+		playerKlos[i] = player.getKlostermon(i);
+		enemyKlos[i] = enemigo.randomKlostermonSetter();
+		cout << "Klostermon enemigo num " << i + 1 << " : " << enemyKlos[i].getNameKlostermon().toAnsiString()<<endl;
+		cout << "Klostermon jugador num " << i + 1 << " : " << playerKlos[i].getNameKlostermon().toAnsiString() << endl;
+	}
+	combate.setKlostermonNames(playerKlos[0].getNameKlostermon(), playerKlos[1].getNameKlostermon(), playerKlos[2].getNameKlostermon());
+}
+
 void Gameplay::IniciarGameplay()
 {
 
@@ -41,6 +58,10 @@ void Gameplay::Update()
 	{
 		UpdateObjetos();
 	}
+	if (combate.interfaz == combate.KLOS_SEL)
+	{
+		UpdateSelKlos();
+	}
 	frameCooldown++;
 }
 
@@ -57,9 +78,7 @@ void Gameplay::loadGameplay()
 
 	frameCooldown = 0;
 
-	int pos;
-	pos = gameplayManager.getSaveSlot();
-	player = archivo.leerArchivo(pos);
+	initKlostermons();
 
 	enemigo.randomNameSetter();
 
@@ -70,36 +89,51 @@ void Gameplay::loadGameplay()
 	combate.IniciarCombate(stringCombate);
 
 	//Se inicializa para que aparezca como la primera decision default
-	attackSelect = true;
-	combate.ChangeSeleccion(attackSelect);
+	SelecctionMenu = 0;
+	combate.ChangeSeleccion(SelecctionMenu);
 	ataquePesadoSelect = true;
 	combate.ChangeAtaque(ataquePesadoSelect);
 	seleccionObj = 0;
 	combate.ChangeObjeto(seleccionObj);
+	k_sel_int = 0;
+	combate.ChangeKlostermon(k_sel_int);
 	//carga los nombres de ataque del klostermon
-	KlostermonAliado = archivoKlostermon.leerArchivo(0);
+	KlostermonAliado = player.getKlostermon(2);
 	combate.setTexture_K_Ally(KlostermonAliado.getPathTexture());
 	combate.setNombreAtaques(KlostermonAliado.ataquePesado.getNombre(),KlostermonAliado.ataqueEspecial.getNombre());
+
 }
 
 void Gameplay::UpdateSeleccion()
 {
-	if ((Keyboard::isKeyPressed(Keyboard::Left) || Keyboard::isKeyPressed(Keyboard::Right)) && frameCooldown > 25)
+	if ((Keyboard::isKeyPressed(Keyboard::Right) && frameCooldown > 25))
 	{
-		attackSelect = !attackSelect;
-		combate.ChangeSeleccion(attackSelect);
+		SelecctionMenu ++;
+		if (SelecctionMenu == 3) { SelecctionMenu = 0; }
+		combate.ChangeSeleccion(SelecctionMenu);
+		frameCooldown = 0;
+	}
+	if ((Keyboard::isKeyPressed(Keyboard::Left) && frameCooldown > 25))
+	{
+		SelecctionMenu--;
+		if (SelecctionMenu == -1) { SelecctionMenu = 2; }
+		combate.ChangeSeleccion(SelecctionMenu);
 		frameCooldown = 0;
 	}
 	if (Keyboard::isKeyPressed(Keyboard::Enter) && frameCooldown > 25)
 	{
-		if (attackSelect)
+		if (SelecctionMenu == 0)
 		{
 			combate.interfaz = combate.ATAQUE;
 		}
-		else
+		else if(SelecctionMenu == 1)
 		{
 			combate.interfaz = combate.OBJETO;
 			std::cerr << "Se selecciono Objeto" << endl;
+		}
+		else if (SelecctionMenu == 2)
+		{
+			combate.interfaz = combate.KLOS_SEL;
 		}
 		
 		frameCooldown = 0;
@@ -128,6 +162,28 @@ void Gameplay::UpdateAtaque()
 			combate.MostrarTexto("Urkos usa ataque especial!/Ahora Laras tiene mas chance de fallar!");
 		}
 
+		frameCooldown = 0;
+	}
+}
+
+void Gameplay::UpdateSelKlos()
+{
+	if ((Keyboard::isKeyPressed(Keyboard::Right) && frameCooldown > 25))
+	{
+		k_sel_int++;
+		if (k_sel_int == 3) { k_sel_int = 0; }
+		combate.ChangeKlostermon(k_sel_int);
+		frameCooldown = 0;
+	}
+	if ((Keyboard::isKeyPressed(Keyboard::Left) && frameCooldown > 25))
+	{
+		k_sel_int--;
+		if (k_sel_int == -1) { k_sel_int = 2; }
+		combate.ChangeKlostermon(k_sel_int);
+		frameCooldown = 0;
+	}
+	if (Keyboard::isKeyPressed(Keyboard::Enter) && frameCooldown > 25)
+	{
 		frameCooldown = 0;
 	}
 }

@@ -15,6 +15,7 @@ public:
 	ArchivoKlostermon();
 	Klostermon leerArchivo(int);
 	int contarRegistros();
+	bool sobreEscribir(int pos, Klostermon kl);
 	bool grabarArchivo(Klostermon);
 	void cargarConsola();
 };

@@ -30,6 +30,41 @@ int ArchivoKlostermon::contarRegistros()
 	return cant;
 }
 
+bool ArchivoKlostermon::sobreEscribir(int pos, Klostermon kl)
+{
+	FILE* p = nullptr;
+
+	p = fopen(nombreArchivo, "rb+");
+	if (p == nullptr)
+	{
+		std::cerr << "error al abrir el archivo " << endl;
+		return false;
+	}
+
+	if (fseek(p, pos * sizeof(Klostermon), SEEK_SET) != 0)
+	{
+		std::cerr << "Hubo un error en el fseek" << std::endl;
+		fclose(p);
+		return false;
+	}
+
+	int escribio = fwrite(&kl, sizeof(kl), 1, p);
+	if (escribio != 1)
+	{
+		std::cerr << "Hubo un error al usar fwrite" << std::endl;
+		fclose(p);
+		return false;
+	}
+
+	fclose(p);
+	cout << "Se sobre escribio!" << endl;
+	return true;
+}
+
+
+
+
+
 bool ArchivoKlostermon::grabarArchivo(Klostermon reg)
 {
 	FILE* p;
@@ -134,7 +169,20 @@ void ArchivoKlostermon::cargarConsola()
 
 	cout << "Random Danio: " << creado.ataqueEspecial.getDanio() << endl;
 	cout << "El path de texture es" << creado.getPathTexture().toAnsiString()<<endl;
-	grabarArchivo(creado);
+	cout << "Ingrese -1 si quiere que el Klostermon sea añadido al siguente ID DISPONIBLE" << endl;
+	cout << "Sino, ingrese el numero que quiere que reemplaze el Klostermon! (CUIDADO PUEDE CAUSAR ERRORES UNA POS NO VALIDA)" << endl;
+	int numero;
+	cin >> numero;
+	if (numero == -1)
+	{
+		grabarArchivo(creado);
+		cout << "Se guardo perfectamente!" << endl;
+	}
+	else 
+	{
+		sobreEscribir(numero, creado);
+		cout << "Se sobre escribio perfectamente!" << endl;
+	}
 
 }
 
