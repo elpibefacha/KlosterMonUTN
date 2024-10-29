@@ -8,6 +8,7 @@
 #include "MenuNuevaPartida.h"
 #include "MenuPartidas.h"
 #include "MusicManager.h"
+#include "ArchivoKlostermon.h"
 using namespace sf;
 
 
@@ -17,6 +18,7 @@ class Menu
 	SceneManager sceneManager;
 	GenerarTexto configTexto;
 	MusicManager musica; 
+	ArchivoKlostermon archivoKlostermon;
 	//MENU PRINCIPAL
 	Sprite fondoMenu;
 	Texture imageFondo;

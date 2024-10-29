@@ -132,7 +132,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ArchivoKlostermon.cpp" />
     <ClCompile Include="ArchivoPlayer.cpp" />
+    <ClCompile Include="Ataque.cpp" />
     <ClCompile Include="Combate.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Gameplay.cpp" />
@@ -151,7 +153,9 @@
     <ClCompile Include="SceneManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ArchivoKlostermon.h" />
     <ClInclude Include="ArchivoPlayer.h" />
+    <ClInclude Include="Ataque.h" />
     <ClInclude Include="Combate.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Gameplay.h" />

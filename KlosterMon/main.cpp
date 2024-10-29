@@ -1,5 +1,6 @@
 #include "GameLoopManager.h"
 #include <ctime>
+
 int main()
 {
     srand(time(NULL));

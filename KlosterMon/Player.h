@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "Klostermon.h"
 #include <iostream>
 #include <cstring>
 using namespace sf;
@@ -8,6 +9,7 @@ class Player
 {
 private:
 	char nombre[6];
+	Klostermon klostermon[3];
 public:
 	~Player();
 	string getName();

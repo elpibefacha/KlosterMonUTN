@@ -81,6 +81,10 @@ void Menu::UpdateMenu()
 		{
 			ActivarSeleccion();
 		}
+		if (Keyboard::isKeyPressed(Keyboard::P))
+		{
+			//archivoKlostermon.cargarConsola();
+		}
 		frameWait++;
 	}
 	else if(menuManager.getMenuID()==1)

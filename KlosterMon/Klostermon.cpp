@@ -1,23 +1,42 @@
 #include "Klostermon.h"
 
-void Klostermon::ataqueEspecial() {
 
+Klostermon::Klostermon()
+{
+	imageKlostermon.loadFromFile("Sprites/fondoGris.png");
 }
 
-void Klostermon::ataquePesado() {
-
+void Klostermon::setNameKlostermon(String nombre)
+{
+	std::string namestd = nombre.toAnsiString();
+	strcpy(_nombre, namestd.c_str());
 }
 
-void Klostermon::setEfectividad() {
-	
+String Klostermon::getNameKlostermon()
+{
+	String nombreAtaque = _nombre;
+	//ya que setteamos el nombre significa que es la primera vez que se crea este klostermon
+	//Asi que le decimos que el mult es 1.0f(daño base)
+	multiplicadoDanio = 1.0f;
+	return nombreAtaque;
 }
 
-void Klostermon::setVelocidad() {
-
+void Klostermon::setVelocidad(int speed) {
+	_velocidad = speed;
 }
 
-void Klostermon::setVida() {
+void Klostermon::setTexture(String path)
+{
+	imageKlostermon.loadFromFile("Sprites/" + path);
+}
 
+void Klostermon::setVida(int vida) {
+	_vida = vida;
+}
+
+void Klostermon::setEfectividad(int efec)
+{
+	_efectividad = efec;
 }
 
 int Klostermon::getEfectividad() {
@@ -28,6 +47,16 @@ int Klostermon::getVelocidad() {
 	return _velocidad; 
 }
 
+void Klostermon::setMaxVida(int maxvida)
+{
+	_maxVida = maxvida;
+}
+
 int Klostermon::getVida() {
 	return _vida; 
+}
+
+int Klostermon::getMaxVida()
+{
+	return _maxVida;
 }
