@@ -43,7 +43,7 @@ void GameLoopManager::GameLoop()
             //combate.IniciarEnfrentamiento()
             
             //VUELVE AL MENU
-            gameplay.Update();
+            tienda.Update();
             window.clear();
             //DRAW
             tienda.Draw(window);
