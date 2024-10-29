@@ -36,18 +36,17 @@ void GameLoopManager::GameLoop()
         {
             if (!sceneManager.getBoolLoad())
             {
-                combate.IniciarNombre();
+                gameplay.loadGameplay();
             }
             //CMD
-            combate.IniciarEnfrentamiento();
+            
+            //combate.IniciarEnfrentamiento()
+            
             //VUELVE AL MENU
-            if (Keyboard::isKeyPressed(Keyboard::Escape))
-            {
-                sceneManager.setScene(0);//VUELVE AL MENU
-            }
+            gameplay.Update();
             window.clear();
             //DRAW
-            combate.Draw(window);
+            gameplay.Draw(window);
         }
 
         window.display();

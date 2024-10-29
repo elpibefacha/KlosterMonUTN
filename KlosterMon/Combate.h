@@ -6,21 +6,16 @@
 #include "GenerarTexto.h"
 #include "ArchivoPlayer.h"
 #include "GameplayManager.h"
-#include "Gameplay.h"
 #include "MusicManager.h"
 using namespace sf;
 
 class Combate
 {
 private:
-	Gameplay gameplay;
 	GameplayManager gameplayManager;
 	SceneManager sceneManager;
 	GenerarTexto configText;
-	//Player
-	Player player;
-	ArchivoPlayer archivoPlayer;
-	//Interfaz
+	
 	void CargarInterfaz();
 	String enfrentamientoString;
 	Text textoBatalla;
@@ -50,12 +45,41 @@ private:
 	Texture contenedorTexture;
 	// Musica
 	MusicManager musica; 
-
+	//Opciones
+	Text Elige;
+	Text ObjetoSelect;
+	Text AtacarSelect;
+	//Ataques
+	Text AtaquePesado;
+	Text AtaqueEspecial;
+	//Objetos
+	Text Objetos[4];
+	//DividirTexto
+	String stringPartes[5];//COMO MAX 5
+	int partesEncontradas;
+	int parteActual;
 	
 public:
 	Combate();
-	void IniciarEnfrentamiento();
+
+	//Enum
+	enum Interfaz
+	{
+		TEXTO,
+		SELECCION,
+		ATAQUE,
+		OBJETO,
+	};
+	Interfaz interfaz;
+	//
+
 	void Draw(RenderWindow&);
-	void IniciarNombre();
+	void IniciarCombate(String);
+	void DividirTexto(const String& string, String partes[]);
+	void avanzarDialogo();
+	void ChangeSeleccion(bool);
+	void ChangeAtaque(bool);
+	void ChangeObjeto(int);
+	void MostrarTexto(String);
 };
 
