@@ -2,6 +2,7 @@
 
 void MenuEleccionKlostermon::Load()
 {
+	cuadroSeleccionado = 0; 
 	imageLaras.loadFromFile("Sprites/laras.png");
 	klostermon[0].setTexture(imageLaras);
 	imageUrkos.loadFromFile("Sprites/urkos.png");
@@ -39,6 +40,7 @@ void MenuEleccionKlostermon::Load()
 		klostermon[i].setPosition(posicionX, posicionY);
 		cuadro[i].setTexture(imageCuadro);
 		cuadro[i].setScale(2, 2);
+		cuadro[i].setColor(Color::Black);
 		cuadro[i].setPosition(posicionX, posicionY); 
 	}
 	imageFondo.loadFromFile("Sprites/fondoGris.png");
@@ -47,7 +49,23 @@ void MenuEleccionKlostermon::Load()
 
 void MenuEleccionKlostermon::Update()
 {
-
+	if (Keyboard::isKeyPressed(Keyboard::Up) && framescooldown >= 15)
+	{
+		Arriba();
+	}
+	if (Keyboard::isKeyPressed(Keyboard::Down) && framescooldown >= 15)
+	{
+		Abajo();
+	}
+	if (Keyboard::isKeyPressed(Keyboard::Left) && framescooldown >= 15)
+	{
+		Izquierda();
+	}
+	if (Keyboard::isKeyPressed(Keyboard::Right) && framescooldown >= 15)
+	{
+		Derecha();
+	}
+	framescooldown++;
 }
 
 void MenuEleccionKlostermon::Draw(RenderWindow& window)
@@ -58,4 +76,65 @@ void MenuEleccionKlostermon::Draw(RenderWindow& window)
 		window.draw(cuadro[i]);
 	}
 	
+}
+
+void MenuEleccionKlostermon::Izquierda()
+{
+	framescooldown = 0;
+	if (cuadroSeleccionado - 3 <= -1) {
+		cuadroSeleccionado == 7; 
+	}
+	else {
+		cuadroSeleccionado -= 3;
+	}
+	actualizarCuadro();
+}
+
+void MenuEleccionKlostermon::Derecha()
+{
+	framescooldown = 0; 
+	if (cuadroSeleccionado + 3 <= 8) {
+		cuadroSeleccionado == 0;
+	}
+	else {
+		cuadroSeleccionado += 3; 
+	}
+	actualizarCuadro();
+}
+
+
+void MenuEleccionKlostermon::Abajo()
+{
+	framescooldown = 0; 
+	if (cuadroSeleccionado + 1 >= 8) {
+		cuadroSeleccionado = 0; 
+	}
+	else {
+		cuadroSeleccionado++;
+	}
+	actualizarCuadro();
+}
+
+void MenuEleccionKlostermon::Arriba()
+{
+	framescooldown = 0; 
+	if (cuadroSeleccionado -1 <= -1) {
+		cuadroSeleccionado = 7;
+	}
+	else {
+		cuadroSeleccionado--;
+	}
+	actualizarCuadro();
+}
+
+void MenuEleccionKlostermon::actualizarCuadro()
+{
+	for (int i = 0; i < 8; i++) {
+		cuadro[i].setColor(Color::Black);
+		cuadro[i].setScale(2, 2);
+		klostermon[i].setScale(2, 2);
+	}
+	cuadro[cuadroSeleccionado].setColor(Color::Red);
+	cuadro[cuadroSeleccionado].setScale(3,3);
+	klostermon[cuadroSeleccionado].setScale(3,3);
 }

@@ -1,6 +1,8 @@
 ﻿  MenuEleccionKlostermon.cpp
-D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(39,40): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(39,29): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(42,36): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(42,25): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(40,40): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(40,29): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(44,36): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(44,25): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(85,22): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(97,22): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
   KlosterMon.vcxproj -> D:\KlosterMonUTN\x64\Debug\KlosterMon.exe
