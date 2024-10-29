@@ -4,10 +4,12 @@ void MenuEleccionKlostermon::Load()
 {
 	configtexto.ConfigurarTexto(caza, configtexto.gameplayFont, "Caza", 20, Color::Black, Color::Red, 0.3f);
 	caza.setPosition(0, 150); 
-	configtexto.ConfigurarTexto(carga, configtexto.gameplayFont, "Carga", 20, Color::Black, Color::Red, 0.3f);
+	configtexto.ConfigurarTexto(carga, configtexto.gameplayFont, "Carga", 20, Color::Black, Color::Yellow, 0.3f);
 	carga.setPosition(300, 150);
-	configtexto.ConfigurarTexto(asistencia, configtexto.gameplayFont, "Asistencia", 20, Color::Black, Color::Red, 0.3f);
+	configtexto.ConfigurarTexto(asistencia, configtexto.gameplayFont, "Asistencia", 20, Color::Black, Color::Cyan, 0.3f);
 	asistencia.setPosition(600, 150);
+	configtexto.ConfigurarTexto(titulo, configtexto.gameTitleFont, "Elige 3 Klostermons!", 50, Color::Black);
+	configtexto.CentrarTexto(titulo, -250, 0); 
 	cuadroSeleccionado = 0; 
 	imageLaras.loadFromFile("Sprites/laras.png");
 	klostermon[0].setTexture(imageLaras);
@@ -89,6 +91,7 @@ void MenuEleccionKlostermon::Update()
 void MenuEleccionKlostermon::Draw(RenderWindow& window)
 {
 	window.draw(fondoMenu);
+	window.draw(titulo); 
 	window.draw(carga);
 	window.draw(caza);
 	window.draw(asistencia);
@@ -174,11 +177,55 @@ void MenuEleccionKlostermon::actualizarCuadro()
 		}
 		
 	}
-	if (cuadroSeleccionado == 0) {
-		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "Sentidos muy agudos. No tiene gran tamaño, \n pero eso le permite moverse con más facilidad. \n Puede aumentar su daño general", 7.5f, Color::Black, Color::Red, 0.3f);
-		info.setPosition(110, 200);
-	}
-	cuadro[cuadroSeleccionado].setColor(Color::Red);
+	configInfo(cuadroSeleccionado); 
 	cuadro[cuadroSeleccionado].setScale(3,3);
 	klostermon[cuadroSeleccionado].setScale(3,3);
+}
+
+void MenuEleccionKlostermon::configInfo(int cuadroSeleccionado)
+{
+	switch (cuadroSeleccionado) {
+	case 0:
+		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "Sentidos muy agudos. No tiene \n gran tamaño, pero eso le \n permite moverse con más \n facilidad. Puede aumentar \n su daño general.", 7.5f, Color::Black, Color::Red, 0.3f);
+		info.setPosition(106, 220);
+		cuadro[cuadroSeleccionado].setColor(Color::Red);
+		break;
+
+	case 1:
+		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "Sabe leer a sus rivales, se \n camufla con el entorno para \n engañar. Aumenta la \n probabilidad de que el enemigo \n falle sus ataques.", 7.5f, Color::Black, Color::Red, 0.3f);
+		info.setPosition(106, 320);
+		cuadro[cuadroSeleccionado].setColor(Color::Red);
+		break;
+
+	case 2:
+		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "De aspecto terrorífico, \n provoca pánico \n y decrece el daño de sus \n enemigos.", 7.5f, Color::Black, Color::Red, 0.3f);
+		info.setPosition(106, 420);
+		cuadro[cuadroSeleccionado].setColor(Color::Red);
+		break;
+	case 3:
+		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "Tiene un gran tamaño, \n puede aturdir enemigos \n y disminuir su  \n velocidad.", 7.5f, Color::Black, Color::Yellow, 0.3f);
+		info.setPosition(406, 220);
+		cuadro[cuadroSeleccionado].setColor(Color::Yellow);
+		break;
+	case 4:
+		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "Su cabeza es literalmente un \n taladro. No puede ver. \n Disminuye la vida total \n del enemigo.", 7.5f, Color::Black, Color::Yellow, 0.3f);
+		info.setPosition(406, 320);
+		cuadro[cuadroSeleccionado].setColor(Color::Yellow);
+		break;
+	case 5:
+		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "Experto en demoliciones. \n Explota y provoca daño \n mortal al enemigo. \n Pero a costa de quedar \n inutilizable durante el \n combate.", 7.5f, Color::Black, Color::Yellow, 0.3f);
+		info.setPosition(406, 420);
+		cuadro[cuadroSeleccionado].setColor(Color::Yellow);
+		break;
+	case 6:
+		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "Cura un  \n porcentaje de \n la vida de sus \n compañeros.", 7.5f, Color::Black, Color::Cyan, 0.3f);
+		info.setPosition(706, 220);
+		cuadro[cuadroSeleccionado].setColor(Color::Cyan);
+		break;
+	case 7:
+		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "Aumenta su vida \n total propia.", 7.5f, Color::Black, Color::Cyan, 0.3f);
+		info.setPosition(706, 320);
+		cuadro[cuadroSeleccionado].setColor(Color::Cyan);
+		break;
+	}
 }

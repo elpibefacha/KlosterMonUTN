@@ -1,7 +1,21 @@
-﻿  MenuEleccionKlostermon.cpp
-D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(46,40): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(46,29): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(50,36): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(50,25): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(178,196): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+﻿  GameLoopManager.cpp
+  Menu.cpp
+D:\KlosterMonUTN\KlosterMon\Menu.cpp(128,50): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\KlosterMonUTN\KlosterMon\Menu.cpp(128,45): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  MenuEleccionKlostermon.cpp
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(48,40): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(48,29): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(52,36): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(52,25): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(189,203): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(195,205): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(201,152): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(206,148): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(211,164): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(216,205): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(221,126): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(226,99): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+  main.cpp
+D:\KlosterMonUTN\KlosterMon\main.cpp(5,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  Generando código...
   KlosterMon.vcxproj -> D:\KlosterMonUTN\x64\Debug\KlosterMon.exe

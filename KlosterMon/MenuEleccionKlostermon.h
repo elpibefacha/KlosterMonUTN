@@ -1,11 +1,12 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "GenerarTexto.h"
+#include "MenuManager.h"
 using namespace sf; 
 class MenuEleccionKlostermon 
 {
 private: 
-	
+	MenuManager menumanager; 
 	Sprite klostermon[8];
 	Texture imageLaras; 
 	Texture imageUrkos; 
@@ -25,19 +26,22 @@ private:
 	Sprite fondoMenu;
 	Texture imageFondo;
 	// Texto
+	Text titulo; 
 	Text caza; 
 	Text carga;
 	Text asistencia; 
 	Text info; 
 	GenerarTexto configtexto; 
-public:
-	void Load(); 
-	void Update();
-	void Draw(RenderWindow& window);
+	// Metodos privados
+	void configInfo(int cuadroSeleccionado); 
 	void Arriba();
 	void Abajo();
 	void Izquierda();
 	void Derecha(); 
 	void actualizarCuadro();
+public:
+	void Load(); 
+	void Update();
+	void Draw(RenderWindow& window);
 };
 
