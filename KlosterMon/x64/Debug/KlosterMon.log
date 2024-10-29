@@ -1,14 +1,46 @@
-﻿  MenuEleccionKlostermon.cpp
-C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(51,40): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(51,29): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(55,36): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(55,25): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(202,203): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
-C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(208,205): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
-C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(214,152): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
-C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(219,148): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
-C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(224,164): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
-C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(229,205): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
-C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(234,126): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
-C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(239,99): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
-  KlosterMon.vcxproj -> C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\x64\Debug\KlosterMon.exe
+﻿  ArchivoKlostermon.cpp
+D:\KlosterMonUTN\KlosterMon\ArchivoKlostermon.cpp(37,15): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+  ArchivoPlayer.cpp
+D:\KlosterMonUTN\KlosterMon\ArchivoPlayer.cpp(38,15): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\ArchivoPlayer.cpp(61,18): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+  Ataque.cpp
+  Combate.cpp
+  Enemy.cpp
+D:\KlosterMonUTN\KlosterMon\Enemy.cpp(9,11): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+  Gameplay.cpp
+  GameplayManager.cpp
+  GenerarTexto.cpp
+  Klostermon.cpp
+  main.cpp
+D:\KlosterMonUTN\KlosterMon\main.cpp(6,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  Menu.cpp
+D:\KlosterMonUTN\KlosterMon\Menu.cpp(132,50): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\KlosterMonUTN\KlosterMon\Menu.cpp(132,45): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  GameLoopManager.cpp
+  MenuCreditos.cpp
+  MenuEleccionKlostermon.cpp
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(51,40): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(51,29): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(55,36): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(55,25): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(202,203): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(208,205): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(214,152): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(219,148): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(224,164): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(229,205): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(234,126): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.cpp(239,99): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+  MenuManager.cpp
+  MenuNuevaPartida.cpp
+D:\KlosterMonUTN\KlosterMon\MenuNuevaPartida.cpp(120,44): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\KlosterMonUTN\KlosterMon\MenuNuevaPartida.cpp(120,39): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  MenuPartidas.cpp
+D:\KlosterMonUTN\KlosterMon\MenuPartidas.cpp(24,46): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\KlosterMonUTN\KlosterMon\MenuPartidas.cpp(24,41): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  MusicManager.cpp
+D:\KlosterMonUTN\KlosterMon\MusicManager.cpp(12,19): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Player.cpp
+  SceneManager.cpp
+  Generando código...
+  KlosterMon.vcxproj -> D:\KlosterMonUTN\x64\Debug\KlosterMon.exe
