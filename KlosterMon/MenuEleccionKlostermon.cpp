@@ -2,6 +2,12 @@
 
 void MenuEleccionKlostermon::Load()
 {
+	configtexto.ConfigurarTexto(caza, configtexto.gameplayFont, "Caza", 20, Color::Black, Color::Red, 0.3f);
+	caza.setPosition(0, 150); 
+	configtexto.ConfigurarTexto(carga, configtexto.gameplayFont, "Carga", 20, Color::Black, Color::Red, 0.3f);
+	carga.setPosition(300, 150);
+	configtexto.ConfigurarTexto(asistencia, configtexto.gameplayFont, "Asistencia", 20, Color::Black, Color::Red, 0.3f);
+	asistencia.setPosition(600, 150);
 	cuadroSeleccionado = 0; 
 	imageLaras.loadFromFile("Sprites/laras.png");
 	klostermon[0].setTexture(imageLaras);
@@ -65,12 +71,28 @@ void MenuEleccionKlostermon::Update()
 	{
 		Derecha();
 	}
+	if (Keyboard::isKeyPressed(Keyboard::Enter) && framescooldown >= 15)
+	{
+		elegido[cuadroSeleccionado] = true; 
+		klostermon[cuadroSeleccionado].setColor(Color::Green); 
+	}
+	if (Keyboard::isKeyPressed(Keyboard::Escape))
+	{
+		for (int i=0; i < 8; i++) {
+			elegido[i] = false; 
+		}
+		actualizarCuadro(); 
+	}
 	framescooldown++;
 }
 
 void MenuEleccionKlostermon::Draw(RenderWindow& window)
 {
 	window.draw(fondoMenu);
+	window.draw(carga);
+	window.draw(caza);
+	window.draw(asistencia);
+	window.draw(info); 
 	for (int i = 0; i < 8; i++) {
 		window.draw(klostermon[i]);
 		window.draw(cuadro[i]);
@@ -81,8 +103,14 @@ void MenuEleccionKlostermon::Draw(RenderWindow& window)
 void MenuEleccionKlostermon::Izquierda()
 {
 	framescooldown = 0;
-	if (cuadroSeleccionado - 3 <= -1) {
-		cuadroSeleccionado == 7; 
+	if (cuadroSeleccionado == 0) {
+		cuadroSeleccionado = 6; 
+	} else 
+	if (cuadroSeleccionado == 1) {
+		cuadroSeleccionado = 7; 
+	} else 
+	if (cuadroSeleccionado == 2) {
+		cuadroSeleccionado = 5;
 	}
 	else {
 		cuadroSeleccionado -= 3;
@@ -93,9 +121,15 @@ void MenuEleccionKlostermon::Izquierda()
 void MenuEleccionKlostermon::Derecha()
 {
 	framescooldown = 0; 
-	if (cuadroSeleccionado + 3 <= 8) {
-		cuadroSeleccionado == 0;
-	}
+	if (cuadroSeleccionado == 7) {
+		cuadroSeleccionado = 1;
+	} else 
+	if (cuadroSeleccionado == 6) {
+		cuadroSeleccionado = 0; 
+	} else 
+	if (cuadroSeleccionado == 5) {
+		cuadroSeleccionado = 7; 
+	} 
 	else {
 		cuadroSeleccionado += 3; 
 	}
@@ -106,7 +140,7 @@ void MenuEleccionKlostermon::Derecha()
 void MenuEleccionKlostermon::Abajo()
 {
 	framescooldown = 0; 
-	if (cuadroSeleccionado + 1 >= 8) {
+	if (cuadroSeleccionado == 7) {
 		cuadroSeleccionado = 0; 
 	}
 	else {
@@ -118,7 +152,7 @@ void MenuEleccionKlostermon::Abajo()
 void MenuEleccionKlostermon::Arriba()
 {
 	framescooldown = 0; 
-	if (cuadroSeleccionado -1 <= -1) {
+	if (cuadroSeleccionado == 0) {
 		cuadroSeleccionado = 7;
 	}
 	else {
@@ -130,9 +164,19 @@ void MenuEleccionKlostermon::Arriba()
 void MenuEleccionKlostermon::actualizarCuadro()
 {
 	for (int i = 0; i < 8; i++) {
-		cuadro[i].setColor(Color::Black);
-		cuadro[i].setScale(2, 2);
-		klostermon[i].setScale(2, 2);
+		if (!elegido[i]) {
+			cuadro[i].setColor(Color::Black);
+			cuadro[i].setScale(2, 2);
+			klostermon[i].setScale(2, 2);
+			klostermon[i].setColor(Color::White);
+			configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "", 5, Color::Black, Color::Red, 0.3f);
+			info.setPosition(50, 200);
+		}
+		
+	}
+	if (cuadroSeleccionado == 0) {
+		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "Sentidos muy agudos. No tiene gran tamaño, \n pero eso le permite moverse con más facilidad. \n Puede aumentar su daño general", 7.5f, Color::Black, Color::Red, 0.3f);
+		info.setPosition(110, 200);
 	}
 	cuadro[cuadroSeleccionado].setColor(Color::Red);
 	cuadro[cuadroSeleccionado].setScale(3,3);

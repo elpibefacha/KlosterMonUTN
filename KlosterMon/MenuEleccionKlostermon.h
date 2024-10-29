@@ -18,12 +18,18 @@ private:
 	// Cuadros
 	Sprite cuadro[8];
 	Texture imageCuadro; 
-	bool seleccionado[8];
+	bool elegido[8] = { false }; 
 	int cuadroSeleccionado;
 	int framescooldown; 
 	//Fondo
 	Sprite fondoMenu;
 	Texture imageFondo;
+	// Texto
+	Text caza; 
+	Text carga;
+	Text asistencia; 
+	Text info; 
+	GenerarTexto configtexto; 
 public:
 	void Load(); 
 	void Update();

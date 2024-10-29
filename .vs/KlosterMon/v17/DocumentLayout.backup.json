@@ -7,31 +7,31 @@
       "RelativeMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|solutionrelative:KlosterMon\\MenuEleccionKlostermon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|D:\\KlosterMonUTN\\KlosterMon\\MenuNuevaPartida.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|solutionrelative:KlosterMon\\MenuNuevaPartida.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|D:\\KlosterMonUTN\\KlosterMon\\MenuEleccionKlostermon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|solutionrelative:KlosterMon\\MenuEleccionKlostermon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|C:\\Users\\joasa\\Downloads\\Klostermon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|D:\\KlosterMonUTN\\KlosterMon\\MenuNuevaPartida.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|solutionrelative:KlosterMon\\MenuNuevaPartida.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|D:\\KlosterMonUTN\\KlosterMon\\MenuManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|solutionrelative:KlosterMon\\MenuManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|D:\\KlosterMonUTN\\KlosterMon\\Combate.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|solutionrelative:KlosterMon\\Combate.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|D:\\KlosterMonUTN\\KlosterMon\\MenuNuevaPartida.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|solutionrelative:KlosterMon\\MenuNuevaPartida.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|D:\\KlosterMonUTN\\KlosterMon\\MenuNuevaPartida.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|solutionrelative:KlosterMon\\MenuNuevaPartida.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|D:\\KlosterMonUTN\\KlosterMon\\MusicManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|solutionrelative:KlosterMon\\MusicManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|C:\\Users\\joasa\\Downloads\\Klostermon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|D:\\KlosterMonUTN\\KlosterMon\\Combate.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|solutionrelative:KlosterMon\\Combate.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A697FC74-E698-4198-989C-39420985F638}|KlosterMon\\KlosterMon.vcxproj|D:\\KlosterMonUTN\\KlosterMon\\Menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -114,7 +114,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "MenuManager.cpp",
               "DocumentMoniker": "D:\\KlosterMonUTN\\KlosterMon\\MenuManager.cpp",
               "RelativeDocumentMoniker": "KlosterMon\\MenuManager.cpp",
@@ -133,27 +133,27 @@
               "RelativeDocumentMoniker": "KlosterMon\\MenuEleccionKlostermon.cpp",
               "ToolTip": "D:\\KlosterMonUTN\\KlosterMon\\MenuEleccionKlostermon.cpp",
               "RelativeToolTip": "KlosterMon\\MenuEleccionKlostermon.cpp",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAAADgAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAJoAAAAAAAAAAADgv7IAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-28T20:49:38.077Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "MenuEleccionKlostermon.h",
               "DocumentMoniker": "D:\\KlosterMonUTN\\KlosterMon\\MenuEleccionKlostermon.h",
               "RelativeDocumentMoniker": "KlosterMon\\MenuEleccionKlostermon.h",
               "ToolTip": "D:\\KlosterMonUTN\\KlosterMon\\MenuEleccionKlostermon.h",
               "RelativeToolTip": "KlosterMon\\MenuEleccionKlostermon.h",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB4AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-10-28T20:47:28.424Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Combate.cpp",
               "DocumentMoniker": "D:\\KlosterMonUTN\\KlosterMon\\Combate.cpp",
               "RelativeDocumentMoniker": "KlosterMon\\Combate.cpp",
@@ -161,8 +161,7 @@
               "RelativeToolTip": "KlosterMon\\Combate.cpp",
               "ViewState": "AgIAACQAAAAAAAAAAAAAAE8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-28T02:01:25.806Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-28T02:01:25.806Z"
             },
             {
               "$type": "Document",
@@ -186,12 +185,11 @@
               "RelativeToolTip": "KlosterMon\\Menu.h",
               "ViewState": "AgIAAB4AAAAAAAAAAAAAAC8AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-28T19:43:53.632Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-28T19:43:53.632Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "MusicManager.cpp",
               "DocumentMoniker": "D:\\KlosterMonUTN\\KlosterMon\\MusicManager.cpp",
               "RelativeDocumentMoniker": "KlosterMon\\MusicManager.cpp",
@@ -204,13 +202,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "MenuNuevaPartida.cpp",
               "DocumentMoniker": "D:\\KlosterMonUTN\\KlosterMon\\MenuNuevaPartida.cpp",
               "RelativeDocumentMoniker": "KlosterMon\\MenuNuevaPartida.cpp",
               "ToolTip": "D:\\KlosterMonUTN\\KlosterMon\\MenuNuevaPartida.cpp",
               "RelativeToolTip": "KlosterMon\\MenuNuevaPartida.cpp",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAAAEUAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAE4AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-28T03:02:26.884Z",
               "EditorCaption": ""
@@ -230,14 +228,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Klostermon.h",
               "DocumentMoniker": "C:\\Users\\joasa\\Downloads\\Klostermon.h",
               "ToolTip": "C:\\Users\\joasa\\Downloads\\Klostermon.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-28T01:43:21.394Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-28T01:43:21.394Z"
             },
             {
               "$type": "Document",
