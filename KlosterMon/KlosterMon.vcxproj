@@ -133,12 +133,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ArchivoPlayer.cpp" />
-    <ClCompile Include="C:\Users\joasa\Downloads\Enemy.cpp" />
-    <ClCompile Include="C:\Users\joasa\Downloads\Klostermon.cpp" />
     <ClCompile Include="Combate.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Gameplay.cpp" />
     <ClCompile Include="GameplayManager.cpp" />
     <ClCompile Include="GenerarTexto.cpp" />
+    <ClCompile Include="Klostermon.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="GameLoopManager.cpp" />
@@ -153,12 +153,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArchivoPlayer.h" />
-    <ClInclude Include="C:\Users\joasa\Downloads\Enemy.h" />
-    <ClInclude Include="C:\Users\joasa\Downloads\Klostermon.h" />
     <ClInclude Include="Combate.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="Gameplay.h" />
     <ClInclude Include="GameplayManager.h" />
     <ClInclude Include="GenerarTexto.h" />
+    <ClInclude Include="Klostermon.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="GameLoopManager.h" />
     <ClInclude Include="MenuCreditos.h" />
