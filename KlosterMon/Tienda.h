@@ -12,6 +12,8 @@ private:
 	// Texto
 	Text info; 
 	GenerarTexto configtexto; 
+	Text Dinero; 
+	int dinero; 
 	// Objetos
 	Sprite objeto[6];
 	Texture imageCopy;

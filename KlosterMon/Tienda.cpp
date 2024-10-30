@@ -40,7 +40,8 @@ void Tienda::loadTienda()
 		objeto[i].setPosition(posicionX, posicionY);
 		posicionY += 200; 
 	}
-
+	configtexto.ConfigurarTexto(Dinero, configtexto.gameplayFont, "Dinero: ", 14, Color::Black);
+	configtexto.CentrarTexto(Dinero, -280, -280);
 	imageFondo.loadFromFile("Sprites/fondoGris.png");
 	fondo.setTexture(imageFondo);
 	scenemanager.sceneLoaded(); 
@@ -51,6 +52,8 @@ void Tienda::loadTienda()
 void Tienda::Draw(RenderWindow& window)
 {
 	window.draw(fondo); 
+	window.draw(info); 
+	window.draw(Dinero); 
 	for (int i = 0; i < 6; i++) {
 	window.draw(objeto[i]); 
 	window.draw(cuadro[i]); 
@@ -88,7 +91,7 @@ void Tienda::Update()
 	if (Keyboard::isKeyPressed(Keyboard::Escape))
 	{
 		elegidos = 0;
-		for (int i = 0; i < 8; i++) {
+		for (int i = 0; i < 6; i++) {
 			elegido[i] = false;
 		}
 		actualizarCuadro();
@@ -185,30 +188,30 @@ void Tienda::configInfo(int cuadroSeleccionado)
 {
 	switch (cuadroSeleccionado) {
 	case 0:
-		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "Sentidos muy agudos. No tiene \n gran tamaño, pero eso le \n permite moverse con más \n facilidad. Puede aumentar \n su daño general.", 7.5f, Color::Black, Color::Red, 0.3f);
-		info.setPosition(106, 220);
+		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "Código de curación pequeño \n Costo: 20 UTs \n \n Este  objeto  ayudará a  \n que  tu  Klostermon  recupere \n 15  puntos  de  salud.", 9, Color::Black, Color::Red, 0.3f);
+		info.setPosition(200, 70);
 		break;
 
 	case 1:
-		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "Sabe leer a sus rivales, se \n camufla con el entorno para \n engañar. Aumenta la \n probabilidad de que el enemigo \n falle sus ataques.", 7.5f, Color::Black, Color::Red, 0.3f);
-		info.setPosition(106, 320);
+		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "Código de curación grande \n Costo: 50 UTs \n \n Recuperará  50  puntos  de  \n salud  para  tu  Klostermon.", 9, Color::Black, Color::Red, 0.3f);
+		info.setPosition(200, 270);
 		break;
 
 	case 2:
-		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "De aspecto terrorífico, \n provoca pánico \n y decrece el daño de sus \n enemigos.", 7.5f, Color::Black, Color::Red, 0.3f);
-		info.setPosition(106, 420);
+		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "Inyección de código \n Costo: 50 UTs \n \n El  Klostermon  rival  perderá \n un  20%  de  efectividad  en  \n sus  ataques.", 9, Color::Black, Color::Red, 0.3f);
+		info.setPosition(200, 470);
 		break;
 	case 3:
-		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "Tiene un gran tamaño, \n puede aturdir enemigos \n y disminuir su  \n velocidad.", 7.5f, Color::Black, Color::Yellow, 0.3f);
-		info.setPosition(406, 220);
+		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "Estructuración de código \n Costo: 100 UTs \n \n Tu  Klostermon  logra  \n organizarse bien, \n otorga  un  100% \n de  efectividad  de \n ataque.  ¡No puede \n fallar!", 9, Color::Black, Color::Red, 0.3f);
+		info.setPosition(590, 70);
 		break;
 	case 4:
-		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "Su cabeza es literalmente un \n taladro. No puede ver. \n Disminuye la vida total \n del enemigo.", 7.5f, Color::Black, Color::Yellow, 0.3f);
-		info.setPosition(406, 320);
+		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "Optimización \n Costo: 180 UTs \n \n Aumenta  en  un  50% \n la  velocidad  de \n tu  Klostermon.", 9, Color::Black, Color::Red, 0.3f);
+		info.setPosition(590, 270);
 		break;
 	case 5:
-		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "Experto en demoliciones. \n Explota y provoca daño \n mortal al enemigo. \n Pero a costa de quedar \n inutilizable durante el \n combate.", 7.5f, Color::Black, Color::Yellow, 0.3f);
-		info.setPosition(406, 420);
+		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "CopyPaste \n Costo: 250 UTs \n \n Copiará  los  puntos  de   \n vida  totales  del  rival  y \n los  aplicará  a  tu \n Klostermon.", 9, Color::Black, Color::Red, 0.3f);
+		info.setPosition(590, 470);
 		break;
 	}
 }
