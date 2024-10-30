@@ -17,30 +17,8 @@ void Gameplay::initKlostermons()
 	combate.setKlostermonNames(playerKlos[0].getNameKlostermon(), playerKlos[1].getNameKlostermon(), playerKlos[2].getNameKlostermon());
 }
 
-void Gameplay::IniciarGameplay()
-{
-
-	String string = player.getName() + " saca un Pokemon!";
-	textoCombate.setString(string);
-	
-	//ACA SE CONSEGUIRIA LA TEXTURA DE CADA UNO
-	String path_texture_enemy = "Sprites/laras.png";
-	String path_texture_aly = "Sprites/laras.png";
-
-	enemigoTexture.loadFromFile(path_texture_enemy);
-	alidadoTexture.loadFromFile(path_texture_aly);
-	
-	k_sprite_aliado.setTexture(alidadoTexture);
-	k_sprite_enemigo.setTexture(enemigoTexture);
-
-}
-
 void Gameplay::Update()
 {
-	if (Keyboard::isKeyPressed(Keyboard::Escape))
-	{
-		sceneManager.setScene(0);
-	}
 	if (Keyboard::isKeyPressed(Keyboard::Enter) && frameCooldown > 15 && combate.interfaz == combate.TEXTO)
 	{
 		combate.avanzarDialogo();
@@ -84,8 +62,8 @@ void Gameplay::loadGameplay()
 
 	sceneManager.sceneLoaded();
 	String stringCombate = ">> Comienza el combate!/>> " 
-		+ player.getName() + " saca a Urkos!/"
-		+ ">> " + enemigo.getName() + " Saca a Laras!";
+		+ player.getName() + " saca a " + playerKlos[0].getNameKlostermon() + "!/"
+		+ ">> " + enemigo.getName() + " saca a " + enemyKlos[0].getNameKlostermon() + "!";
 	combate.IniciarCombate(stringCombate);
 
 	//Se inicializa para que aparezca como la primera decision default
@@ -97,10 +75,18 @@ void Gameplay::loadGameplay()
 	combate.ChangeObjeto(seleccionObj);
 	k_sel_int = 0;
 	combate.ChangeKlostermon(k_sel_int);
+	//Carga la textura del klostermon
+	combate.setTexture_K_Ally(playerKlos[0].getPathTexture());
+	combate.setTexture_K_Enemy(enemyKlos[0].getPathTexture());
+	//Se inicia datos(que klostermon tienen actualmente y cuantos tiene vivos
+	klostermonIndexEnemy = 0;
+	klostermonIndexPlayer = 0;
+	klostermonRestantes_enemy = 3;
+	klostermonRestantes_player = 3;
+	//Se le asigna la vida al texto
+	combate.changeHPText(playerKlos[0].getVida(), enemyKlos[0].getVida());
 	//carga los nombres de ataque del klostermon
-	KlostermonAliado = player.getKlostermon(2);
-	combate.setTexture_K_Ally(KlostermonAliado.getPathTexture());
-	combate.setNombreAtaques(KlostermonAliado.ataquePesado.getNombre(),KlostermonAliado.ataqueEspecial.getNombre());
+	combate.setNombreAtaques(playerKlos[0].ataquePesado.getNombre(), playerKlos[0].ataqueEspecial.getNombre());
 
 }
 
@@ -129,13 +115,11 @@ void Gameplay::UpdateSeleccion()
 		else if(SelecctionMenu == 1)
 		{
 			combate.interfaz = combate.OBJETO;
-			std::cerr << "Se selecciono Objeto" << endl;
 		}
 		else if (SelecctionMenu == 2)
 		{
 			combate.interfaz = combate.KLOS_SEL;
 		}
-		
 		frameCooldown = 0;
 	}
 
@@ -154,7 +138,24 @@ void Gameplay::UpdateAtaque()
 		if (ataquePesadoSelect)
 		{
 			combate.interfaz = combate.TEXTO;
-			Atacar("Urkos usa ataque pesado!/Es superefectivo!");
+			int efectividad = playerKlos[klostermonIndexPlayer].getEfectividad();
+			int random = rand() % 101;
+			if (random > efectividad)
+			{
+				String ataqueString = playerKlos[klostermonIndexPlayer].getNameKlostermon() + " utiliza "
+					+ playerKlos[klostermonIndexPlayer].ataquePesado.getNombre() + "!/"
+					+ "Pero fallo!";
+				Atacar(ataqueString, 0);//HAY QUE HACER QUE LA CLASE ATAQUE PUEDA ATACAR 
+				//(YA QUE ES LA QUE BAJARA LAS STATS)
+			}
+			else
+			{
+				String ataqueString = playerKlos[klostermonIndexPlayer].getNameKlostermon() + " utiliza "
+					+ playerKlos[klostermonIndexPlayer].ataquePesado.getNombre() + "!";
+				Atacar(ataqueString, playerKlos[klostermonIndexPlayer].ataquePesado.getDanio());
+				//HAY QUE HACER QUE LA CLASE ATAQUE PUEDA ATACAR 
+				//(YA QUE ES LA QUE BAJARA LAS STATS)
+			}
 		}
 		else
 		{
@@ -163,6 +164,10 @@ void Gameplay::UpdateAtaque()
 		}
 
 		frameCooldown = 0;
+	}
+	if (Keyboard::isKeyPressed(Keyboard::Escape))
+	{
+		combate.interfaz = combate.SELECCION;
 	}
 }
 
@@ -185,6 +190,10 @@ void Gameplay::UpdateSelKlos()
 	if (Keyboard::isKeyPressed(Keyboard::Enter) && frameCooldown > 25)
 	{
 		frameCooldown = 0;
+	}
+	if (Keyboard::isKeyPressed(Keyboard::Escape))
+	{
+		combate.interfaz = combate.SELECCION;
 	}
 }
 
@@ -258,18 +267,29 @@ void Gameplay::UpdateObjetos()
 		}
 		frameCooldown = 0;
 	}
+	if (Keyboard::isKeyPressed(Keyboard::Escape))
+	{
+		combate.interfaz = combate.SELECCION;
+	}
 }
 
 
-void Gameplay::Atacar(String ataqueString)
+void Gameplay::Atacar(String ataqueString, int danioHecho)
 {
 	//Se verifica quien tiene mas velocidad
 	if (true)
 	{
 		combate.interfaz = combate.TEXTO;
 		//Enemy.ai() //Nos da un string
-		String ataqueEnemigo = "Laras usa ataque pesado!/Fallo!";
+		String ataqueEnemigo = enemyKlos[klostermonIndexEnemy].getNameKlostermon() + " enemigo utilizo "
+			+ enemyKlos[klostermonIndexEnemy].ataquePesado.getNombre() + "!";
 		combate.MostrarTexto(ataqueString + "/" + ataqueEnemigo);
+		
+		int danioEnemigo = enemyKlos[klostermonIndexEnemy].ataquePesado.getDanio();
+
+		playerKlos[klostermonIndexPlayer].setVida(playerKlos[klostermonIndexPlayer].getVida() - danioEnemigo);
+		enemyKlos[klostermonIndexEnemy].setVida(enemyKlos[klostermonIndexEnemy].getVida() - danioHecho);
+		combate.changeHPText(playerKlos[klostermonIndexPlayer].getVida(), enemyKlos[klostermonIndexEnemy].getVida());
 	}
 }
 

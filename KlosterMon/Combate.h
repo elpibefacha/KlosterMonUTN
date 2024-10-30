@@ -90,5 +90,6 @@ public:
 	void setKlostermonNames(String k1, String k2, String k3);
 	void setTexture_K_Ally(String path);
 	void setTexture_K_Enemy(String path);
+	void changeHPText(int pla, int ene);
 };
 

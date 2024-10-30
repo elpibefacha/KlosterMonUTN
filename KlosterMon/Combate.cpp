@@ -19,12 +19,8 @@ void Combate::CargarInterfaz()
 	klostermonAliado.setPosition(60, 110);
 	klostermonEnemigo.setPosition(550, 110);
 	//HP
-	configText.ConfigurarTexto(klostermon_ally_hp, fuenteCombate, "110", 20, Color::Green, Color::Black, 2.0f);
-	configText.ConfigurarTexto(klostermon_enemy_hp, fuenteCombate, "120", 20, Color::Green, Color::Black, 2.0f);
-
-
-	klostermon_ally_hp.setPosition(125, 90);
-	klostermon_enemy_hp.setPosition(615, 90);
+	configText.ConfigurarTexto(klostermon_ally_hp, fuenteCombate, "", 20, Color::Green, Color::Black, 2.0f);
+	configText.ConfigurarTexto(klostermon_enemy_hp, fuenteCombate, "", 20, Color::Green, Color::Black, 2.0f);
 
 	//Sombras
 	sombraTexture.loadFromFile("Sprites/shadow.png");
@@ -271,6 +267,16 @@ void Combate::setTexture_K_Enemy(String path)
 {
 	klostermonE.loadFromFile(path);
 	klostermonEnemigo.setTexture(klostermonE);
+}
+
+void Combate::changeHPText(int pla, int ene)
+{
+	klostermon_ally_hp.setString(to_string(pla));
+	klostermon_enemy_hp.setString(to_string(ene));
+
+	configText.CentrarTexto(klostermon_ally_hp,-215,-245);
+	configText.CentrarTexto(klostermon_enemy_hp,-215,245);
+
 }
 
 
