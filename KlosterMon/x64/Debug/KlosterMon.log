@@ -1,6 +1,6 @@
 ﻿  Tienda.cpp
-D:\KlosterMonUTN\KlosterMon\Tienda.cpp(36,36): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-D:\KlosterMonUTN\KlosterMon\Tienda.cpp(36,25): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-D:\KlosterMonUTN\KlosterMon\Tienda.cpp(40,36): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-D:\KlosterMonUTN\KlosterMon\Tienda.cpp(40,25): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\Tienda.cpp(34,36): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\Tienda.cpp(34,25): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\Tienda.cpp(38,36): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\KlosterMonUTN\KlosterMon\Tienda.cpp(38,25): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
   KlosterMon.vcxproj -> D:\KlosterMonUTN\x64\Debug\KlosterMon.exe

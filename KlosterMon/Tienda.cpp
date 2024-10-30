@@ -2,7 +2,6 @@
 
 void Tienda::loadTienda()
 {
-	elegidos = 0; 
 	framescooldown = 0; 
 	musica.stopMusic();
 	musica.playMusic("tienda.ogg");
@@ -19,7 +18,6 @@ void Tienda::loadTienda()
 	objeto[4].setTexture(imageOpti);
 	imageCopy.loadFromFile("Sprites/copy_paste.png");
 	objeto[5].setTexture(imageCopy); 
-	elegidos = 0;
 	imageCuadro.loadFromFile("Sprites/cuadro.png"); 
 	int posicionX=0;
 	int posicionY=0;
@@ -42,7 +40,7 @@ void Tienda::loadTienda()
 	}
 	configtexto.ConfigurarTexto(Dinero, configtexto.gameplayFont, "Dinero: ", 14, Color::Black);
 	configtexto.CentrarTexto(Dinero, -280, -280);
-	imageFondo.loadFromFile("Sprites/fondoGris.png");
+	imageFondo.loadFromFile("Sprites/tienda.jpg");
 	fondo.setTexture(imageFondo);
 	scenemanager.sceneLoaded(); 
 	cuadroSeleccionado = 0; 
@@ -62,6 +60,10 @@ void Tienda::Draw(RenderWindow& window)
 
 void Tienda::Update()
 {
+	tiempo = clock.getElapsedTime();
+	if(tiempo.asSeconds() > 1) {
+		objeto[cuadroSeleccionado].setColor(Color::White);
+	}
 
 	if (Keyboard::isKeyPressed(Keyboard::Up) && framescooldown >= 15)
 	{
@@ -79,21 +81,15 @@ void Tienda::Update()
 	{
 		Derecha();
 	}
-	if (Keyboard::isKeyPressed(Keyboard::Enter) && framescooldown >= 15)
+	if (Keyboard::isKeyPressed(Keyboard::Enter) && framescooldown >= 60)
 	{
-		if (elegidos < 3 && !elegido[cuadroSeleccionado]) {
-			elegido[cuadroSeleccionado] = true;
-			elegidos++;
-			objeto[cuadroSeleccionado].setColor(Color::Green);
-		}
+		std::cerr << "enter" << std::endl; 
+		tiempo = clock.restart();
+		objeto[cuadroSeleccionado].setColor(Color::Green);
 		framescooldown = 0;
 	}
 	if (Keyboard::isKeyPressed(Keyboard::Escape))
 	{
-		elegidos = 0;
-		for (int i = 0; i < 6; i++) {
-			elegido[i] = false;
-		}
 		actualizarCuadro();
 	}
 	framescooldown++;
@@ -166,16 +162,13 @@ void Tienda::Arriba()
 
 void Tienda::actualizarCuadro()
 {
-	for (int i = 0; i < 8; i++) {
-		if (!elegido[i]) {
+	for (int i = 0; i < 6; i++) {
 			cuadro[i].setColor(Color::Black);
 			cuadro[i].setScale(3, 3);
 			objeto[i].setScale(3, 3);
 			objeto[i].setColor(Color::White);
 			configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "", 5, Color::Black, Color::Red, 0.3f);
 			info.setPosition(0, 0);
-		}
-
 	}
 	configInfo(cuadroSeleccionado);
 	cuadro[cuadroSeleccionado].setColor(Color::Red);
@@ -188,29 +181,29 @@ void Tienda::configInfo(int cuadroSeleccionado)
 {
 	switch (cuadroSeleccionado) {
 	case 0:
-		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "Código de curación pequeño \n Costo: 20 UTs \n \n Este  objeto  ayudará a  \n que  tu  Klostermon  recupere \n 15  puntos  de  salud.", 9, Color::Black, Color::Red, 0.3f);
+		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "Código de curación pequeño \n Costo: 20 UTs \n \n Este  objeto  ayudará a  \n que  tu  Klostermon  recupere \n 15  puntos  de  salud.", 9, Color::White, Color::Red, 0.3f);
 		info.setPosition(200, 70);
 		break;
 
 	case 1:
-		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "Código de curación grande \n Costo: 50 UTs \n \n Recuperará  50  puntos  de  \n salud  para  tu  Klostermon.", 9, Color::Black, Color::Red, 0.3f);
+		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "Código de curación grande \n Costo: 50 UTs \n \n Recuperará  50  puntos  de  \n salud  para  tu  Klostermon.", 9, Color::White, Color::Red, 0.3f);
 		info.setPosition(200, 270);
 		break;
 
 	case 2:
-		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "Inyección de código \n Costo: 50 UTs \n \n El  Klostermon  rival  perderá \n un  20%  de  efectividad  en  \n sus  ataques.", 9, Color::Black, Color::Red, 0.3f);
+		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "Inyección de código \n Costo: 50 UTs \n \n El  Klostermon  rival  perderá \n un  20%  de  efectividad  en  \n sus  ataques.", 9, Color::White, Color::Red, 0.3f);
 		info.setPosition(200, 470);
 		break;
 	case 3:
-		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "Estructuración de código \n Costo: 100 UTs \n \n Tu  Klostermon  logra  \n organizarse bien, \n otorga  un  100% \n de  efectividad  de \n ataque.  ¡No puede \n fallar!", 9, Color::Black, Color::Red, 0.3f);
+		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "Estructuración de código \n Costo: 100 UTs \n \n Tu  Klostermon  logra  \n organizarse bien, \n otorga  un  100% \n de  efectividad  de \n ataque.  ¡No puede \n fallar!", 9, Color::White, Color::Red, 0.3f);
 		info.setPosition(590, 70);
 		break;
 	case 4:
-		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "Optimización \n Costo: 180 UTs \n \n Aumenta  en  un  50% \n la  velocidad  de \n tu  Klostermon.", 9, Color::Black, Color::Red, 0.3f);
+		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "Optimización \n Costo: 180 UTs \n \n Aumenta  en  un  50% \n la  velocidad  de \n tu  Klostermon.", 9, Color::White, Color::Red, 0.3f);
 		info.setPosition(590, 270);
 		break;
 	case 5:
-		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "CopyPaste \n Costo: 250 UTs \n \n Copiará  los  puntos  de   \n vida  totales  del  rival  y \n los  aplicará  a  tu \n Klostermon.", 9, Color::Black, Color::Red, 0.3f);
+		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "CopyPaste \n Costo: 250 UTs \n \n Copiará  los  puntos  de   \n vida  totales  del  rival  y \n los  aplicará  a  tu \n Klostermon.", 9, Color::White, Color::Red, 0.3f);
 		info.setPosition(590, 470);
 		break;
 	}

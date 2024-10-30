@@ -3,6 +3,7 @@
 #include "GenerarTexto.h"
 #include "SceneManager.h"
 #include "MusicManager.h"
+#include <iostream>
 using namespace sf; 
 class Tienda
 {
@@ -26,12 +27,13 @@ private:
 	Sprite cuadro[6];
 	Texture imageCuadro; 
 	int cuadroSeleccionado; 
-	bool elegido[6] = { false }; 
-	int elegidos; 
 	int framescooldown = 0; 
 	// Fondo
 	Sprite fondo; 
 	Texture imageFondo; 
+	// Tiempo
+	Clock clock; 
+	Time tiempo; 
 public: 
 	void loadTienda(); 
 	void Update(); 
