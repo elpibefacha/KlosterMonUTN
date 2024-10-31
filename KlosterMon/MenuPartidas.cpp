@@ -119,6 +119,18 @@ void MenuPartidas::Update()
 	{
 		SeleccionarOpcion();
 	}
+	if (Keyboard::isKeyPressed(Keyboard::P))//BORRAR ESTO!!!!
+	{
+		Player playerGame;
+		playerGame = archivoPlayer.leerArchivo(opcionSeleccionada);
+
+		if (playerGame.getName() == "")
+		{
+			return;
+		}
+		gameplayManager.setSaveSlot(opcionSeleccionada);
+		sceneManager.setScene(2);
+	}
 	frameCooldown++;
 }
 

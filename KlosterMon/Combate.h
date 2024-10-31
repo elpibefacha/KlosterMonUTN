@@ -59,12 +59,11 @@ private:
 	Text k_slot[3];
 	//DividirTexto
 	String stringPartes[10];//COMO MAX 10
-	int partesEncontradas;
-	int parteActual;
 	
 public:
 	Combate();
-
+	int partesEncontradas;
+	int parteActual;
 	//Enum
 	enum Interfaz
 	{
@@ -86,11 +85,14 @@ public:
 	void ChangeObjeto(int);
 	void ChangeKlostermon(int);
 	void MostrarTexto(String);
-	void setNombreAtaques(String pesado, String especial);
+	void setNombreAtaques(String pesado, String especial);;
 	void setNombreObjetos(String nombreObj, int pos);
 	void setKlostermonNames(String k1, String k2, String k3);
+	void setKlostermonApagado(int);
 	void setTexture_K_Ally(String path);
 	void setTexture_K_Enemy(String path);
 	void changeHPText(int pla, int ene);
+	void changeHPEnemy(int vida);
+	void changeHPPlayer(int vida);
 };
 

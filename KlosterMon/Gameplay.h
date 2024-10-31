@@ -27,6 +27,8 @@ private:
 	Enemy enemigo; 
 	int klostermonIndexEnemy;
 	int klostermonRestantes_enemy;
+
+	bool partidaTermino;
 	//Klostermones
 
 	Klostermon playerKlos[3];
@@ -50,15 +52,20 @@ private:
 	int seleccionObj;
 	//KlostermonSelect
 	int k_sel_int;//Se usa para saber cual esta seleccionado en el menu
+	
 	void initKlostermons();
+
+	void UpdateSeleccion();
+	void UpdateAtaque();
+	void UpdateSelKlos();
+	void Atacar(Ataque ataqueUsado);
+	bool playerKlostermonDie(String& ataqueEnemy, String& ataquePlayer);
+	bool enemyKlostermonDie(String& ataqueEnemy, String ataquePlayer);
+	void AvanzarTurno(String);
 public:
 	void Update(); 
 	void Draw(RenderWindow&);
 	void loadGameplay();
-	void UpdateSeleccion();
-	void UpdateAtaque();
-	void UpdateSelKlos();
-	void AvanzarTurno(String);
 	void UpdateObjetos();
 };
 

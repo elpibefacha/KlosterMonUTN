@@ -100,11 +100,20 @@ void Tienda::Update()
 	}
 	if (Keyboard::isKeyPressed(Keyboard::Enter) && framescooldown >= 60)
 	{
+		int slot = -1;
 		tiempo = clock.restart();
-		if (player.getMoney() >= precios[cuadroSeleccionado])//Mayor o igual que el precio
+		for (int i = 0;i < 4;i++)//Verifica si hay slot disponible
 		{
-			//Hay que verificar si el jugador tiene espacio! Diria que en el if de arriba
+			if (player.getObjeto(i) == 0)
+			{
+				slot = i;
+				i = 4;
+			}
+		}
+		if (player.getMoney() >= precios[cuadroSeleccionado] && slot != -1)//Mayor o igual que el precio
+		{
 			objeto[cuadroSeleccionado].setColor(Color::Green);
+			player.setObjeto(cuadroSeleccionado +1, slot);
 
 			//se quita la plata y se deberia añadir el objeto al jugador
 			player.setMoney(player.getMoney() - precios[cuadroSeleccionado]);
@@ -123,7 +132,11 @@ void Tienda::Update()
 	}
 	if (Keyboard::isKeyPressed(Keyboard::Escape))
 	{
-		actualizarCuadro();
+		std::cerr << "obj1 = " + to_string(player.getObjeto(0))<<endl;
+		std::cerr << "obj2 = " + to_string(player.getObjeto(1)) << endl;
+		std::cerr << "obj3 = " + to_string(player.getObjeto(2)) << endl;
+		archivoPlayer.sobreEscribir(gameplayManager.getSaveSlot(), player);
+		scenemanager.setScene(1);
 	}
 	framescooldown++;
 }

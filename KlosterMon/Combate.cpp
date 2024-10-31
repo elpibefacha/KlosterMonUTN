@@ -264,6 +264,11 @@ void Combate::setKlostermonNames(String k1, String k2, String k3)
 	configText.CentrarTexto(k_slot[2], 200, 150);
 }
 
+void Combate::setKlostermonApagado(int pos)
+{
+	k_slot[pos].setFillColor(Color::Red);
+}
+
 void Combate::setTexture_K_Ally(String path)
 {
 	if (!klostermonA.loadFromFile(path))
@@ -287,6 +292,18 @@ void Combate::changeHPText(int pla, int ene)
 	configText.CentrarTexto(klostermon_ally_hp,-215,-245);
 	configText.CentrarTexto(klostermon_enemy_hp,-215,245);
 
+}
+
+void Combate::changeHPEnemy(int vida)
+{
+	klostermon_enemy_hp.setString(to_string(vida));
+	configText.CentrarTexto(klostermon_enemy_hp, -215, 245);
+}
+
+void Combate::changeHPPlayer(int vida)
+{
+	klostermon_ally_hp.setString(to_string(vida));
+	configText.CentrarTexto(klostermon_ally_hp, -215, -245);
 }
 
 

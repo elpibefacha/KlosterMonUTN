@@ -7,7 +7,7 @@ void MenuEleccionKlostermon::Load()
 	player.setMoney(50);//Iniciamos con 50 monedas
 	for (int i = 0; i < 4; i++)
 	{
-		player.setObjeto(6, i);
+		player.setObjeto(0, i);
 	}
 	//Lo que hace arriba es que setea el nombre del player de esta clase al mismo que se puso anteriormente
 	elegidos = 0;

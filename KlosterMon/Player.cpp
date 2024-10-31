@@ -36,6 +36,7 @@ void Player::setMoney(int n_money)
 
 void Player::setObjeto(int id, int pos)
 {
+	std::cerr << "pos: " << pos << " id: " << id << endl;
 	objetos[pos] = id;
 }
 
