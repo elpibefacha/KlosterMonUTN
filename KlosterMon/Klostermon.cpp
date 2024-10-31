@@ -12,9 +12,6 @@ void Klostermon::setNameKlostermon(String nombre)
 String Klostermon::getNameKlostermon()
 {
 	String nombreAtaque = _nombre;
-	//ya que setteamos el nombre significa que es la primera vez que se crea este klostermon
-	//Asi que le decimos que el mult es 1.0f(daño base)
-	multiplicadoDanio = 1.0f;
 	return nombreAtaque;
 }
 
@@ -27,6 +24,11 @@ void Klostermon::setTexture(String path)
 	String pathCompleto = "Sprites/" + path;
 	std::string stdstring = pathCompleto.toAnsiString();
 	strcpy(pathTexture, stdstring.c_str());
+}
+
+void Klostermon::setMultiplicador(float nuevoMult)
+{
+	multiplicadorDanio = nuevoMult;
 }
 
 void Klostermon::setVida(int vida) {
@@ -44,6 +46,11 @@ int Klostermon::getEfectividad() {
 
 int Klostermon::getVelocidad() {
 	return _velocidad; 
+}
+
+float Klostermon::getMultiplicador()
+{
+	return multiplicadorDanio;
 }
 
 String Klostermon::getPathTexture()

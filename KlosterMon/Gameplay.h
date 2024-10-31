@@ -55,7 +55,7 @@ public:
 	void UpdateSeleccion();
 	void UpdateAtaque();
 	void UpdateSelKlos();
-	void Atacar(String, int);
+	void Atacar(String);
 	void UpdateObjetos();
 };
 

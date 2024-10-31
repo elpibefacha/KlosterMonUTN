@@ -58,7 +58,7 @@ private:
 	//Seleccionar Klostermon
 	Text k_slot[3];
 	//DividirTexto
-	String stringPartes[5];//COMO MAX 5
+	String stringPartes[10];//COMO MAX 10
 	int partesEncontradas;
 	int parteActual;
 	

@@ -117,11 +117,12 @@ void ArchivoKlostermon::cargarConsola()
 	cin >> danio;
 	creado.ataquePesado.setDanioPropio(danio);
 	cout << "Efectividad ataque" << endl;
-	cin >> efec;
-	creado.ataquePesado.setEfectividadAtaque(efec);
+	int efecti;
+	cin >> efecti;
+	creado.ataquePesado.setEfectividadAtaque(efecti);
 	cout << "Efectividad enemiga" << endl;
-	cin >> efec;
-	creado.ataquePesado.setEfectividadEnemiga(efec);
+	cin >> efecti;
+	creado.ataquePesado.setEfectividadEnemiga(efecti);
 	cout << "Velocidad ataque" << endl;
 	cin >> velocidad;
 	creado.ataquePesado.setVelocidadAtaque(velocidad);
@@ -149,11 +150,11 @@ void ArchivoKlostermon::cargarConsola()
 	cin >> danio;
 	creado.ataqueEspecial.setDanioPropio(danio);
 	cout << "Efectividad ataque" << endl;
-	cin >> efec;
-	creado.ataqueEspecial.setEfectividadAtaque(efec);
+	cin >> efecti;
+	creado.ataqueEspecial.setEfectividadAtaque(efecti);
 	cout << "Efectividad enemiga" << endl;
-	cin >> efec;
-	creado.ataqueEspecial.setEfectividadEnemiga(efec);
+	cin >> efecti;
+	creado.ataqueEspecial.setEfectividadEnemiga(efecti);
 	cout << "Velocidad ataque" << endl;
 	cin >> velocidad;
 	creado.ataqueEspecial.setVelocidadAtaque(velocidad);
@@ -162,10 +163,11 @@ void ArchivoKlostermon::cargarConsola()
 	creado.ataqueEspecial.setVelocidadEnemiga(velocidad);
 	cout << "Multiplicador Propio(0.1 = +10%)";
 	cin >> mult;
-	creado.ataquePesado.setMultPropio(mult);
+	creado.ataqueEspecial.setMultPropio(mult);
 	cout << "Multiplicador Enemigo(-0.1 = -10%)";
 	cin >> mult;
-	creado.ataquePesado.setMultEnemigo(mult);
+	creado.ataqueEspecial.setMultEnemigo(mult);
+	creado.setMultiplicador(1.0f);
 
 	cout << "Random Danio: " << creado.ataqueEspecial.getDanio() << endl;
 	cout << "El path de texture es" << creado.getPathTexture().toAnsiString()<<endl;

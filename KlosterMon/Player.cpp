@@ -33,6 +33,11 @@ void Player::SetKlostermon(Klostermon k, int pos)
 	klostermon[pos] = k;
 }
 
+void Player::setMoney(int n_money)
+{
+	money = n_money;
+}
+
 Klostermon Player::getKlostermon(int pos)
 {
 	if (pos > 2 || pos < 0)
@@ -41,4 +46,9 @@ Klostermon Player::getKlostermon(int pos)
 		return Klostermon();
 	}
 	return klostermon[pos];
+}
+
+int Player::getMoney()
+{
+	return money;
 }

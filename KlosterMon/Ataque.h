@@ -1,13 +1,17 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <iostream>
 using namespace sf;
+
+class Klostermon;
+
 class Ataque
 {
 	char nombre[9];
 	int danioMin;
 	int danioMax;
 	int danioPropio;
-	int efectividad;
+	int efectividadPropia;
 	int efectividadEnemiga;
 	int velocidad;
 	int velocidadEnemiga;
@@ -38,5 +42,8 @@ public:
 	void setMultPropio(float);
 	float getMultEnemigo();
 	void setMultEnemigo(float);
+
+	String utilizarAtaque(Klostermon& enemigo,Klostermon& aliado);
+
 };
 

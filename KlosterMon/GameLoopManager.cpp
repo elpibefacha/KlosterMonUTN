@@ -48,6 +48,21 @@ void GameLoopManager::GameLoop()
             //DRAW
             gameplay.Draw(window);
         }
+        else if (sceneActual == 2)//En la tienda
+        {
+            if (!sceneManager.getBoolLoad())
+            {
+                tienda.loadTienda();
+            }
+            //CMD
+
+
+            //VUELVE AL MENU
+            tienda.Update();
+            window.clear();
+            //DRAW
+            tienda.Draw(window);
+        }
 
         window.display();
 	}

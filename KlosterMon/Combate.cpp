@@ -139,7 +139,7 @@ void Combate::IniciarCombate(String combateText)
 void Combate::DividirTexto(const String& string, String partes[])
 {
 
-	for (int i = 0; i < 5;i++)
+	for (int i = 0; i < 10;i++)
 	{
 		partes[i] = "";
 	}

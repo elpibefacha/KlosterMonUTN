@@ -17,6 +17,8 @@ public:
 	string getName();
 	void SetName(String);
 	void SetKlostermon(Klostermon k, int pos);
+	void setMoney(int);
 	Klostermon getKlostermon(int pos);
+	int getMoney();
 };
 

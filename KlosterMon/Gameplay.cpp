@@ -9,7 +9,7 @@ void Gameplay::initKlostermons()
 
 	for (int i = 0; i < 3;i++)
 	{
-		playerKlos[i] = player.getKlostermon(i);
+		playerKlos[i] = player.getKlostermon(0);
 		enemyKlos[i] = enemigo.randomKlostermonSetter();
 		cout << "Klostermon enemigo num " << i + 1 << " : " << enemyKlos[i].getNameKlostermon().toAnsiString()<<endl;
 		cout << "Klostermon jugador num " << i + 1 << " : " << playerKlos[i].getNameKlostermon().toAnsiString() << endl;
@@ -137,30 +137,11 @@ void Gameplay::UpdateAtaque()
 	{
 		if (ataquePesadoSelect)
 		{
-			combate.interfaz = combate.TEXTO;
-			int efectividad = playerKlos[klostermonIndexPlayer].getEfectividad();
-			int random = rand() % 101;
-			if (random > efectividad)
-			{
-				String ataqueString = playerKlos[klostermonIndexPlayer].getNameKlostermon() + " utiliza "
-					+ playerKlos[klostermonIndexPlayer].ataquePesado.getNombre() + "!/"
-					+ "Pero fallo!";
-				Atacar(ataqueString, 0);//HAY QUE HACER QUE LA CLASE ATAQUE PUEDA ATACAR 
-				//(YA QUE ES LA QUE BAJARA LAS STATS)
-			}
-			else
-			{
-				String ataqueString = playerKlos[klostermonIndexPlayer].getNameKlostermon() + " utiliza "
-					+ playerKlos[klostermonIndexPlayer].ataquePesado.getNombre() + "!";
-				Atacar(ataqueString, playerKlos[klostermonIndexPlayer].ataquePesado.getDanio());
-				//HAY QUE HACER QUE LA CLASE ATAQUE PUEDA ATACAR 
-				//(YA QUE ES LA QUE BAJARA LAS STATS)
-			}
+			Atacar(playerKlos[klostermonIndexPlayer].ataquePesado.utilizarAtaque(enemyKlos[klostermonIndexEnemy], playerKlos[klostermonIndexPlayer]));
 		}
 		else
 		{
-			combate.interfaz = combate.TEXTO;
-			combate.MostrarTexto("Urkos usa ataque especial!/Ahora Laras tiene mas chance de fallar!");
+			Atacar(playerKlos[klostermonIndexPlayer].ataqueEspecial.utilizarAtaque(enemyKlos[klostermonIndexEnemy], playerKlos[klostermonIndexPlayer]));
 		}
 
 		frameCooldown = 0;
@@ -274,21 +255,16 @@ void Gameplay::UpdateObjetos()
 }
 
 
-void Gameplay::Atacar(String ataqueString, int danioHecho)
+void Gameplay::Atacar(String ataqueString)
 {
 	//Se verifica quien tiene mas velocidad
 	if (true)
 	{
 		combate.interfaz = combate.TEXTO;
 		//Enemy.ai() //Nos da un string
-		String ataqueEnemigo = enemyKlos[klostermonIndexEnemy].getNameKlostermon() + " enemigo utilizo "
-			+ enemyKlos[klostermonIndexEnemy].ataquePesado.getNombre() + "!";
-		combate.MostrarTexto(ataqueString + "/" + ataqueEnemigo);
-		
-		int danioEnemigo = enemyKlos[klostermonIndexEnemy].ataquePesado.getDanio();
+		String ataqueEnemigo = enemyKlos[klostermonIndexEnemy].ataquePesado.utilizarAtaque(playerKlos[klostermonIndexPlayer],enemyKlos[klostermonIndexEnemy]);
 
-		playerKlos[klostermonIndexPlayer].setVida(playerKlos[klostermonIndexPlayer].getVida() - danioEnemigo);
-		enemyKlos[klostermonIndexEnemy].setVida(enemyKlos[klostermonIndexEnemy].getVida() - danioHecho);
+		combate.MostrarTexto(ataqueString + "/" + ataqueEnemigo);
 		combate.changeHPText(playerKlos[klostermonIndexPlayer].getVida(), enemyKlos[klostermonIndexEnemy].getVida());
 	}
 }

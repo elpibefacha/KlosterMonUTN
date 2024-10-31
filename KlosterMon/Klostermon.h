@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "Ataque.h"
 using namespace sf;
+class Ataque;
 class Klostermon
 {
 private: 
@@ -11,7 +12,7 @@ private:
 	int _maxVida;
 	int _velocidad; 
 	int _efectividad; 
-	float multiplicadoDanio;
+	float multiplicadorDanio;
 public:
 	Ataque ataquePesado;
 	Ataque ataqueEspecial;
@@ -22,11 +23,13 @@ public:
 	int getMaxVida();
 	int getEfectividad(); 
 	int getVelocidad();
+	float getMultiplicador();
 	String getPathTexture();
 	void setMaxVida(int);
 	void setVida(int);
 	void setEfectividad(int);
 	void setVelocidad(int); 
 	void setTexture(String);
+	void setMultiplicador(float);
 };
 
