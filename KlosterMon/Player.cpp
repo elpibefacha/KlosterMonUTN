@@ -1,9 +1,5 @@
 #include "Player.h"
 
-Player::Player()
-{
-	money = 50;
-}
 
 Player::~Player()
 {
@@ -36,6 +32,16 @@ void Player::SetKlostermon(Klostermon k, int pos)
 void Player::setMoney(int n_money)
 {
 	money = n_money;
+}
+
+void Player::setObjeto(int id, int pos)
+{
+	objetos[pos] = id;
+}
+
+int Player::getObjeto(int pos)
+{
+	return objetos[pos];
 }
 
 Klostermon Player::getKlostermon(int pos)

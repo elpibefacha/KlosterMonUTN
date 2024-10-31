@@ -10,7 +10,7 @@ void MenuPartidas::SeleccionarOpcion()
 		return;
 	}
 	gameplayManager.setSaveSlot(opcionSeleccionada);
-	sceneManager.setScene(2);
+	sceneManager.setScene(1);
 }
 
 void MenuPartidas::ActualizarSeleccion()

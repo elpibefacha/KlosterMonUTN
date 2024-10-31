@@ -8,6 +8,7 @@
 #include "GameplayManager.h"
 #include "MusicManager.h"
 #include "Enemy.h"
+#include "Objeto.h"
 class Gameplay
 {
 private:
@@ -44,6 +45,8 @@ private:
 	//Ataque (entre pesado y especial)
 	bool ataquePesadoSelect;
 	//Objetos
+	Objeto* objeto[4];
+
 	int seleccionObj;
 	//KlostermonSelect
 	int k_sel_int;//Se usa para saber cual esta seleccionado en el menu
@@ -55,7 +58,7 @@ public:
 	void UpdateSeleccion();
 	void UpdateAtaque();
 	void UpdateSelKlos();
-	void Atacar(String);
+	void AvanzarTurno(String);
 	void UpdateObjetos();
 };
 

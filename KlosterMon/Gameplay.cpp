@@ -9,10 +9,22 @@ void Gameplay::initKlostermons()
 
 	for (int i = 0; i < 3;i++)
 	{
-		playerKlos[i] = player.getKlostermon(0);
+		playerKlos[i] = player.getKlostermon(i);
 		enemyKlos[i] = enemigo.randomKlostermonSetter();
 		cout << "Klostermon enemigo num " << i + 1 << " : " << enemyKlos[i].getNameKlostermon().toAnsiString()<<endl;
 		cout << "Klostermon jugador num " << i + 1 << " : " << playerKlos[i].getNameKlostermon().toAnsiString() << endl;
+	}
+	for (int i = 0;i < 4;i++)
+	{
+		//cargo los items
+		objeto[i] = Objeto::cargarObjeto(player.getObjeto(i));
+		String nombreObj;
+		if (objeto[i])
+		{
+			nombreObj = objeto[i]->getNombre();
+		}
+		else { nombreObj = "Vacio"; }
+		combate.setNombreObjetos(nombreObj,i);
 	}
 	combate.setKlostermonNames(playerKlos[0].getNameKlostermon(), playerKlos[1].getNameKlostermon(), playerKlos[2].getNameKlostermon());
 }
@@ -137,12 +149,12 @@ void Gameplay::UpdateAtaque()
 	{
 		if (ataquePesadoSelect)
 		{
-			Atacar(playerKlos[klostermonIndexPlayer].ataquePesado.utilizarAtaque(enemyKlos[klostermonIndexEnemy], playerKlos[klostermonIndexPlayer]));
-		}
+			AvanzarTurno(playerKlos[klostermonIndexPlayer].ataquePesado.utilizarAtaque(enemyKlos[klostermonIndexEnemy], playerKlos[klostermonIndexPlayer]));
+		}//Manda cual es el string del ataque
 		else
 		{
-			Atacar(playerKlos[klostermonIndexPlayer].ataqueEspecial.utilizarAtaque(enemyKlos[klostermonIndexEnemy], playerKlos[klostermonIndexPlayer]));
-		}
+			AvanzarTurno(playerKlos[klostermonIndexPlayer].ataqueEspecial.utilizarAtaque(enemyKlos[klostermonIndexEnemy], playerKlos[klostermonIndexPlayer]));
+		}//Manda cual es el string del ataque
 
 		frameCooldown = 0;
 	}
@@ -230,22 +242,13 @@ void Gameplay::UpdateObjetos()
 	
 	if (Keyboard::isKeyPressed(Keyboard::Enter) && frameCooldown > 25)
 	{
+		if (!objeto[seleccionObj]) { return; }
 		combate.interfaz = combate.TEXTO;
-		switch (seleccionObj)
-		{
-		case 0:
-			combate.MostrarTexto("Se utilizo objeto 1!/Perfecto!");
-			break;
-		case 1:
-			combate.MostrarTexto("Se utilizo objeto 2!/Genial!");
-			break;
-		case 2:
-			combate.MostrarTexto("Se utilizo objeto 3!/God!");
-			break;
-		case 3:
-			combate.MostrarTexto("Se utilizo objeto 4!/Epico!");
-			break;
-		}
+		
+		AvanzarTurno(objeto[seleccionObj]->usarObjeto(playerKlos[klostermonIndexPlayer],enemyKlos[klostermonIndexEnemy]));
+		objeto[seleccionObj] = nullptr;
+		combate.setNombreObjetos("Vacio", seleccionObj);
+
 		frameCooldown = 0;
 	}
 	if (Keyboard::isKeyPressed(Keyboard::Escape))
@@ -255,7 +258,7 @@ void Gameplay::UpdateObjetos()
 }
 
 
-void Gameplay::Atacar(String ataqueString)
+void Gameplay::AvanzarTurno(String ataqueString)
 {
 	//Se verifica quien tiene mas velocidad
 	if (true)

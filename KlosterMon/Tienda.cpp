@@ -53,6 +53,13 @@ void Tienda::loadTienda()
 	sonidoComprar.setVolume(50);
 	sonidoError.setBuffer(errorBuff);
 	sonidoError.setVolume(50);
+	//Iniciamos los precios
+	precios[0] = 20;
+	precios[1] = 50;
+	precios[2] = 50;
+	precios[3] = 100;
+	precios[4] = 180;
+	precios[5] = 250;
 
 	scenemanager.sceneLoaded();
 }
@@ -94,11 +101,13 @@ void Tienda::Update()
 	if (Keyboard::isKeyPressed(Keyboard::Enter) && framescooldown >= 60)
 	{
 		tiempo = clock.restart();
-		if (player.getMoney() >= 10)//Mayor o igual que el precio
+		if (player.getMoney() >= precios[cuadroSeleccionado])//Mayor o igual que el precio
 		{
+			//Hay que verificar si el jugador tiene espacio! Diria que en el if de arriba
 			objeto[cuadroSeleccionado].setColor(Color::Green);
+
 			//se quita la plata y se deberia añadir el objeto al jugador
-			player.setMoney(player.getMoney() - 10);
+			player.setMoney(player.getMoney() - precios[cuadroSeleccionado]);
 			String dinero = "Dinero: " + to_string(player.getMoney());
 			configtexto.ConfigurarTexto(Dinero, configtexto.gameplayFont, dinero, 14, Color::Black);
 			configtexto.CentrarTexto(Dinero, -280, -280);

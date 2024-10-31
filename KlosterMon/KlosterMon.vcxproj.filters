@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Objetos">
+      <UniqueIdentifier>{dae866ab-484d-452c-b814-425a178779b7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -78,6 +81,27 @@
     <ClCompile Include="Tienda.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="Objeto.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="CuracionPequeña.cpp">
+      <Filter>Objetos</Filter>
+    </ClCompile>
+    <ClCompile Include="CuracionGrande.cpp">
+      <Filter>Objetos</Filter>
+    </ClCompile>
+    <ClCompile Include="InyeccionCodigo.cpp">
+      <Filter>Objetos</Filter>
+    </ClCompile>
+    <ClCompile Include="EstructuracionCod.cpp">
+      <Filter>Objetos</Filter>
+    </ClCompile>
+    <ClCompile Include="Optimizacion.cpp">
+      <Filter>Objetos</Filter>
+    </ClCompile>
+    <ClCompile Include="CopyPaste.cpp">
+      <Filter>Objetos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Menu.h">
@@ -139,6 +163,27 @@
     </ClInclude>
     <ClInclude Include="Tienda.h">
       <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Objeto.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="CuracionPequeña.h">
+      <Filter>Objetos</Filter>
+    </ClInclude>
+    <ClInclude Include="CuracionGrande.h">
+      <Filter>Objetos</Filter>
+    </ClInclude>
+    <ClInclude Include="InyeccionCodigo.h">
+      <Filter>Objetos</Filter>
+    </ClInclude>
+    <ClInclude Include="EstructuracionCod.h">
+      <Filter>Objetos</Filter>
+    </ClInclude>
+    <ClInclude Include="Optimizacion.h">
+      <Filter>Objetos</Filter>
+    </ClInclude>
+    <ClInclude Include="CopyPaste.h">
+      <Filter>Objetos</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -243,6 +243,16 @@ void Combate::setNombreAtaques(String pesado, String especial)
 	configText.CentrarTexto(AtaquePesado, 250, -150);
 }
 
+void Combate::setNombreObjetos(String nombreObj, int pos)
+{
+	configText.ConfigurarTexto(Objetos[pos], fuenteCombate,nombreObj, 20, Color::Green);
+	//Centramos para que quede bien
+	configText.CentrarTexto(Objetos[0], 125, -150);
+	configText.CentrarTexto(Objetos[1], 125, 150);
+	configText.CentrarTexto(Objetos[2], 225, -150);
+	configText.CentrarTexto(Objetos[3], 225, 150);
+}
+
 void Combate::setKlostermonNames(String k1, String k2, String k3)
 {
 	k_slot[0].setString(k1);

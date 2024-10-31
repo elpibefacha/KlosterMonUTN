@@ -40,6 +40,8 @@ private:
 	// Tiempo
 	Clock clock;
 	Time tiempo;
+	//Precios
+	int precios[6];
 	// Sonidos
 	SoundBuffer comprarBuff;
 	SoundBuffer errorBuff;
