@@ -12,6 +12,8 @@ private:
 	Klostermon klostermon[3];
 	int objetos[4];
 	int money;
+	int enfrentamientoNum;
+	int anioTorneo;
 public:
 	~Player();
 	string getName();
@@ -19,6 +21,10 @@ public:
 	void SetKlostermon(Klostermon k, int pos);
 	void setMoney(int);
 	void setObjeto(int id, int pos);
+	void setEnfrentamientoNum(int);
+	void setAnio(int);
+	int getAnio();
+	int getEnfrentamiento();
 	int getObjeto(int pos);
 	Klostermon getKlostermon(int pos);
 	int getMoney();

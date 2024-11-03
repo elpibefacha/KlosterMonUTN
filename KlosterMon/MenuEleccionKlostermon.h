@@ -6,6 +6,7 @@
 #include "ArchivoPlayer.h";
 #include "GameplayManager.h"
 #include "Player.h"
+#include "SceneManager.h"
 using namespace sf;
 class MenuEleccionKlostermon
 {
@@ -14,6 +15,8 @@ private:
 	ArchivoPlayer archivoPlayer;
 	GameplayManager gameplayManager;
 	MenuManager menumanager;
+	SceneManager sceneManager;
+
 	Player player;
 	Klostermon klostermonSeleccionado;
 	Sprite klostermon[8];

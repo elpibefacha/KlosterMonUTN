@@ -1,8 +1,1 @@
-﻿  GameLoopManager.cpp
-C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-  Gameplay.cpp
-  main.cpp
-C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\main.cpp(6,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
-  Generando código...
-  KlosterMon.vcxproj -> C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\x64\Debug\KlosterMon.exe
+﻿  KlosterMon.vcxproj -> C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\x64\Debug\KlosterMon.exe

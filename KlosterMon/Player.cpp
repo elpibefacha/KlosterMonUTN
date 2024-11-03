@@ -40,6 +40,27 @@ void Player::setObjeto(int id, int pos)
 	objetos[pos] = id;
 }
 
+void Player::setEnfrentamientoNum(int enf)
+{
+	enfrentamientoNum = enf;
+}
+
+void Player::setAnio(int newAnio)
+{
+	anioTorneo = newAnio;
+}
+
+int Player::getAnio()
+{
+	return anioTorneo;
+}
+
+int Player::getEnfrentamiento()
+{
+	return enfrentamientoNum;
+}
+
+
 int Player::getObjeto(int pos)
 {
 	return objetos[pos];

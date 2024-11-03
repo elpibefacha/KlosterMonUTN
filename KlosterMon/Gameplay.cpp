@@ -11,7 +11,12 @@ void Gameplay::initKlostermons()
 	for (int i = 0; i < 3;i++)
 	{
 		playerKlos[i] = player.getKlostermon(i);
+
+		playerKlos[i].setVida(playerKlos[i].getMaxVida());
+
 		enemyKlos[i] = enemigo.randomKlostermonSetter();
+
+		enemyKlos[i].setVida(enemyKlos[i].getMaxVida());
 
 		cout << "Klostermon enemigo num " << i + 1 << " : " << enemyKlos[i].getNameKlostermon().toAnsiString()<<endl;
 		cout << "Klostermon jugador num " << i + 1 << " : " << playerKlos[i].getNameKlostermon().toAnsiString() << endl;
@@ -73,9 +78,34 @@ void Gameplay::loadGameplay()
 	initKlostermons();
 
 	enemigo.randomNameSetter();
+	if (player.getAnio() == 2024 && player.getEnfrentamiento() == 3)
+	{
+		enemigo.forceName("Klostr");
+	}
 
 	sceneManager.sceneLoaded();
-	String stringCombate = ">> Comienza el combate!/>> " 
+	
+	String stringCombate;
+	if (player.getEnfrentamiento() == 1 && player.getAnio() == 2024)
+	{
+		stringCombate = ">>Aqui comienza tu aventura.../Tu primer torneo Klostermon!/";
+	}
+	else if (player.getEnfrentamiento() == 1)
+	{
+		stringCombate = ">>Empieza el torneo Klostermon de " + to_string(player.getAnio()) + "./" + "Haz lo posible para ganarlo!/";
+	}
+	else if (player.getEnfrentamiento() == 3 && player.getAnio() == 2024)
+	{
+		stringCombate = ">>Estas en la final.../Sientes los nervios.../Te toca enfretarte contra el inventor\nde los Klostermones./Klosterman!/";
+		musica.playMusic("Sounds/combatefinal.ogg");
+	}
+	else if (player.getEnfrentamiento() == 3)
+	{
+		stringCombate = ">>Estas en la final.../Otra vez.../No dejes que la victoria escape de tus manos!/";
+		musica.playMusic("Sounds/combatefinal.ogg");
+	}
+
+	stringCombate = stringCombate + ">> Comienza el combate!/>> " 
 		+ player.getName() + " saca a " + playerKlos[0].getNameKlostermon() + "!/"
 		+ ">> " + enemigo.getName() + " saca a " + enemyKlos[0].getNameKlostermon() + "!";
 	combate.IniciarCombate(stringCombate);
@@ -339,6 +369,8 @@ bool Gameplay::playerKlostermonDie(String& ataqueEnemy, String& ataquePlayer)
 			ataqueEnemy = ataqueEnemy + enemigo.getName() + " gana la partida!/"
 				+ "Le das 10 UTs.../Aca termina la aventura de este\ncuatrimestre...";
 
+			player.setAnio(player.getAnio() + 1);
+			player.setEnfrentamientoNum(1);
 			player.setMoney(player.getMoney() - 10);
 			archivo.sobreEscribir(gameplayManager.getSaveSlot(), player);
 			//Se muestra el texto
@@ -385,12 +417,33 @@ bool Gameplay::enemyKlostermonDie(String& ataqueEnemy, String ataquePlayer)
 			int dineroGanado = rand() % (70 + 1 - 15) + 15;
 			ataqueEnemy = ataqueEnemy + "Ganaste " + to_string(dineroGanado) + "UTs!/" +
 				"Tus klostermones suben sus estadisticas!";
+			player.setEnfrentamientoNum(player.getEnfrentamiento() + 1);//Avanzamos un puesto
 			//SE VERIFICA SI ES EL ULTIMO COMBATE DEL AÑO (3), SI ES SE ENTREGA MAS DINERO
+			if (player.getEnfrentamiento() == 3)
+			{
+				ataqueEnemy = ataqueEnemy + "/Eres el campeon del \ntorneo klostermon " + to_string(player.getAnio()) + "!/"
+					+ "Obtienes 100Uts extra!\n Te serviran para el siguente torneo!";
+				player.setMoney(player.getMoney() + 100);
+				player.setAnio(player.getAnio() + 1);
+				player.setEnfrentamientoNum(1);
+			}
+			else { player.setEnfrentamientoNum(player.getEnfrentamiento() + 1); }//Avanzamos un puesto}
 			player.setMoney(player.getMoney() + dineroGanado);
 			for (int i = 0; i < 3;i++)
 			{
-				player.getKlostermon(i).setMultiplicador(player.getKlostermon(i).getMultiplicador() + 0.05f);
-				player.getKlostermon(i).setMaxVida(player.getKlostermon(i).getMaxVida() + 3);
+				Klostermon mejorado;
+				for (int ii = 0; ii < 8;ii++)
+				{
+					if (archivoKlostermon.leerArchivo(ii).getNameKlostermon() == playerKlos[i].getNameKlostermon())
+					{
+						mejorado = archivoKlostermon.leerArchivo(ii);
+						mejorado.setMaxVida(playerKlos[i].getMaxVida() + 4);
+						mejorado.setMultiplicador(playerKlos[i].getMultiplicador() + 0.1f);
+					}
+				}
+				player.SetKlostermon(mejorado,i);
+				//player.getKlostermon(i).setMultiplicador(player.getKlostermon(i).getMultiplicador() + 10.0f);
+				//player.getKlostermon(i).setMaxVida(player.getKlostermon(i).getMaxVida() + 4);
 			}
 			//Guarda
 			archivo.sobreEscribir(gameplayManager.getSaveSlot(), player);

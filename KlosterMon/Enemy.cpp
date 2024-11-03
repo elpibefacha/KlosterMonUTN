@@ -22,6 +22,12 @@ void Enemy::randomNameSetter() {
 	}
 }
 
+void Enemy::forceName(String nameForced)
+{
+	string name = nameForced.toAnsiString();
+	strcpy(nombre, name.c_str());
+}
+
 Klostermon Enemy::randomKlostermonSetter()
 {
 	int random = rand() % (2 + 1 - 0) + 0;

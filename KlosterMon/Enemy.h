@@ -14,6 +14,7 @@ public:
 	~Enemy();
 	void atacarIA(); 
 	void randomNameSetter();
+	void forceName(String);
 	Klostermon randomKlostermonSetter();
 	string getName();
 };

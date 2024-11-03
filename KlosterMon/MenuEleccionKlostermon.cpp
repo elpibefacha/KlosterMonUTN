@@ -111,7 +111,11 @@ void MenuEleccionKlostermon::Update()
 			cerr << "2- " << player.getKlostermon(1).getNameKlostermon().toAnsiString() << endl;
 			cerr << "3- " << player.getKlostermon(2).getNameKlostermon().toAnsiString() << endl;
 			cerr << "Nombre " << player.getName() << endl;
+
+			player.setEnfrentamientoNum(1);
+			player.setAnio(2024);
 			archivoPlayer.sobreEscribir(gameplayManager.getSaveSlot(),player);
+			sceneManager.setScene(2);
 		}
 		framescooldown = 0;
 	}
