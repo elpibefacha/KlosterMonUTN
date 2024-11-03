@@ -61,9 +61,9 @@ private:
 	String stringPartes[10];//COMO MAX 10
 	
 public:
-	Combate();
 	int partesEncontradas;
 	int parteActual;
+	Combate();
 	//Enum
 	enum Interfaz
 	{
@@ -75,7 +75,15 @@ public:
 	};
 	Interfaz interfaz;
 	//
-
+	enum Estado
+	{
+		NOTHING,
+		K_ENEMY_DIE,
+		K_PLAYER_DIE,
+		K_PLAYER_ATTACK,
+		K_ENEMY_ATTACK,
+	};
+	Estado estado;
 	void Draw(RenderWindow&);
 	void IniciarCombate(String);
 	void DividirTexto(const String& string, String partes[]);

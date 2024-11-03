@@ -38,6 +38,7 @@ void Gameplay::initKlostermons()
 
 void Gameplay::Update()
 {
+	UpdateEstado();
 	if (Keyboard::isKeyPressed(Keyboard::Enter) && frameCooldown > 15 && combate.interfaz == combate.TEXTO)
 	{
 		combate.avanzarDialogo();
@@ -242,6 +243,104 @@ void Gameplay::UpdateSelKlos()
 	}
 }
 
+void Gameplay::UpdateEstado()
+{
+	if (textoIndex != combate.parteActual)
+	{
+		avanzoTexto();
+		textoIndex = combate.parteActual;
+	}
+}
+
+void Gameplay::avanzoTexto()
+{
+	if (playerMoreFast)
+	{
+		switch (textoIndex)
+		{
+		case 0:
+			if (k_player_attack) {
+				combate.changeHPEnemy(vidaEnemy);
+			}
+			break;
+		case 1:
+			if (k_enemy_died) {
+				combate.setTexture_K_Enemy("Sprites/transparente.png");
+			}
+			break;
+		case 2:
+			if (k_enemy_died && !k_player_won) {
+				combate.setTexture_K_Enemy(enemyKlos[klostermonIndexEnemy].getPathTexture());
+				combate.changeHPEnemy(enemyKlos[klostermonIndexEnemy].getVida());
+				k_enemy_died = false;
+			}
+			else if (k_enemy_attack)
+			{
+				combate.changeHPPlayer(vidaPlayer);
+			}
+			break;
+		case 3:
+			if (k_player_died)
+			{
+				combate.setTexture_K_Ally("Sprites/transparente.png");
+			}
+			break;
+		case 4:
+			if (k_player_died && !k_enemy_won)
+			{
+				combate.setTexture_K_Ally(playerKlos[klostermonIndexPlayer].getPathTexture());
+				combate.changeHPPlayer(playerKlos[klostermonIndexPlayer].getVida());
+				k_player_died = false;
+			}
+		break;
+		default:
+			break;
+		}
+	}
+	else
+	{
+		switch (textoIndex)
+		{
+		case 0:
+			if (k_enemy_attack)
+			{
+				combate.changeHPPlayer(vidaPlayer);
+			}
+			break;
+		case 1:
+			if (k_player_died)
+			{
+				combate.setTexture_K_Ally("Sprites/transparente.png");
+			}
+			break;
+		case 2:
+			if (k_player_died && !k_enemy_won)
+			{
+				combate.setTexture_K_Ally(playerKlos[klostermonIndexPlayer].getPathTexture());
+				combate.changeHPPlayer(playerKlos[klostermonIndexPlayer].getVida());
+				k_player_died = false;
+			}
+			else if(k_player_attack)
+			{
+				combate.changeHPEnemy(vidaEnemy);
+			}
+			break;
+		case 3:
+			if (k_enemy_died) {
+				combate.setTexture_K_Enemy("Sprites/transparente.png");
+			}
+			break;
+		case 4:
+			if (k_enemy_died && !k_player_won) {
+				combate.setTexture_K_Enemy(enemyKlos[klostermonIndexEnemy].getPathTexture());
+				combate.changeHPEnemy(enemyKlos[klostermonIndexEnemy].getVida());
+				k_enemy_died = false;
+			}
+			break;
+		}
+	}
+}
+
 
 void Gameplay::UpdateObjetos()
 {
@@ -319,29 +418,41 @@ void Gameplay::Atacar(Ataque ataqueUsado)
 	if (playerKlos[klostermonIndexPlayer].getVelocidad() >= enemyKlos[klostermonIndexEnemy].getVelocidad())
 	{
 		//ataca primero
+		playerMoreFast = true;
 		String ataquePlayer = ataqueUsado.utilizarAtaque(enemyKlos[klostermonIndexEnemy], playerKlos[klostermonIndexPlayer]);
 		String ataqueEnemy;
+		vidaEnemy = enemyKlos[klostermonIndexEnemy].getVida();
+		k_player_attack = true;
 		//Si muere el klostermon enemigo
 		if (enemyKlostermonDie(ataqueEnemy, ataquePlayer)) { return; }
 		
 		ataqueEnemy = enemyKlos[klostermonIndexEnemy].ataquePesado.utilizarAtaque(playerKlos[klostermonIndexPlayer], enemyKlos[klostermonIndexEnemy]);
+		
+		vidaPlayer = playerKlos[klostermonIndexPlayer].getVida();
+		k_enemy_attack = true;
 		//Si muere el klostermon del jugador
 		if (playerKlostermonDie(ataqueEnemy, ataquePlayer)) { return; }
 
 		//Si no muere ninguno de los dos
+		
 		combate.interfaz = combate.TEXTO;
 		combate.MostrarTexto(ataquePlayer + "/" + ataqueEnemy);
-		combate.changeHPText(playerKlos[klostermonIndexPlayer].getVida(), enemyKlos[klostermonIndexEnemy].getVida());
+		//combate.changeHPText(playerKlos[klostermonIndexPlayer].getVida(), enemyKlos[klostermonIndexEnemy].getVida());
 		return;
 	}	
 	else
 	{
+		playerMoreFast = false;
 		String ataqueEnemy = enemyKlos[klostermonIndexEnemy].ataquePesado.utilizarAtaque(playerKlos[klostermonIndexPlayer], enemyKlos[klostermonIndexEnemy]);
 		String ataquePlayer = "";
+		vidaPlayer = playerKlos[klostermonIndexPlayer].getVida();
+		k_enemy_attack = true;
 		//SI MUERE EL KLOSTERMON DEL JUGADOR
 		if (playerKlostermonDie(ataqueEnemy, ataquePlayer)) { return; }
 
 		ataquePlayer = ataqueUsado.utilizarAtaque(enemyKlos[klostermonIndexEnemy], playerKlos[klostermonIndexPlayer]);
+		vidaEnemy = enemyKlos[klostermonIndexEnemy].getVida();
+		k_player_attack = true;
 		//Si muere el klostermon del enemigo
 		if (enemyKlostermonDie(ataqueEnemy, ataquePlayer)) { return; }
 		//si no muere ninguno
@@ -363,8 +474,10 @@ bool Gameplay::playerKlostermonDie(String& ataqueEnemy, String& ataquePlayer)
 
 		if (klostermonRestantes_player <= 0)//Si el enemigo gana
 		{
-			combate.setTexture_K_Ally("Sprites/transparente.png");//ImagenVacia
-			combate.changeHPText(0, enemyKlos[klostermonIndexEnemy].getVida());
+			k_player_died = true;
+			k_enemy_won = true;
+			//combate.setTexture_K_Ally("Sprites/transparente.png");//ImagenVacia
+			//combate.changeHPText(0, enemyKlos[klostermonIndexEnemy].getVida());
 
 			ataqueEnemy = ataqueEnemy + enemigo.getName() + " gana la partida!/"
 				+ "Le das 10 UTs.../Aca termina la aventura de este\ncuatrimestre...";
@@ -381,6 +494,7 @@ bool Gameplay::playerKlostermonDie(String& ataqueEnemy, String& ataquePlayer)
 		}
 		else //Si me quedan klostermones
 		{
+			k_player_died = true;
 			for (int i = 0; i < 3;i++)
 			{
 				if (playerKlos[i].getVida() > 0)
@@ -389,8 +503,8 @@ bool Gameplay::playerKlostermonDie(String& ataqueEnemy, String& ataquePlayer)
 					i = 3;
 				}
 			}
-			combate.setTexture_K_Ally(playerKlos[klostermonIndexPlayer].getPathTexture());
-			combate.changeHPText(playerKlos[klostermonIndexPlayer].getVida(), enemyKlos[klostermonIndexEnemy].getVida());
+			//combate.setTexture_K_Ally(playerKlos[klostermonIndexPlayer].getPathTexture());
+			//combate.changeHPText(playerKlos[klostermonIndexPlayer].getVida(), enemyKlos[klostermonIndexEnemy].getVida());
 			combate.setNombreAtaques(playerKlos[klostermonIndexPlayer].ataquePesado.getNombre(), playerKlos[klostermonIndexPlayer].ataqueEspecial.getNombre());
 			ataqueEnemy = ataqueEnemy + player.getName() + " saca a " + playerKlos[klostermonIndexPlayer].getNameKlostermon() + "!";
 
@@ -410,8 +524,11 @@ bool Gameplay::enemyKlostermonDie(String& ataqueEnemy, String ataquePlayer)
 		klostermonRestantes_enemy--;
 		if (klostermonRestantes_enemy <= 0)//SI GANA
 		{
-			combate.setTexture_K_Enemy("Sprites/transparente.png");//ImagenVacia
-			combate.changeHPText(playerKlos[klostermonIndexPlayer].getVida(), 0);
+			k_enemy_died = true;
+			k_player_won = true;
+			//combate.setTexture_K_Enemy("Sprites/transparente.png");//ImagenVacia
+			//combate.changeHPText(playerKlos[klostermonIndexPlayer].getVida(), 0);
+
 
 			ataqueEnemy = ataqueEnemy + player.getName() + " gana la partida!/";
 			int dineroGanado = rand() % (70 + 1 - 15) + 15;
@@ -435,15 +552,13 @@ bool Gameplay::enemyKlostermonDie(String& ataqueEnemy, String ataquePlayer)
 				for (int ii = 0; ii < 8;ii++)
 				{
 					if (archivoKlostermon.leerArchivo(ii).getNameKlostermon() == playerKlos[i].getNameKlostermon())
-					{
+					{//Busca al klostermon por nombre y lo modifica para que tenga la stats mejoradas.
 						mejorado = archivoKlostermon.leerArchivo(ii);
 						mejorado.setMaxVida(playerKlos[i].getMaxVida() + 4);
 						mejorado.setMultiplicador(playerKlos[i].getMultiplicador() + 0.1f);
 					}
 				}
-				player.SetKlostermon(mejorado,i);
-				//player.getKlostermon(i).setMultiplicador(player.getKlostermon(i).getMultiplicador() + 10.0f);
-				//player.getKlostermon(i).setMaxVida(player.getKlostermon(i).getMaxVida() + 4);
+				player.SetKlostermon(mejorado,i);//Setea el klostermon
 			}
 			//Guarda
 			archivo.sobreEscribir(gameplayManager.getSaveSlot(), player);
@@ -455,9 +570,11 @@ bool Gameplay::enemyKlostermonDie(String& ataqueEnemy, String ataquePlayer)
 		}
 		else//Si le quedan klostermones
 		{
+			k_enemy_died = true;
+			vidaEnemy = enemyKlos[klostermonIndexEnemy].getVida();
 			klostermonIndexEnemy++;//Utiliza el siguente klostermon
-			combate.setTexture_K_Enemy(enemyKlos[klostermonIndexEnemy].getPathTexture());
-			combate.changeHPText(playerKlos[klostermonIndexPlayer].getVida(), enemyKlos[klostermonIndexEnemy].getVida());
+			//combate.setTexture_K_Enemy(enemyKlos[klostermonIndexEnemy].getPathTexture());
+			//combate.changeHPText(playerKlos[klostermonIndexPlayer].getVida(), enemyKlos[klostermonIndexEnemy].getVida());
 
 			ataqueEnemy = ataqueEnemy + enemigo.getName() + " saca a " + enemyKlos[klostermonIndexEnemy].getNameKlostermon() + "!";
 			combate.interfaz = combate.TEXTO;
@@ -471,15 +588,15 @@ bool Gameplay::enemyKlostermonDie(String& ataqueEnemy, String ataquePlayer)
 void Gameplay::AvanzarTurno(String accionString)
 {
 	//Se hace primero lo del jugador ya que es una accion
-
+	playerMoreFast = true;
+	k_enemy_attack = true;
 	combate.interfaz = combate.TEXTO;
+	combate.changeHPPlayer(playerKlos[klostermonIndexPlayer].getVida());
 	//Enemy.ai() //Nos da un string (El ataque del enemigo)
 	String ataqueEnemy = enemyKlos[klostermonIndexEnemy].ataquePesado.utilizarAtaque(playerKlos[klostermonIndexPlayer],enemyKlos[klostermonIndexEnemy]);
-
-	combate.changeHPText(playerKlos[klostermonIndexPlayer].getVida(), enemyKlos[klostermonIndexEnemy].getVida());
+	vidaPlayer = playerKlos[klostermonIndexPlayer].getVida();
 	//Si murio el klostermon
 	playerKlostermonDie(ataqueEnemy, accionString);
-
 	combate.MostrarTexto(accionString + "/" + ataqueEnemy);
 }
 

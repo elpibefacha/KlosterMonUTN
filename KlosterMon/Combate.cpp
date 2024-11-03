@@ -72,6 +72,9 @@ void Combate::CargarInterfaz()
 	configText.CentrarTexto(k_slot[0], 200, -150);
 	configText.CentrarTexto(k_slot[1], 200, 0);
 	configText.CentrarTexto(k_slot[2], 200, 150);
+
+	estado = NOTHING;
+
 }
 
 Combate::Combate()
@@ -171,6 +174,7 @@ void Combate::avanzarDialogo()
 	else 
 	{
 		interfaz = SELECCION;
+		parteActual = 0;
 		std::cerr << "Fin del texto" << endl;
 	}
 }

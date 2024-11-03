@@ -41,6 +41,7 @@ private:
 
 	//
 	int frameCooldown;
+	int textoIndex;
 	String stringCombate;
 	//Seleccion (entre ataque,objeto y cambiar)
 	int SelecctionMenu;
@@ -52,12 +53,25 @@ private:
 	int seleccionObj;
 	//KlostermonSelect
 	int k_sel_int;//Se usa para saber cual esta seleccionado en el menu
-	
+	//Diferentes bools
+	bool k_player_attack = false;
+	bool k_enemy_attack = false;
+	bool k_enemy_died = false;
+	bool k_player_died = false;
+	bool k_enemy_won = false;
+	bool k_player_won = false;
+	bool playerMoreFast = false;
+
+	int vidaEnemy;
+	int vidaPlayer;
+
 	void initKlostermons();
 
 	void UpdateSeleccion();
 	void UpdateAtaque();
 	void UpdateSelKlos();
+	void UpdateEstado();
+	void avanzoTexto();
 	void Atacar(Ataque ataqueUsado);
 	bool playerKlostermonDie(String& ataqueEnemy, String& ataquePlayer);
 	bool enemyKlostermonDie(String& ataqueEnemy, String ataquePlayer);
