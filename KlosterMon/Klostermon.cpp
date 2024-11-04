@@ -33,6 +33,7 @@ void Klostermon::setMultiplicador(float nuevoMult)
 
 void Klostermon::setVida(int vida) {
 	if (vida > _maxVida) { vida = _maxVida; }
+	if (vida <= 0) { vida = 0; }
 	_vida = vida;
 }
 

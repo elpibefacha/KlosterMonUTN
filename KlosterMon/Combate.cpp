@@ -73,13 +73,6 @@ void Combate::CargarInterfaz()
 	configText.CentrarTexto(k_slot[1], 200, 0);
 	configText.CentrarTexto(k_slot[2], 200, 150);
 
-	estado = NOTHING;
-
-}
-
-Combate::Combate()
-{
-	CargarInterfaz();
 }
 
 

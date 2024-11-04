@@ -1,2 +1,17 @@
-﻿  Gameplay.cpp
+﻿  GameLoopManager.cpp
+C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+  Menu.cpp
+C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\Menu.cpp(136,50): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\Menu.cpp(136,45): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  MenuNuevaPartida.cpp
+C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\MenuNuevaPartida.cpp(120,44): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\MenuNuevaPartida.cpp(120,39): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  MenuPartidas.cpp
+C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\MenuPartidas.cpp(24,46): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\MenuPartidas.cpp(24,41): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  main.cpp
+C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\main.cpp(6,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  Generando código...
   KlosterMon.vcxproj -> C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\x64\Debug\KlosterMon.exe

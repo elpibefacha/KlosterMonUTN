@@ -14,6 +14,7 @@ private:
 	int money;
 	int enfrentamientoNum;
 	int anioTorneo;
+	bool completoJuego;
 public:
 	~Player();
 	string getName();
@@ -23,6 +24,8 @@ public:
 	void setObjeto(int id, int pos);
 	void setEnfrentamientoNum(int);
 	void setAnio(int);
+	void completarJuego(bool);
+	bool completoElJuego();
 	int getAnio();
 	int getEnfrentamiento();
 	int getObjeto(int pos);

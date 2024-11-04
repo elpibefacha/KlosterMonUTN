@@ -26,6 +26,7 @@ void MenuPartidas::ActualizarSeleccion()
 
 void MenuPartidas::Subir()
 {
+	
 	frameCooldown = 0;
 	if (opcionSeleccionada - 1 <= -1)
 	{
@@ -59,6 +60,9 @@ MenuPartidas::MenuPartidas()
 
 void MenuPartidas::Load()
 {
+	//Sonido
+	
+	//Archivo Player
 	archivoPlayer.ArchiveExist();
 	for (int i = 0; i < 3;i++)
 	{

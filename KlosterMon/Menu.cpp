@@ -9,6 +9,8 @@ Menu::Menu()
 	menuNombreJuego = "Klostermon";
 	configTexto.ConfigurarTexto(textoTitulo, fuente, menuNombreJuego, 85, Color::Yellow,Color::Black,8);
 	configTexto.CentrarTexto(textoTitulo, -200);
+	bufferSound.loadFromFile("Sounds/moveMenu.ogg");
+	moveSound.setBuffer(bufferSound);
 	//DemasOpciones
 	fuenteOpciones = configTexto.gameplayFont;
 
@@ -24,6 +26,8 @@ Menu::Menu()
 		textoOpciones[i].setCharacterSize(20);
 		textoOpciones[i].setFont(fuenteOpciones);
 		textoOpciones[i].setFillColor(Color::Black);
+		textoOpciones[i].setOutlineThickness(1.5f);
+		textoOpciones[i].setOutlineColor(Color::White);
 	}
 	opcionSeleccionada = 0;
 	frameWait = 30;
@@ -134,6 +138,7 @@ void Menu::CambiarSeleccion()
 
 void Menu::Bajar()
 {
+	moveSound.play();
 	frameWait = 0;
 	if (opcionSeleccionada + 1 >= 4)
 	{
@@ -148,6 +153,7 @@ void Menu::Bajar()
 
 void Menu::Subir()
 {
+	moveSound.play();
 	frameWait = 0;
 	if (opcionSeleccionada - 1 <= -1)
 	{

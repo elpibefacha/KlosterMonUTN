@@ -16,7 +16,6 @@ private:
 	SceneManager sceneManager;
 	GenerarTexto configText;
 	
-	void CargarInterfaz();
 	String enfrentamientoString;
 	Text textoBatalla;
 	Font fuenteCombate;
@@ -63,7 +62,6 @@ private:
 public:
 	int partesEncontradas;
 	int parteActual;
-	Combate();
 	//Enum
 	enum Interfaz
 	{
@@ -74,16 +72,8 @@ public:
 		KLOS_SEL,
 	};
 	Interfaz interfaz;
-	//
-	enum Estado
-	{
-		NOTHING,
-		K_ENEMY_DIE,
-		K_PLAYER_DIE,
-		K_PLAYER_ATTACK,
-		K_ENEMY_ATTACK,
-	};
-	Estado estado;
+	// Metodos
+	void CargarInterfaz();
 	void Draw(RenderWindow&);
 	void IniciarCombate(String);
 	void DividirTexto(const String& string, String partes[]);

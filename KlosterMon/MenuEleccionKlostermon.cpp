@@ -5,6 +5,7 @@ void MenuEleccionKlostermon::Load()
 {
 	player.SetName(archivoPlayer.leerArchivo(gameplayManager.getSaveSlot()).getName());
 	player.setMoney(50);//Iniciamos con 50 monedas
+	player.completarJuego(false);
 	for (int i = 0; i < 4; i++)
 	{
 		player.setObjeto(0, i);

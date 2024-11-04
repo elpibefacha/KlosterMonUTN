@@ -31,6 +31,9 @@ class Menu
 	Text textoTitulo;
 	String menuNombreJuego;
 
+	SoundBuffer bufferSound;
+	Sound moveSound;
+
 	Text textoOpciones[4];
 	int opcionSeleccionada;
 	int frameWait;

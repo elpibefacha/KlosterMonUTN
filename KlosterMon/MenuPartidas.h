@@ -23,7 +23,7 @@ private:
 	Font fuenteGuardados;
 	//Textos
 	Text textoSave[3];
-
+	
 	//Fondo
 	Sprite fondoMenu;
 	Texture imageFondo;

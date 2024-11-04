@@ -50,6 +50,16 @@ void Player::setAnio(int newAnio)
 	anioTorneo = newAnio;
 }
 
+void Player::completarJuego(bool com)
+{
+	completoJuego = com;
+}
+
+bool Player::completoElJuego()
+{
+	return completoJuego;
+}
+
 int Player::getAnio()
 {
 	return anioTorneo;
