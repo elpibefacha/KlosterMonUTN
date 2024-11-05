@@ -141,6 +141,7 @@
     <ClCompile Include="CuracionPequeña.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EstructuracionCod.cpp" />
+    <ClCompile Include="FX.cpp" />
     <ClCompile Include="Gameplay.cpp" />
     <ClCompile Include="GameplayManager.cpp" />
     <ClCompile Include="GenerarTexto.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="CuracionPequeña.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EstructuracionCod.h" />
+    <ClInclude Include="FX.h" />
     <ClInclude Include="Gameplay.h" />
     <ClInclude Include="GameplayManager.h" />
     <ClInclude Include="GenerarTexto.h" />

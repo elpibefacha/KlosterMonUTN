@@ -62,6 +62,18 @@ private:
 	bool k_enemy_won = false;
 	bool k_player_won = false;
 	bool playerMoreFast = false;
+	// bools de animacion 
+	bool k_player_mejora = false;
+	bool k_enemy_decadencia = false;
+	bool k_enemy_danio = false;
+	bool k_player_danio = false;
+	bool iniciarAMejora = false;
+	bool iniciarADecadencia = false;
+	bool iniciarADanio_E = false;
+	bool iniciarADanio_P = false;
+	// Tiempos animacion
+	Clock clockAnimacion; 
+	Time tiempoAnimacion; 
 
 	int vidaEnemy;
 	int vidaPlayer;
@@ -72,6 +84,7 @@ private:
 	void UpdateAtaque();
 	void UpdateSelKlos();
 	void UpdateEstado();
+	void UpdateAnimaciones(); 
 	void avanzoTexto();
 	void Atacar(Ataque ataqueUsado);
 	bool playerKlostermonDie(String& ataqueEnemy, String& ataquePlayer);

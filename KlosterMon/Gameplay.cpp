@@ -37,6 +37,7 @@ void Gameplay::initKlostermons()
 
 void Gameplay::Update()
 {
+	UpdateAnimaciones(); 
 	UpdateEstado();
 	if (Keyboard::isKeyPressed(Keyboard::Enter) && frameCooldown > 15 && combate.interfaz == combate.TEXTO && tiempoAnimacion.asSeconds() > 2)
 	{
@@ -65,12 +66,9 @@ void Gameplay::Update()
 void Gameplay::Draw(RenderWindow& window)
 {
 	combate.Draw(window);
-<<<<<<< Updated upstream
-=======
 	if (tiempoAnimacion.asSeconds() <= 2) {
 		combate.efectos.Draw(window);
 	} 
->>>>>>> Stashed changes
 }
 
 void Gameplay::loadGameplay()
@@ -160,8 +158,6 @@ void Gameplay::loadGameplay()
 	k_enemy_won = false;
 	k_player_won = false;
 	playerMoreFast = false;
-<<<<<<< Updated upstream
-=======
 	// bools de animaciones
 	k_player_mejora = false;
 	k_enemy_decadencia = false;
@@ -171,7 +167,6 @@ void Gameplay::loadGameplay()
 	iniciarADecadencia = false;
 	iniciarADanio_E = false;
 	iniciarADanio_P = false;
->>>>>>> Stashed changes
 }
 
 void Gameplay::UpdateSeleccion()
@@ -291,8 +286,6 @@ void Gameplay::UpdateEstado()
 	}
 }
 
-<<<<<<< Updated upstream
-=======
 void Gameplay::UpdateAnimaciones()
 {
 	tiempoAnimacion = clockAnimacion.getElapsedTime();
@@ -330,7 +323,6 @@ void Gameplay::UpdateAnimaciones()
 	
 }
 
->>>>>>> Stashed changes
 void Gameplay::avanzoTexto()
 {
 	if (playerMoreFast)
@@ -341,8 +333,6 @@ void Gameplay::avanzoTexto()
 			if (k_player_attack) {
 				combate.changeHPEnemy(vidaEnemy);
 			}
-<<<<<<< Updated upstream
-=======
 			if (k_player_mejora) {
 				combate.efectos.changeFX(1);
 				combate.efectos.setPosition(60+17*6, 110+17*6);
@@ -364,7 +354,6 @@ void Gameplay::avanzoTexto()
 				clockAnimacion.restart();
 				k_enemy_danio = false; 
 			}
->>>>>>> Stashed changes
 			break;
 		case 1:
 			if (k_enemy_died) {
@@ -563,24 +552,8 @@ void Gameplay::Atacar(Ataque ataqueUsado)
 		String ataqueEnemy;
 		vidaEnemy = enemyKlos[klostermonIndexEnemy].getVida();
 		k_player_attack = true;
-<<<<<<< Updated upstream
-		//Efecto visual del ataque
-		if (ataqueUsado.getDanio() > 0)//Si hace daño
-		{
-			//Hacer efecto visual de daño
-		}
-		else if (ataqueUsado.getEfectividadAtaque() > 0 || ataqueUsado.getVelocidadAtaque() > 0 || ataqueUsado.getMultPropio() > 0)
-		{//Si se mejora a si mismo
-			//Hacer efecto de mejora 
-		}
-		else if (ataqueUsado.getEfectividadEnemiga() < 0 || ataqueUsado.getMultEnemigo() < 0 || ataqueUsado.getVelocidadEnemiga() < 0)
-		{//Si hace un ataque que afecta a stats enemigas
-			//hacer efecto de decaimiento al enemigo
-		}
-=======
 		detectarTipoAnimacion(ataqueUsado, playerKlos[klostermonIndexPlayer]);
->>>>>>> Stashed changes
-			//Si muere el klostermon enemigo
+		//Si muere el klostermon enemigo
 		if (enemyKlostermonDie(ataqueEnemy, ataquePlayer)) { return; }
 		
 		ataqueEnemy = enemyKlos[klostermonIndexEnemy].ataquePesado.utilizarAtaque(playerKlos[klostermonIndexPlayer], enemyKlos[klostermonIndexEnemy]);
@@ -792,20 +765,21 @@ void Gameplay::AvanzarTurno(String accionString)
 void Gameplay::detectarTipoAnimacion(Ataque ataqueUsado, Klostermon k)
 {
 	//Efecto visual del ataque
-		if (ataqueUsado.getDanio() > 0)//Si hace daño
-		{
-			k_enemy_danio = true; 
-			std::cerr << "danioooooo" << endl; 
-		}
-		else if (ataqueUsado.getEfectividadAtaque() > 0 || ataqueUsado.getVelocidadAtaque() > 0 || ataqueUsado.getMultPropio() > 0)
-		{//Si se mejora a si mismo
-			k_player_mejora = true; 
-		}
-		else if (ataqueUsado.getEfectividadEnemiga() < 0 || ataqueUsado.getMultEnemigo() < 0 || ataqueUsado.getVelocidadEnemiga() < 0)
-		{//Si hace un ataque que afecta a stats enemigas
-			k_enemy_decadencia = true; 
-			std::cerr << "Decadenciaaaaa" << endl; 
-		}
+	if (ataqueUsado.getDanio() > 0)//Si hace daño
+	{
+		k_enemy_danio = true;
+		std::cerr << "danioooooo" << endl;
+	}
+	else if (ataqueUsado.getEfectividadAtaque() > 0 || ataqueUsado.getVelocidadAtaque() > 0 || ataqueUsado.getMultPropio() > 0)
+	{//Si se mejora a si mismo
+		k_player_mejora = true;
+	}
+	else if (ataqueUsado.getEfectividadEnemiga() < 0 || ataqueUsado.getMultEnemigo() < 0 || ataqueUsado.getVelocidadEnemiga() < 0)
+	{//Si hace un ataque que afecta a stats enemigas
+		k_enemy_decadencia = true;
+		std::cerr << "Decadenciaaaaa" << endl;
+	}
 }
+
 
 

@@ -59,13 +59,10 @@ private:
 	String stringPartes[10];//COMO MAX 10
 	
 public:
-<<<<<<< Updated upstream
-=======
 	// Sprite animaciones
 	FX efectos; 
 	Sprite klostermonAliado;
 	Sprite klostermonEnemigo;
->>>>>>> Stashed changes
 	int partesEncontradas;
 	int parteActual;
 	//Enum
