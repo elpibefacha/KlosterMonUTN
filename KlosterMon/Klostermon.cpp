@@ -62,6 +62,8 @@ String Klostermon::getPathTexture()
 
 void Klostermon::setMaxVida(int maxvida)
 {
+	if (maxvida <= 0) { maxvida = 1; }
+	if (_vida > maxvida) { _vida = maxvida; }
 	_maxVida = maxvida;
 }
 

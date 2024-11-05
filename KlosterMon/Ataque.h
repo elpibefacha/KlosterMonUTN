@@ -11,6 +11,8 @@ class Ataque
 	int danioMin;
 	int danioMax;
 	int danioPropio;
+	int modVidaTotal;
+	int modVidaTotalEnemiga;
 	int efectividadPropia;
 	int efectividadEnemiga;
 	int velocidad;
@@ -28,6 +30,11 @@ public:
 	int getDanioPropio();
 	void setDanioPropio(int);
 
+	int getModVidaTotal();
+	void setModVidaTotal(int);
+	int getModVidaTotalEnemiga();
+	void setModVidaTotalEnemiga(int);
+
 	int getEfectividadAtaque();
 	void setEfectividadAtaque(int);
 	int getEfectividadEnemiga();
@@ -44,6 +51,7 @@ public:
 	void setMultEnemigo(float);
 
 	String utilizarAtaque(Klostermon& enemigo,Klostermon& aliado);
+	String fallarAtaque(Klostermon atacante);
 
 };
 

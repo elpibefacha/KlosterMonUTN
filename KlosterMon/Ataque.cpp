@@ -42,6 +42,26 @@ void Ataque::setDanioPropio(int selfDamage)
     danioPropio = selfDamage;
 }
 
+int Ataque::getModVidaTotal()
+{
+    return modVidaTotal;
+}
+
+void Ataque::setModVidaTotal(int newmodvida)
+{
+    modVidaTotal = newmodvida;
+}
+
+int Ataque::getModVidaTotalEnemiga()
+{
+    return modVidaTotalEnemiga;
+}
+
+void Ataque::setModVidaTotalEnemiga(int newModVidaEnemiga)
+{
+    modVidaTotalEnemiga = newModVidaEnemiga;
+}
+
 int Ataque::getEfectividadAtaque()
 {
     return efectividadPropia;
@@ -104,13 +124,11 @@ void Ataque::setMultEnemigo(float mult)
 
 String Ataque::utilizarAtaque(Klostermon& target, Klostermon& atacante)
 {
-    Ataque* ataqueEfectuado = this;
-    int efectividad = atacante.getEfectividad();
-    int random = rand() % 101;
-    if (random < efectividad)//Si random es menor que efectividad significa que esta dentro del rango, el ataque se efectua
-    {
+        Ataque* ataqueEfectuado = this;
         int danio_k = ataqueEfectuado->getDanio();
         int danioPropio_k = ataqueEfectuado->getDanioPropio();
+        int modDeVida_k = ataqueEfectuado->getModVidaTotal();
+        int modDeVidaEnemiga_k = ataqueEfectuado->getModVidaTotalEnemiga();
         int velocidad_k = ataqueEfectuado->getVelocidadAtaque();
         int velocidadEnemiga_k = ataqueEfectuado->getVelocidadEnemiga();
         int efectividad_k = ataqueEfectuado->getEfectividadAtaque();
@@ -118,18 +136,12 @@ String Ataque::utilizarAtaque(Klostermon& target, Klostermon& atacante)
         float multPropio_k = ataqueEfectuado->getMultPropio();
         float multEnemigo_k = ataqueEfectuado->getMultEnemigo();
 
-        std::cerr << danio_k << std::endl;
-        std::cerr << danioPropio_k << std::endl;
-        std::cerr << velocidad_k << std::endl;
-        std::cerr << velocidadEnemiga_k << std::endl;
-        std::cerr << efectividad_k << std::endl;
-        std::cerr << efectividadEnemiga_k << std::endl;
-        std::cerr << multPropio_k << std::endl;
-        std::cerr << multEnemigo_k << std::endl;
-
         //Daño
         target.setVida(target.getVida() - int(danio_k * atacante.getMultiplicador()));
         atacante.setVida(atacante.getVida() - danioPropio_k);
+        //Vida total
+        target.setMaxVida(target.getMaxVida() + int(modDeVidaEnemiga_k * atacante.getMultiplicador()));
+        atacante.setMaxVida(atacante.getMaxVida() + int(modDeVida_k * atacante.getMultiplicador()));
         //Velocidad
         target.setVelocidad(target.getVelocidad() + velocidadEnemiga_k);//Aca se recibe un valor negativo(si es que se baja)
         atacante.setVelocidad(atacante.getVelocidad() + velocidad_k);//Aca se suele recibir positivo
@@ -140,25 +152,39 @@ String Ataque::utilizarAtaque(Klostermon& target, Klostermon& atacante)
         target.setMultiplicador(target.getMultiplicador() + multEnemigo_k);//Se espera negativo
         atacante.setMultiplicador(atacante.getMultiplicador() + multPropio_k);//se espera valor positivo
 
+        std::cerr << "ModVidaEnemiga: " << modDeVidaEnemiga_k<<std::endl;
+        std::cerr << "Mod vida propia: " << modDeVida_k << std::endl;
+
         String stringMostrado =
             atacante.getNameKlostermon() + " utilizo " + ataqueEfectuado->getNombre() + "!";
        
-        if (danio_k != 0)
+        if (danioPropio_k != 0)
         {
-            stringMostrado = stringMostrado + "/El " + target.getNameKlostermon()
-            +" pierde " + std::to_string(int(danio_k * atacante.getMultiplicador())) + " de vida!";
-        }if (danioPropio_k != 0)
-        {
-            if (danioPropio < 0)
+            if (danioPropio_k < 0)
             {
                 stringMostrado = stringMostrado + "/" + atacante.getNameKlostermon()
                     + " recupero " + std::to_string(danioPropio_k * -1) + " de vida!";
             }
-            else 
+            else
             {
                 stringMostrado = stringMostrado + "/" + atacante.getNameKlostermon()
                     + " se autoinfligido " + std::to_string(danioPropio_k) + " de vida!";
             }
+        }
+        if (danio_k != 0)
+        {
+            stringMostrado = stringMostrado + "/El " + target.getNameKlostermon()
+            +" pierde " + std::to_string(int(danio_k * atacante.getMultiplicador())) + " de vida!";
+        }
+        if (modDeVidaEnemiga_k < 0)
+        {
+            stringMostrado = stringMostrado + "/" + target.getNameKlostermon()
+                + " bajo " + std::to_string(int(modDeVidaEnemiga_k * atacante.getMultiplicador())) + " de su vida total!";
+        }
+        if (modDeVida_k > 0)
+        {
+            stringMostrado = stringMostrado + "/" + atacante.getNameKlostermon()
+                + " subio " + std::to_string(int(modDeVidaEnemiga_k * atacante.getMultiplicador())) + " de su vida total!";
         }
         if (velocidadEnemiga_k < 0)
         {
@@ -189,16 +215,18 @@ String Ataque::utilizarAtaque(Klostermon& target, Klostermon& atacante)
         {
             stringMostrado = stringMostrado + "/" + atacante.getNameKlostermon()
                 + " ahora hace un " + std::to_string(int(multPropio_k * 100)) + "% mas de daño!";
-            std::cerr << "multaaa: " + std::to_string(atacante.getMultiplicador()) << " " << std::to_string(multPropio_k) << std::endl;
         }
+        //delete ataqueEfectuado;
+        return stringMostrado;
+    
+}
 
-        return stringMostrado;
-    }
-    else
-    {
-        String stringMostrado =
-            atacante.getNameKlostermon() + " utilizo " + ataqueEfectuado->getNombre() + "!/"
-            + "Pero fallo!";
-        return stringMostrado;
-    }
+String Ataque::fallarAtaque(Klostermon atacante)
+{
+    Ataque* ataqueEfectuado= this;
+    String stringMostrado =
+        atacante.getNameKlostermon() + " utilizo " + ataqueEfectuado->getNombre() + "!/"
+        + "Pero fallo!";
+    //delete ataqueEfectuado;
+    return stringMostrado;
 }

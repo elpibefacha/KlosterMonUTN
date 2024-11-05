@@ -90,7 +90,7 @@ private:
 	bool playerKlostermonDie(String& ataqueEnemy, String& ataquePlayer);
 	bool enemyKlostermonDie(String& ataqueEnemy, String ataquePlayer);
 	void AvanzarTurno(String);
-	void detectarTipoAnimacion(Ataque ataqueUsado, Klostermon k); 
+	void detectarTipoAnimacion(Ataque ataqueUsado, bool enemigo); 
 public:
 	void Update(); 
 	void Draw(RenderWindow&);

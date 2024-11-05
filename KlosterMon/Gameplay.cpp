@@ -15,6 +15,7 @@ void Gameplay::initKlostermons()
 		playerKlos[i].setVida(playerKlos[i].getMaxVida());
 
 		enemyKlos[i] = enemigo.randomKlostermonSetter();
+
 		enemyKlos[i].setVida(enemyKlos[i].getMaxVida());
 
 		cout << "Klostermon enemigo num " << i + 1 << " : " << enemyKlos[i].getNameKlostermon().toAnsiString()<<endl;
@@ -548,19 +549,39 @@ void Gameplay::Atacar(Ataque ataqueUsado)
 	{
 		//ataca primero
 		playerMoreFast = true;
-		String ataquePlayer = ataqueUsado.utilizarAtaque(enemyKlos[klostermonIndexEnemy], playerKlos[klostermonIndexPlayer]);
+		String ataquePlayer;  
 		String ataqueEnemy;
+		//Si random es menor que efectividad significa que esta dentro del rango, el ataque se efectua
+		int random = rand() % 101;
+		if ( random < playerKlos[klostermonIndexPlayer].getEfectividad() )
+		{
+			ataquePlayer = ataqueUsado.utilizarAtaque(enemyKlos[klostermonIndexEnemy], playerKlos[klostermonIndexPlayer]);
+			k_player_attack = true;
+			detectarTipoAnimacion(ataqueUsado, false);
+		}
+		else
+		{
+			ataquePlayer = ataqueUsado.fallarAtaque(playerKlos[klostermonIndexPlayer]);
+			k_player_attack = false;
+		}
+
 		vidaEnemy = enemyKlos[klostermonIndexEnemy].getVida();
-		k_player_attack = true;
-		detectarTipoAnimacion(ataqueUsado, playerKlos[klostermonIndexPlayer]);
 		//Si muere el klostermon enemigo
 		if (enemyKlostermonDie(ataqueEnemy, ataquePlayer)) { return; }
 		
-		ataqueEnemy = enemyKlos[klostermonIndexEnemy].ataquePesado.utilizarAtaque(playerKlos[klostermonIndexPlayer], enemyKlos[klostermonIndexEnemy]);
-		
+		random = rand() % 101;
+		if (random < enemyKlos[klostermonIndexEnemy].getEfectividad())
+		{
+			ataqueEnemy = enemyKlos[klostermonIndexEnemy].ataquePesado.utilizarAtaque(playerKlos[klostermonIndexPlayer], enemyKlos[klostermonIndexEnemy]);
+			detectarTipoAnimacion(enemyKlos[klostermonIndexEnemy].ataquePesado,true);
+			k_enemy_attack = true;
+		}
+		else
+		{
+			ataqueEnemy = enemyKlos[klostermonIndexEnemy].ataquePesado.fallarAtaque(enemyKlos[klostermonIndexEnemy]);
+			k_enemy_attack = true;
+		}
 		vidaPlayer = playerKlos[klostermonIndexPlayer].getVida();
-		k_enemy_attack = true;
-		k_player_danio = true;
 		//Si muere el klostermon del jugador
 		if (playerKlostermonDie(ataqueEnemy, ataquePlayer)) { return; }
 
@@ -574,18 +595,39 @@ void Gameplay::Atacar(Ataque ataqueUsado)
 	else
 	{
 		playerMoreFast = false;
-		String ataqueEnemy = enemyKlos[klostermonIndexEnemy].ataquePesado.utilizarAtaque(playerKlos[klostermonIndexPlayer], enemyKlos[klostermonIndexEnemy]);
+		String ataqueEnemy = "";
 		String ataquePlayer = "";
-		vidaPlayer = playerKlos[klostermonIndexPlayer].getVida();
-		k_enemy_attack = true;
-		k_player_danio = true;
+		int random = rand() % 101;
+		if (random < enemyKlos[klostermonIndexEnemy].getEfectividad())
+		{
+			ataqueEnemy = enemyKlos[klostermonIndexEnemy].ataquePesado.utilizarAtaque(playerKlos[klostermonIndexPlayer], enemyKlos[klostermonIndexEnemy]);
+			detectarTipoAnimacion(enemyKlos[klostermonIndexEnemy].ataquePesado,true);
+			k_enemy_attack = true;
+		}
+		else
+		{
+			ataqueEnemy = enemyKlos[klostermonIndexEnemy].ataquePesado.fallarAtaque(enemyKlos[klostermonIndexEnemy]);
+			k_enemy_attack = true;
+		}
+		vidaPlayer = playerKlos[klostermonIndexPlayer].getVida();//Se hace para saber la vida que tiene 
+		//que mostrar (y no mostrar la del nuevo klostermon si es que el anterior murio
+		
 		//SI MUERE EL KLOSTERMON DEL JUGADOR
 		if (playerKlostermonDie(ataqueEnemy, ataquePlayer)) { return; }
 
-		ataquePlayer = ataqueUsado.utilizarAtaque(enemyKlos[klostermonIndexEnemy], playerKlos[klostermonIndexPlayer]);
+		random = rand() % 101;
+		if (random < playerKlos[klostermonIndexPlayer].getEfectividad())
+		{
+			ataquePlayer = ataqueUsado.utilizarAtaque(enemyKlos[klostermonIndexEnemy], playerKlos[klostermonIndexPlayer]);
+			k_player_attack = true;
+			detectarTipoAnimacion(ataqueUsado, false);
+		}
+		else
+		{
+			ataquePlayer = ataqueUsado.fallarAtaque(playerKlos[klostermonIndexPlayer]);
+			k_player_attack = false;
+		}
 		vidaEnemy = enemyKlos[klostermonIndexEnemy].getVida();
-		k_player_attack = true;
-		detectarTipoAnimacion(ataqueUsado, playerKlos[klostermonIndexPlayer]);
 		//Si muere el klostermon del enemigo
 		if (enemyKlostermonDie(ataqueEnemy, ataquePlayer)) { return; }
 		//si no muere ninguno
@@ -736,7 +778,7 @@ bool Gameplay::enemyKlostermonDie(String& ataqueEnemy, String ataquePlayer)
 			//combate.setTexture_K_Enemy(enemyKlos[klostermonIndexEnemy].getPathTexture());
 			//combate.changeHPText(playerKlos[klostermonIndexPlayer].getVida(), enemyKlos[klostermonIndexEnemy].getVida());
 
-			ataqueEnemy = ataqueEnemy + enemigo.getName() + " saca a " + enemyKlos[klostermonIndexEnemy].getNameKlostermon() + "!";
+			endString = endString + enemigo.getName() + " saca a " + enemyKlos[klostermonIndexEnemy].getNameKlostermon() + "!";
 			combate.interfaz = combate.TEXTO;
 			if (playerMoreFast) { combate.MostrarTexto(ataquePlayer + "/" + ataqueEnemy + "/" + endString); }
 			else { combate.MostrarTexto(ataqueEnemy + "/" + ataquePlayer + "/" + endString); }
@@ -762,22 +804,27 @@ void Gameplay::AvanzarTurno(String accionString)
 	combate.MostrarTexto(accionString + "/" + ataqueEnemy);
 }
 
-void Gameplay::detectarTipoAnimacion(Ataque ataqueUsado, Klostermon k)
+void Gameplay::detectarTipoAnimacion(Ataque ataqueUsado, bool enemigo)
 {
 	//Efecto visual del ataque
-	if (ataqueUsado.getDanio() > 0)//Si hace daño
+	if ((ataqueUsado.getDanio() > 0) && !enemigo)//Si hace daño
 	{
 		k_enemy_danio = true;
-		std::cerr << "danioooooo" << endl;
 	}
-	else if (ataqueUsado.getEfectividadAtaque() > 0 || ataqueUsado.getVelocidadAtaque() > 0 || ataqueUsado.getMultPropio() > 0)
+	else if ((ataqueUsado.getEfectividadAtaque() > 0 || ataqueUsado.getVelocidadAtaque() > 0 ||
+		 ataqueUsado.getMultPropio() > 0 || ataqueUsado.getModVidaTotal() > 0)&&!enemigo)
 	{//Si se mejora a si mismo
 		k_player_mejora = true;
 	}
-	else if (ataqueUsado.getEfectividadEnemiga() < 0 || ataqueUsado.getMultEnemigo() < 0 || ataqueUsado.getVelocidadEnemiga() < 0)
+	else if ((ataqueUsado.getEfectividadEnemiga() < 0 || ataqueUsado.getMultEnemigo() < 0 || 
+		ataqueUsado.getVelocidadEnemiga() < 0 || ataqueUsado.getModVidaTotalEnemiga() < 0)&&!enemigo)
 	{//Si hace un ataque que afecta a stats enemigas
 		k_enemy_decadencia = true;
-		std::cerr << "Decadenciaaaaa" << endl;
+	}
+	//Si el ataque es del enemgio
+	if ((ataqueUsado.getDanio() > 0) && enemigo)
+	{
+		k_player_danio = true;
 	}
 }
 

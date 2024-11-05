@@ -1,3 +1,4 @@
-﻿  Gameplay.cpp
-D:\KlosterMonUTN\KlosterMon\Gameplay.cpp(700,26): warning C4552: "+": el resultado de la expresión no se usa
-  KlosterMon.vcxproj -> D:\KlosterMonUTN\x64\Debug\KlosterMon.exe
+﻿  ArchivoKlostermon.cpp
+C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\ArchivoKlostermon.cpp(51,15): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\ArchivoKlostermon.cpp(72,15): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+  KlosterMon.vcxproj -> C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\x64\Debug\KlosterMon.exe
