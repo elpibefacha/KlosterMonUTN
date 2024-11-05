@@ -9,6 +9,7 @@
 #include "MusicManager.h"
 #include "Enemy.h"
 #include "Objeto.h"
+#include "FX.h"
 class Gameplay
 {
 private:
@@ -76,6 +77,7 @@ private:
 	bool playerKlostermonDie(String& ataqueEnemy, String& ataquePlayer);
 	bool enemyKlostermonDie(String& ataqueEnemy, String ataquePlayer);
 	void AvanzarTurno(String);
+	void detectarTipoAnimacion(Ataque ataqueUsado, Klostermon k); 
 public:
 	void Update(); 
 	void Draw(RenderWindow&);

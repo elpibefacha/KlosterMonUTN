@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ﻿  GameLoopManager.cpp
 C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
   Menu.cpp
@@ -15,3 +16,8 @@ C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\Klo
 C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\main.cpp(6,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
   Generando código...
   KlosterMon.vcxproj -> C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\x64\Debug\KlosterMon.exe
+=======
+﻿  Gameplay.cpp
+D:\KlosterMonUTN\KlosterMon\Gameplay.cpp(700,26): warning C4552: "+": el resultado de la expresión no se usa
+  KlosterMon.vcxproj -> D:\KlosterMonUTN\x64\Debug\KlosterMon.exe
+>>>>>>> Stashed changes

@@ -7,6 +7,7 @@
 #include "ArchivoPlayer.h"
 #include "GameplayManager.h"
 #include "MusicManager.h"
+#include "FX.h"
 using namespace sf;
 
 class Combate
@@ -24,9 +25,7 @@ private:
 	Texture imagenGris;
 	Sprite fondo;
 	//Klostermon
-	Sprite klostermonAliado;
 	Texture klostermonA;
-	Sprite klostermonEnemigo;
 	Texture klostermonE;
 	//HP
 	Text klostermon_ally_hp;
@@ -60,6 +59,13 @@ private:
 	String stringPartes[10];//COMO MAX 10
 	
 public:
+<<<<<<< Updated upstream
+=======
+	// Sprite animaciones
+	FX efectos; 
+	Sprite klostermonAliado;
+	Sprite klostermonEnemigo;
+>>>>>>> Stashed changes
 	int partesEncontradas;
 	int parteActual;
 	//Enum

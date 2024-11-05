@@ -15,7 +15,6 @@ void Gameplay::initKlostermons()
 		playerKlos[i].setVida(playerKlos[i].getMaxVida());
 
 		enemyKlos[i] = enemigo.randomKlostermonSetter();
-
 		enemyKlos[i].setVida(enemyKlos[i].getMaxVida());
 
 		cout << "Klostermon enemigo num " << i + 1 << " : " << enemyKlos[i].getNameKlostermon().toAnsiString()<<endl;
@@ -39,7 +38,7 @@ void Gameplay::initKlostermons()
 void Gameplay::Update()
 {
 	UpdateEstado();
-	if (Keyboard::isKeyPressed(Keyboard::Enter) && frameCooldown > 15 && combate.interfaz == combate.TEXTO)
+	if (Keyboard::isKeyPressed(Keyboard::Enter) && frameCooldown > 15 && combate.interfaz == combate.TEXTO && tiempoAnimacion.asSeconds() > 2)
 	{
 		combate.avanzarDialogo();
 		frameCooldown = 0;
@@ -66,6 +65,12 @@ void Gameplay::Update()
 void Gameplay::Draw(RenderWindow& window)
 {
 	combate.Draw(window);
+<<<<<<< Updated upstream
+=======
+	if (tiempoAnimacion.asSeconds() <= 2) {
+		combate.efectos.Draw(window);
+	} 
+>>>>>>> Stashed changes
 }
 
 void Gameplay::loadGameplay()
@@ -155,6 +160,18 @@ void Gameplay::loadGameplay()
 	k_enemy_won = false;
 	k_player_won = false;
 	playerMoreFast = false;
+<<<<<<< Updated upstream
+=======
+	// bools de animaciones
+	k_player_mejora = false;
+	k_enemy_decadencia = false;
+	k_enemy_danio = false;
+	k_player_danio = false;
+	iniciarAMejora = false;
+	iniciarADecadencia = false;
+	iniciarADanio_E = false;
+	iniciarADanio_P = false;
+>>>>>>> Stashed changes
 }
 
 void Gameplay::UpdateSeleccion()
@@ -274,6 +291,46 @@ void Gameplay::UpdateEstado()
 	}
 }
 
+<<<<<<< Updated upstream
+=======
+void Gameplay::UpdateAnimaciones()
+{
+	tiempoAnimacion = clockAnimacion.getElapsedTime();
+	if (iniciarAMejora && tiempoAnimacion.asSeconds() < 2) {
+
+		combate.efectos.UpdateFX();
+	}
+	else if (iniciarAMejora && tiempoAnimacion.asSeconds() >= 2) {
+
+		iniciarAMejora = false;
+	}
+	if (iniciarADecadencia && tiempoAnimacion.asSeconds() < 2) {
+		combate.efectos.UpdateFX();
+	}
+	else if (iniciarADecadencia && tiempoAnimacion.asSeconds() >= 2) {
+
+		iniciarADecadencia= false;
+	} 
+	if (iniciarADanio_E && tiempoAnimacion.asSeconds() < 2) {
+		combate.efectos.UpdateFX(); 
+		combate.klostermonEnemigo.setColor(Color::Red); 
+	}
+	else if (iniciarADanio_E && tiempoAnimacion.asSeconds() >= 2) {
+		iniciarADanio_E = false;
+		combate.klostermonEnemigo.setColor(Color::White);
+	}
+	if (iniciarADanio_P && tiempoAnimacion.asSeconds() < 2) {
+		combate.efectos.UpdateFX(); 
+		combate.klostermonAliado.setColor(Color::Red); 
+	}
+	else if (iniciarADanio_P && tiempoAnimacion.asSeconds() >= 2) {
+		iniciarADanio_P = false;
+		combate.klostermonAliado.setColor(Color::White);
+	}
+	
+}
+
+>>>>>>> Stashed changes
 void Gameplay::avanzoTexto()
 {
 	if (playerMoreFast)
@@ -284,6 +341,30 @@ void Gameplay::avanzoTexto()
 			if (k_player_attack) {
 				combate.changeHPEnemy(vidaEnemy);
 			}
+<<<<<<< Updated upstream
+=======
+			if (k_player_mejora) {
+				combate.efectos.changeFX(1);
+				combate.efectos.setPosition(60+17*6, 110+17*6);
+				iniciarAMejora = true; 
+				clockAnimacion.restart();
+				k_player_mejora = false; 
+			}
+			if (k_enemy_decadencia) {
+				combate.efectos.changeFX(2);
+				combate.efectos.setPosition(550+17*6, 110+17*6);
+				iniciarADecadencia = true; 
+				clockAnimacion.restart();
+				k_enemy_decadencia = false; 
+			}
+			if (k_enemy_danio) {
+				combate.efectos.changeFX(0);
+				combate.efectos.setPosition(550+17*6, 110+17*6);
+				iniciarADanio_E = true;
+				clockAnimacion.restart();
+				k_enemy_danio = false; 
+			}
+>>>>>>> Stashed changes
 			break;
 		case 1:
 			if (k_enemy_died) {
@@ -299,6 +380,14 @@ void Gameplay::avanzoTexto()
 			else if (k_enemy_attack)
 			{
 				combate.changeHPPlayer(vidaPlayer);
+			}
+			if (k_player_danio) {
+				combate.efectos.changeFX(0);
+				combate.efectos.setPosition(60+17*6, 110+17*6);
+				combate.efectos.mirror();
+				iniciarADanio_P = true; 
+				clockAnimacion.restart();
+				k_player_danio = false; 
 			}
 			break;
 		case 3:
@@ -328,6 +417,14 @@ void Gameplay::avanzoTexto()
 			{
 				combate.changeHPPlayer(vidaPlayer);
 			}
+			if (k_player_danio) {
+				combate.efectos.changeFX(0);
+				combate.efectos.setPosition(60 + 17 * 6, 110 + 17 * 6);
+				combate.efectos.mirror();
+				iniciarADanio_P = true;
+				clockAnimacion.restart();
+				k_player_danio = false;
+			}
 			break;
 		case 1:
 			if (k_player_died)
@@ -345,6 +442,27 @@ void Gameplay::avanzoTexto()
 			else if(k_player_attack)
 			{
 				combate.changeHPEnemy(vidaEnemy);
+			}
+			if (k_player_mejora) {
+				combate.efectos.changeFX(1);
+				combate.efectos.setPosition(60 + 17 * 6, 110 + 17 * 6);
+				iniciarAMejora = true;
+				clockAnimacion.restart();
+				k_player_mejora = false;
+			}
+			if (k_enemy_decadencia) {
+				combate.efectos.changeFX(2);
+				combate.efectos.setPosition(550 + 17 * 6, 110 + 17 * 6);
+				iniciarADecadencia = true;
+				clockAnimacion.restart();
+				k_enemy_decadencia = false;
+			}
+			if (k_enemy_danio) {
+				combate.efectos.changeFX(0);
+				combate.efectos.setPosition(550 + 17 * 6, 110 + 17 * 6);
+				iniciarADanio_E = true;
+				clockAnimacion.restart();
+				k_enemy_danio = false;
 			}
 			break;
 		case 3:
@@ -445,6 +563,7 @@ void Gameplay::Atacar(Ataque ataqueUsado)
 		String ataqueEnemy;
 		vidaEnemy = enemyKlos[klostermonIndexEnemy].getVida();
 		k_player_attack = true;
+<<<<<<< Updated upstream
 		//Efecto visual del ataque
 		if (ataqueUsado.getDanio() > 0)//Si hace daño
 		{
@@ -458,6 +577,9 @@ void Gameplay::Atacar(Ataque ataqueUsado)
 		{//Si hace un ataque que afecta a stats enemigas
 			//hacer efecto de decaimiento al enemigo
 		}
+=======
+		detectarTipoAnimacion(ataqueUsado, playerKlos[klostermonIndexPlayer]);
+>>>>>>> Stashed changes
 			//Si muere el klostermon enemigo
 		if (enemyKlostermonDie(ataqueEnemy, ataquePlayer)) { return; }
 		
@@ -465,6 +587,7 @@ void Gameplay::Atacar(Ataque ataqueUsado)
 		
 		vidaPlayer = playerKlos[klostermonIndexPlayer].getVida();
 		k_enemy_attack = true;
+		k_player_danio = true;
 		//Si muere el klostermon del jugador
 		if (playerKlostermonDie(ataqueEnemy, ataquePlayer)) { return; }
 
@@ -482,12 +605,14 @@ void Gameplay::Atacar(Ataque ataqueUsado)
 		String ataquePlayer = "";
 		vidaPlayer = playerKlos[klostermonIndexPlayer].getVida();
 		k_enemy_attack = true;
+		k_player_danio = true;
 		//SI MUERE EL KLOSTERMON DEL JUGADOR
 		if (playerKlostermonDie(ataqueEnemy, ataquePlayer)) { return; }
 
 		ataquePlayer = ataqueUsado.utilizarAtaque(enemyKlos[klostermonIndexEnemy], playerKlos[klostermonIndexPlayer]);
 		vidaEnemy = enemyKlos[klostermonIndexEnemy].getVida();
 		k_player_attack = true;
+		detectarTipoAnimacion(ataqueUsado, playerKlos[klostermonIndexPlayer]);
 		//Si muere el klostermon del enemigo
 		if (enemyKlostermonDie(ataqueEnemy, ataquePlayer)) { return; }
 		//si no muere ninguno
@@ -662,6 +787,25 @@ void Gameplay::AvanzarTurno(String accionString)
 	//Si murio el klostermon
 	playerKlostermonDie(ataqueEnemy, accionString);
 	combate.MostrarTexto(accionString + "/" + ataqueEnemy);
+}
+
+void Gameplay::detectarTipoAnimacion(Ataque ataqueUsado, Klostermon k)
+{
+	//Efecto visual del ataque
+		if (ataqueUsado.getDanio() > 0)//Si hace daño
+		{
+			k_enemy_danio = true; 
+			std::cerr << "danioooooo" << endl; 
+		}
+		else if (ataqueUsado.getEfectividadAtaque() > 0 || ataqueUsado.getVelocidadAtaque() > 0 || ataqueUsado.getMultPropio() > 0)
+		{//Si se mejora a si mismo
+			k_player_mejora = true; 
+		}
+		else if (ataqueUsado.getEfectividadEnemiga() < 0 || ataqueUsado.getMultEnemigo() < 0 || ataqueUsado.getVelocidadEnemiga() < 0)
+		{//Si hace un ataque que afecta a stats enemigas
+			k_enemy_decadencia = true; 
+			std::cerr << "Decadenciaaaaa" << endl; 
+		}
 }
 
 
