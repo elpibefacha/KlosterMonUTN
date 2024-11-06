@@ -16,13 +16,11 @@ void Gameplay::initKlostermons()
 
 		enemyKlos[i] = enemigo.randomKlostermonSetter();
 
-		//enemyKlos[i] = archivoKlostermon.leerArchivo(5);
-
 		//se mejora al enemigo dependiendo de los combates ganados
 		enemyKlos[i].setMaxVida(enemyKlos[i].getMaxVida() + (rand() % (3 + 1 - 6) + 3)*player.getEnfrentamientosGanados());
 
 		enemyKlos[i].setMultiplicador(enemyKlos[i].getMultiplicador() + 0.4*float(player.getEnfrentamientosGanados()));
-
+		
 		enemyKlos[i].setVida(enemyKlos[i].getMaxVida());
 
 		cout << "Klostermon enemigo num " << i + 1 << " : " << enemyKlos[i].getNameKlostermon().toAnsiString()<<endl;
@@ -234,6 +232,11 @@ void Gameplay::UpdateSeleccion()
 		}
 		frameCooldown = 0;
 	}
+	if (Keyboard::isKeyPressed(Keyboard::Escape) && frameCooldown > 30)
+	{
+		sceneManager.setScene(0);
+		frameCooldown = 0;
+	}
 
 }
 
@@ -263,6 +266,7 @@ void Gameplay::UpdateAtaque()
 	if (Keyboard::isKeyPressed(Keyboard::Escape))
 	{
 		combate.interfaz = combate.SELECCION;
+		frameCooldown = 0;
 	}
 }
 
@@ -301,6 +305,7 @@ void Gameplay::UpdateSelKlos()
 	if (Keyboard::isKeyPressed(Keyboard::Escape))
 	{
 		combate.interfaz = combate.SELECCION;
+		frameCooldown = 0;
 	}
 }
 
@@ -629,20 +634,19 @@ void Gameplay::Atacar(Ataque ataqueUsado)
 			detectarTipoAnimacion(ataqueUsado, false);
 			if (playerKlos[klostermonIndexPlayer].getVida() <= 0)//Si el jugador muere lo sumo al string de endString
 			{
-				endString = playerKlos[klostermonIndexPlayer].getNameKlostermon() + " se apago!";
 				klostermonRestantes_player--;
 				combate.setKlostermonApagado(klostermonIndexPlayer);
 
 				if (klostermonRestantes_player <= 0)//Si el enemigo gana
 				{
-					PerdioPartida(endString);
+					if (playerKlostermonDie(ataqueEnemy, ataquePlayer, endString)) { return; }
 				}
 				else //Si me quedan klostermones
 				{
+					endString = playerKlos[klostermonIndexPlayer].getNameKlostermon() + " se apago!";
 					QuedanKlostermones(endString);
 				}
 			}
-			if (playerKlostermonDie(ataqueEnemy, ataquePlayer,endString)) { return; }
 		}
 		else
 		{
@@ -877,7 +881,8 @@ void Gameplay::Enemigo_PerdioPartida(String& endString)
 		player.setAnio(player.getAnio() + 1);
 		player.setEnfrentamientoNum(1);
 	}
-	else { player.setEnfrentamientoNum(player.getEnfrentamiento() + 1); }//Avanzamos un puesto}
+	else { 
+		player.setEnfrentamientoNum(player.getEnfrentamiento() + 1); }//Avanzamos un puesto}
 	player.setMoney(player.getMoney() + dineroGanado);
 	for (int i = 0; i < 3;i++)
 	{

@@ -56,7 +56,7 @@ private:
 	//Seleccionar Klostermon
 	Text k_slot[3];
 	//DividirTexto
-	String stringPartes[10];//COMO MAX 10
+	String stringPartes[15];//COMO MAX 15
 	
 public:
 	// Sprite animaciones

@@ -31,6 +31,7 @@ void Player::SetKlostermon(Klostermon k, int pos)
 
 void Player::setMoney(int n_money)
 {
+	if (n_money < 0) { n_money = 0; }
 	money = n_money;
 }
 

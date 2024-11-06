@@ -134,7 +134,7 @@ void Combate::IniciarCombate(String combateText)
 void Combate::DividirTexto(const String& string, String partes[])
 {
 
-	for (int i = 0; i < 10;i++)
+	for (int i = 0; i < 15;i++)
 	{
 		partes[i] = "";
 	}
@@ -154,6 +154,7 @@ void Combate::DividirTexto(const String& string, String partes[])
 
 	if (inicio < string.getSize())
 	{
+
 		partes[partesEncontradas++] = string.substring(inicio);
 	}
 
