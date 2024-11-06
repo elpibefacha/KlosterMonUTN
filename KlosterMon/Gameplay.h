@@ -67,10 +67,13 @@ private:
 	bool k_enemy_decadencia = false;
 	bool k_enemy_danio = false;
 	bool k_player_danio = false;
+	bool k_danio_propio = false;
 	bool iniciarAMejora = false;
 	bool iniciarADecadencia = false;
 	bool iniciarADanio_E = false;
 	bool iniciarADanio_P = false;
+	bool iniciarAExplosion = false;
+
 	// Tiempos animacion
 	Clock clockAnimacion; 
 	Time tiempoAnimacion; 
@@ -87,8 +90,12 @@ private:
 	void UpdateAnimaciones(); 
 	void avanzoTexto();
 	void Atacar(Ataque ataqueUsado);
-	bool playerKlostermonDie(String& ataqueEnemy, String& ataquePlayer);
-	bool enemyKlostermonDie(String& ataqueEnemy, String ataquePlayer);
+	bool playerKlostermonDie(String& ataqueEnemy, String& ataquePlayer, String& endString);
+	bool enemyKlostermonDie(String& ataqueEnemy, String& ataquePlayer, String& endString);
+	void PerdioPartida(String& endString);
+	void QuedanKlostermones(String& endString);
+	void Enemigo_PerdioPartida(String& endString);
+	void Enemigo_QuedanKlostermones(String& endString);
 	void AvanzarTurno(String);
 	void detectarTipoAnimacion(Ataque ataqueUsado, bool enemigo); 
 public:

@@ -184,7 +184,7 @@ String Ataque::utilizarAtaque(Klostermon& target, Klostermon& atacante)
         if (modDeVida_k > 0)
         {
             stringMostrado = stringMostrado + "/" + atacante.getNameKlostermon()
-                + " subio " + std::to_string(int(modDeVidaEnemiga_k * atacante.getMultiplicador())) + " de su vida total!";
+                + " subio " + std::to_string(int(modDeVida_k * atacante.getMultiplicador())) + " de su vida total!";
         }
         if (velocidadEnemiga_k < 0)
         {

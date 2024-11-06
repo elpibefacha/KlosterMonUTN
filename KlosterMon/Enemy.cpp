@@ -30,7 +30,7 @@ void Enemy::forceName(String nameForced)
 
 Klostermon Enemy::randomKlostermonSetter()
 {
-	int random = rand() % (2 + 1 - 0) + 0;
+	int random = rand() % (7 + 1 - 0) + 0;
 	return archivoKlos.leerArchivo(random);
 }
 

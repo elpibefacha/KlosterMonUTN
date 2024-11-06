@@ -5,6 +5,7 @@ void MenuEleccionKlostermon::Load()
 {
 	player.SetName(archivoPlayer.leerArchivo(gameplayManager.getSaveSlot()).getName());
 	player.setMoney(50);//Iniciamos con 50 monedas
+	player.setEnfrentamientosGanados(0);
 	player.completarJuego(false);
 	for (int i = 0; i < 4; i++)
 	{
@@ -35,10 +36,10 @@ void MenuEleccionKlostermon::Load()
 	klostermon[4].setTexture(imageDriller);
 	imageBomber.loadFromFile("Sprites/bomber.png");
 	klostermon[5].setTexture(imageBomber);
-	imageNuxias.loadFromFile("Sprites/nuxias.png");
-	klostermon[6].setTexture(imageNuxias);
 	imageMercias.loadFromFile("Sprites/mercias.png");
-	klostermon[7].setTexture(imageMercias);
+	klostermon[6].setTexture(imageMercias);
+	imageNuxias.loadFromFile("Sprites/nuxias.png");
+	klostermon[7].setTexture(imageNuxias);
 	imageCuadro.loadFromFile("Sprites/cuadro.png");
 	int posicionX = 0;
 	int posicionY = 0;
@@ -265,7 +266,7 @@ void MenuEleccionKlostermon::configInfo(int cuadroSeleccionado)
 		cuadro[cuadroSeleccionado].setColor(Color::Yellow);
 		break;
 	case 6:
-		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "Cura un  \n porcentaje de \n la vida de sus \n compañeros.", 7.5f, Color::Black, Color::Cyan, 0.3f);
+		configtexto.ConfigurarTexto(info, configtexto.gameplayFont, "Cura su  \n vida \n 15 puntos.", 7.5f, Color::Black, Color::Cyan, 0.3f);
 		info.setPosition(706, 220);
 		cuadro[cuadroSeleccionado].setColor(Color::Cyan);
 		break;

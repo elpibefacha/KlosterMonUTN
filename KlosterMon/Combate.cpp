@@ -145,8 +145,11 @@ void Combate::DividirTexto(const String& string, String partes[])
 
 	while ((pos = string.find("/", inicio)) != String::InvalidPos)
 	{
-		partes[partesEncontradas++] = string.substring(inicio, pos - inicio);
-		inicio = pos + 1;
+		if (string.substring(inicio, pos - inicio) != "/"|| string.substring(inicio, pos - inicio)!=" /")
+		{
+			partes[partesEncontradas++] = string.substring(inicio, pos - inicio);
+			inicio = pos + 1;
+		}
 	}
 
 	if (inicio < string.getSize())

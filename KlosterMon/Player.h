@@ -14,6 +14,7 @@ private:
 	int money;
 	int enfrentamientoNum;
 	int anioTorneo;
+	int enfrentamientosGanados;
 	bool completoJuego;
 public:
 	~Player();
@@ -24,10 +25,12 @@ public:
 	void setObjeto(int id, int pos);
 	void setEnfrentamientoNum(int);
 	void setAnio(int);
+	void setEnfrentamientosGanados(int);
 	void completarJuego(bool);
 	bool completoElJuego();
 	int getAnio();
 	int getEnfrentamiento();
+	int getEnfrentamientosGanados();
 	int getObjeto(int pos);
 	Klostermon getKlostermon(int pos);
 	int getMoney();

@@ -1,8 +1,5 @@
 #include "Klostermon.h"
 
-
-
-
 void Klostermon::setNameKlostermon(String nombre)
 {
 	std::string namestd = nombre.toAnsiString();
@@ -28,6 +25,7 @@ void Klostermon::setTexture(String path)
 
 void Klostermon::setMultiplicador(float nuevoMult)
 {
+	if (nuevoMult < 0.1) { nuevoMult = 0.1; }
 	multiplicadorDanio = nuevoMult;
 }
 
@@ -39,6 +37,7 @@ void Klostermon::setVida(int vida) {
 
 void Klostermon::setEfectividad(int efec)
 {
+	if (efec < 10) { efec = 10; }
 	_efectividad = efec;
 }
 

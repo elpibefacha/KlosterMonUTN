@@ -50,6 +50,11 @@ void Player::setAnio(int newAnio)
 	anioTorneo = newAnio;
 }
 
+void Player::setEnfrentamientosGanados(int newEnfrentamiento)
+{
+	enfrentamientosGanados = newEnfrentamiento;
+}
+
 void Player::completarJuego(bool com)
 {
 	completoJuego = com;
@@ -68,6 +73,11 @@ int Player::getAnio()
 int Player::getEnfrentamiento()
 {
 	return enfrentamientoNum;
+}
+
+int Player::getEnfrentamientosGanados()
+{
+	return enfrentamientosGanados;
 }
 
 
