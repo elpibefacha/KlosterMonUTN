@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "GenerarTexto.h"
 #include "MenuManager.h"
 #include "SceneManager.h"
@@ -23,7 +24,9 @@ private:
 	Font fuenteGuardados;
 	//Textos
 	Text textoSave[3];
-	
+	// Sonids
+	SoundBuffer bufferSound;
+	Sound moveSound;
 	//Fondo
 	Sprite fondoMenu;
 	Texture imageFondo;

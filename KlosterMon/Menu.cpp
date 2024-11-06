@@ -11,6 +11,7 @@ Menu::Menu()
 	configTexto.CentrarTexto(textoTitulo, -200);
 	bufferSound.loadFromFile("Sounds/moveMenu.ogg");
 	moveSound.setBuffer(bufferSound);
+	moveSound.setVolume(50); 
 	//DemasOpciones
 	fuenteOpciones = configTexto.gameplayFont;
 

@@ -73,6 +73,17 @@ private:
 	bool iniciarADanio_E = false;
 	bool iniciarADanio_P = false;
 	bool iniciarAExplosion = false;
+	// Sonidos
+	SoundBuffer damageBuffer;
+	Sound damageSound; 
+	SoundBuffer explosionBuffer;
+	Sound explosionSound; 
+	SoundBuffer mejoraBuffer;
+	Sound mejoraSound;
+	SoundBuffer decadenciaBuffer;
+	Sound decadenciaSound;
+	SoundBuffer muerteBuffer;
+	Sound muerteSound;
 
 	// Tiempos animacion
 	Clock clockAnimacion; 

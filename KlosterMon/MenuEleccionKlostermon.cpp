@@ -66,7 +66,11 @@ void MenuEleccionKlostermon::Load()
 	}
 	imageFondo.loadFromFile("Sprites/fondoGris.png");
 	fondoMenu.setTexture(imageFondo);
-
+	bufferSound.loadFromFile("Sounds/moveMenu.ogg"); 
+	moveSound.setBuffer(bufferSound);
+	moveSound.setVolume(50);
+	bufferSelect.loadFromFile("Sounds/select.ogg");
+	selectSound.setBuffer(bufferSelect); 
 	cuadroSeleccionado = 0;
 	actualizarCuadro();
 }
@@ -96,6 +100,7 @@ void MenuEleccionKlostermon::Update()
 			elegido[cuadroSeleccionado] = true;
 			elegidos++;
 			klostermon[cuadroSeleccionado].setColor(Color::Green);
+			selectSound.play();
 		}else if (elegidos == 3)
 		{
 			int num = 0;
@@ -149,6 +154,7 @@ void MenuEleccionKlostermon::Draw(RenderWindow& window)
 
 void MenuEleccionKlostermon::Izquierda()
 {
+	moveSound.play(); 
 	framescooldown = 0;
 	if (cuadroSeleccionado == 0) {
 		cuadroSeleccionado = 6;
@@ -169,6 +175,7 @@ void MenuEleccionKlostermon::Izquierda()
 
 void MenuEleccionKlostermon::Derecha()
 {
+	moveSound.play();
 	framescooldown = 0;
 	if (cuadroSeleccionado == 7) {
 		cuadroSeleccionado = 1;
@@ -190,6 +197,7 @@ void MenuEleccionKlostermon::Derecha()
 
 void MenuEleccionKlostermon::Abajo()
 {
+	moveSound.play();
 	framescooldown = 0;
 	if (cuadroSeleccionado == 7) {
 		cuadroSeleccionado = 0;
@@ -202,6 +210,7 @@ void MenuEleccionKlostermon::Abajo()
 
 void MenuEleccionKlostermon::Arriba()
 {
+	moveSound.play();
 	framescooldown = 0;
 	if (cuadroSeleccionado == 0) {
 		cuadroSeleccionado = 7;

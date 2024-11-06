@@ -20,7 +20,7 @@ void Gameplay::initKlostermons()
 
 		//se mejora al enemigo dependiendo de los combates ganados
 		enemyKlos[i].setMaxVida(enemyKlos[i].getMaxVida() + (rand() % (3 + 1 - 6) + 3)*player.getEnfrentamientosGanados());
-		enemyKlos[i].setMultiplicador(enemyKlos[i].getMultiplicador() + 0.6*float(player.getEnfrentamientosGanados()));
+		enemyKlos[i].setMultiplicador(enemyKlos[i].getMultiplicador() + 0.4*float(player.getEnfrentamientosGanados()));
 
 		enemyKlos[i].setVida(enemyKlos[i].getMaxVida());
 
@@ -80,6 +80,23 @@ void Gameplay::Draw(RenderWindow& window)
 
 void Gameplay::loadGameplay()
 {
+	// Load Sounds
+	damageBuffer.loadFromFile("Sounds/danio.ogg");
+	damageSound.setBuffer(damageBuffer); 
+	damageSound.setVolume(50); 
+	explosionBuffer.loadFromFile("Sounds/explosion.ogg");
+	explosionSound.setBuffer(explosionBuffer);
+	explosionSound.setVolume(60); 
+	mejoraBuffer.loadFromFile("Sounds/mejora.ogg");
+	mejoraSound.setBuffer(mejoraBuffer);
+	mejoraSound.setVolume(50);
+	decadenciaBuffer.loadFromFile("Sounds/decadencia.ogg");
+	decadenciaSound.setBuffer(decadenciaBuffer);
+	decadenciaSound.setVolume(25);
+	muerteBuffer.loadFromFile("Sounds/muerte.ogg");
+	muerteSound.setBuffer(muerteBuffer);
+	muerteSound.setVolume(40);
+	// Musica
 	musica.stopMusic();
 	musica.setVolumen(20);
 	musica.playMusic("combate.ogg");
@@ -95,19 +112,19 @@ void Gameplay::loadGameplay()
 		musica.setVolumen(40);
 		musica.playMusic("Sounds/combatefinal.ogg");
 		enemigo.forceName("Klost");
-		enemyKlos[0] = archivoKlostermon.leerArchivo(0);
+		enemyKlos[0] = archivoKlostermon.leerArchivo(2);
 		enemyKlos[0].setMaxVida(150);
 		enemyKlos[0].setVida(enemyKlos[0].getMaxVida());
 		enemyKlos[0].setMultiplicador(2.0f);
 
-		enemyKlos[1] = archivoKlostermon.leerArchivo(1);
-		enemyKlos[1].setMaxVida(150);
-		enemyKlos[1].setVida(enemyKlos[0].getMaxVida());
+		enemyKlos[1] = archivoKlostermon.leerArchivo(3);
+		enemyKlos[1].setMaxVida(200);
+		enemyKlos[1].setVida(enemyKlos[1].getMaxVida());
 		enemyKlos[1].setMultiplicador(2.0f);
 
-		enemyKlos[2] = archivoKlostermon.leerArchivo(2);
-		enemyKlos[2].setMaxVida(150);
-		enemyKlos[2].setVida(enemyKlos[0].getMaxVida());
+		enemyKlos[2] = archivoKlostermon.leerArchivo(0);
+		enemyKlos[2].setMaxVida(100);
+		enemyKlos[2].setVida(enemyKlos[2].getMaxVida());
 		enemyKlos[2].setMultiplicador(2.0f);
 	}
 
@@ -353,6 +370,7 @@ void Gameplay::avanzoTexto()
 				combate.changeHPEnemy(vidaEnemy);
 			}
 			if (k_player_mejora) {
+				mejoraSound.play();
 				combate.efectos.changeFX(1);
 				combate.efectos.setPosition(60+17*6, 110+17*6);
 				iniciarAMejora = true; 
@@ -360,6 +378,7 @@ void Gameplay::avanzoTexto()
 				k_player_mejora = false; 
 			}
 			if (k_enemy_decadencia) {
+				decadenciaSound.play(); 
 				combate.efectos.changeFX(2);
 				combate.efectos.setPosition(550+17*6, 110+17*6);
 				iniciarADecadencia = true; 
@@ -367,6 +386,7 @@ void Gameplay::avanzoTexto()
 				k_enemy_decadencia = false; 
 			}
 			if (k_enemy_danio) {
+				damageSound.play(); 
 				combate.efectos.changeFX(0);
 				combate.efectos.setPosition(550+17*6, 110+17*6);
 				iniciarADanio_E = true;
@@ -375,6 +395,7 @@ void Gameplay::avanzoTexto()
 			}
 			if (k_danio_propio)
 			{
+				explosionSound.play();
 				combate.efectos.changeFX(3);
 				combate.efectos.setPosition(60 + 17 * 6, 110 + 17 * 6);
 				iniciarAExplosion = true;
@@ -384,6 +405,7 @@ void Gameplay::avanzoTexto()
 			break;
 		case 1:
 			if (k_enemy_died) {
+				muerteSound.play(); 
 				combate.setTexture_K_Enemy("Sprites/transparente.png");
 			}
 			break;
@@ -398,6 +420,7 @@ void Gameplay::avanzoTexto()
 				combate.changeHPPlayer(vidaPlayer);
 			}
 			if (k_player_danio) {
+				damageSound.play();
 				combate.efectos.changeFX(0);
 				combate.efectos.setPosition(60+17*6, 110+17*6);
 				combate.efectos.mirror();
@@ -409,6 +432,7 @@ void Gameplay::avanzoTexto()
 		case 3:
 			if (k_player_died)
 			{
+				muerteSound.play(); 
 				combate.setTexture_K_Ally("Sprites/transparente.png");
 			}
 			break;
@@ -434,6 +458,7 @@ void Gameplay::avanzoTexto()
 				combate.changeHPPlayer(vidaPlayer);
 			}
 			if (k_player_danio) {
+				damageSound.play();
 				combate.efectos.changeFX(0);
 				combate.efectos.setPosition(60 + 17 * 6, 110 + 17 * 6);
 				combate.efectos.mirror();
@@ -445,6 +470,7 @@ void Gameplay::avanzoTexto()
 		case 1:
 			if (k_player_died)
 			{
+				muerteSound.play(); 
 				combate.setTexture_K_Ally("Sprites/transparente.png");
 			}
 			break;
@@ -461,6 +487,7 @@ void Gameplay::avanzoTexto()
 				combate.changeHPPlayer(playerKlos[klostermonIndexPlayer].getVida());
 			}
 			if (k_player_mejora) {
+				mejoraSound.play();
 				combate.efectos.changeFX(1);
 				combate.efectos.setPosition(60 + 17 * 6, 110 + 17 * 6);
 				iniciarAMejora = true;
@@ -468,6 +495,7 @@ void Gameplay::avanzoTexto()
 				k_player_mejora = false;
 			}
 			if (k_enemy_decadencia) {
+				decadenciaSound.play(); 
 				combate.efectos.changeFX(2);
 				combate.efectos.setPosition(550 + 17 * 6, 110 + 17 * 6);
 				iniciarADecadencia = true;
@@ -475,6 +503,7 @@ void Gameplay::avanzoTexto()
 				k_enemy_decadencia = false;
 			}
 			if (k_enemy_danio) {
+				damageSound.play();
 				combate.efectos.changeFX(0);
 				combate.efectos.setPosition(550 + 17 * 6, 110 + 17 * 6);
 				iniciarADanio_E = true;
@@ -483,6 +512,7 @@ void Gameplay::avanzoTexto()
 			}
 			if (k_danio_propio)
 			{
+				explosionSound.play();
 				combate.efectos.changeFX(3);
 				combate.efectos.setPosition(60 + 17 * 6, 110 + 17 * 6);
 				iniciarAExplosion = true;
@@ -492,6 +522,7 @@ void Gameplay::avanzoTexto()
 			break;
 		case 3:
 			if (k_enemy_died) {
+				muerteSound.play(); 
 				combate.setTexture_K_Enemy("Sprites/transparente.png");
 			}
 			break;
@@ -783,7 +814,7 @@ void Gameplay::PerdioPartida(String& endString)
 	}
 	else
 	{
-		endString = endString + enemigo.getName() + " gana la partida!/"
+		endString = endString +"/" + enemigo.getName() + " gana la partida!/"
 			+ "Te derroto el inventor.../Todavia no estas a su nivel.../Gana el siguente torneo y \nvuelve a enfrentarlo!";
 	}
 	player.setAnio(player.getAnio() + 1);

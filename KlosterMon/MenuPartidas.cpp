@@ -26,7 +26,7 @@ void MenuPartidas::ActualizarSeleccion()
 
 void MenuPartidas::Subir()
 {
-	
+	moveSound.play();
 	frameCooldown = 0;
 	if (opcionSeleccionada - 1 <= -1)
 	{
@@ -41,6 +41,7 @@ void MenuPartidas::Subir()
 
 void MenuPartidas::Bajar()
 {
+	moveSound.play();
 	frameCooldown = 0;
 	if (opcionSeleccionada + 1 >= 3)
 	{
@@ -66,7 +67,7 @@ void MenuPartidas::Load()
 	archivoPlayer.ArchiveExist();
 	for (int i = 0; i < 3;i++)
 	{
-		configTexto.ConfigurarTexto(textoSave[i], fuenteGuardados, "", 25, Color::Black);
+		configTexto.ConfigurarTexto(textoSave[i], fuenteGuardados, "", 25, Color::Black,Color::White,1);
 
 		player = archivoPlayer.leerArchivo(i);
 		if (player.getName() != "")
@@ -84,7 +85,9 @@ void MenuPartidas::Load()
 	configTexto.CentrarTexto(textoSave[1], -100);
 	configTexto.CentrarTexto(textoSave[2], 0);
 	frameCooldown = 0;
-
+	bufferSound.loadFromFile("Sounds/moveMenu.ogg");
+	moveSound.setBuffer(bufferSound);
+	moveSound.setVolume(50);
 	opcionSeleccionada = 0;
 	ActualizarSeleccion();
 }

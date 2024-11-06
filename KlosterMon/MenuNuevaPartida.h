@@ -6,7 +6,7 @@
 #include "Player.h"
 #include "ArchivoPlayer.h"
 #include "GameplayManager.h"
-
+#include "SFML/Audio.hpp"
 #include <iostream>
 
 using namespace sf;
@@ -31,6 +31,12 @@ private:
 
 	Text titleSelect;
 	Text savesText[3];
+
+	//Sonido
+	SoundBuffer bufferSound;
+	Sound moveSound;
+	SoundBuffer teclaBuffer;
+	Sound teclaSound; 
 
 	GenerarTexto configTexto;
 	//INPUT TEXT VARIABLES

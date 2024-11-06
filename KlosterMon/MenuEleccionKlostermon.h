@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "GenerarTexto.h"
 #include "MenuManager.h"
 #include "ArchivoKlostermon.h"
@@ -38,6 +39,11 @@ private:
 	//Fondo
 	Sprite fondoMenu;
 	Texture imageFondo;
+	//Sonidos
+	SoundBuffer bufferSound; 
+	Sound moveSound; 
+	SoundBuffer bufferSelect;
+	Sound selectSound; 
 	// Texto
 	Text titulo;
 	Text caza;

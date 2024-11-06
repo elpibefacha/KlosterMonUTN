@@ -25,6 +25,12 @@ void MenuNuevaPartida::IniciarSlots()
 	configTexto.CentrarTexto(savesText[0], -200);
 	configTexto.CentrarTexto(savesText[1], -100);
 	configTexto.CentrarTexto(savesText[2], 0);
+	//SONIDO
+	bufferSound.loadFromFile("Sounds/moveMenu.ogg"); 
+	moveSound.setBuffer(bufferSound); 
+	moveSound.setVolume(50);
+	teclaBuffer.loadFromFile("Sounds/tecla.ogg");
+	teclaSound.setBuffer(teclaBuffer); 
 }
 
 MenuNuevaPartida::MenuNuevaPartida()
@@ -83,6 +89,7 @@ void MenuNuevaPartida::SlotUpdate()
 
 void MenuNuevaPartida::Subir()
 {
+	moveSound.play(); 
 	framesCooldown = 0;
 	if (slotSeleccionado - 1 <= -1)
 	{
@@ -97,6 +104,7 @@ void MenuNuevaPartida::Subir()
 
 void MenuNuevaPartida::Bajar()
 {
+	moveSound.play();
 	framesCooldown = 0;
 	if (slotSeleccionado + 1 >= 3)
 	{
@@ -125,7 +133,7 @@ void MenuNuevaPartida::Load()
 	archivo.ArchiveExist();
 	for (int i = 0; i < 3;i++)
 	{
-		configTexto.ConfigurarTexto(savesText[i], fuente, "", 25, Color::Black);
+		configTexto.ConfigurarTexto(savesText[i], fuente, "", 25, Color::Black, Color::White, 1);
 		
 		player = archivo.leerArchivo(i);
 		if (player.getName() != "")
@@ -177,6 +185,8 @@ void MenuNuevaPartida::NameUpdate()
 			{
 				playerInputName += event.text.unicode;
 				playerNameText.setString(playerInputName);
+				teclaSound.play();
+
 			}
 		}
 		//Si es backspace
@@ -184,11 +194,13 @@ void MenuNuevaPartida::NameUpdate()
 		{
 			playerInputName.erase(playerInputName.getSize() - 1, 1);
 			playerNameText.setString(playerInputName);
+			teclaSound.play();
+
 		}
 		framesCooldown = 0;
 		configTexto.CentrarTexto(playerNameText, -150);
 	}
-	framesCooldown++;
+		framesCooldown++;
 }
 
 
