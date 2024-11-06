@@ -97,6 +97,7 @@ void Menu::UpdateMenu()
 	}
 	else if(menuManager.getMenuID()==1)
 	{
+		if (!menuManager.getLoaded()) { menuCreditos.Iniciar(); menuManager.loadMenu(); }
 		menuCreditos.Update();
 	}
 	else if (menuManager.getMenuID()== 2)

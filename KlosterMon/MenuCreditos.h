@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "GenerarTexto.h"
 #include "MenuManager.h"
+#include "MusicManager.h"
 
 using namespace sf;
 class MenuCreditos
@@ -9,6 +10,7 @@ class MenuCreditos
 private:
 
 	MenuManager menuManager;
+	MusicManager musica; 
 
 	//TEXTOS
 	GenerarTexto configTexto;
@@ -19,11 +21,11 @@ private:
 	//Fondo
 	Sprite fondoMenu;
 	Texture imageFondo;
+	int acum = 1; 
 
-	void Iniciar();
 
 public:
-	MenuCreditos();
+	void Iniciar();
 	void drawCreditos(RenderWindow&);
 	void Update();
 };

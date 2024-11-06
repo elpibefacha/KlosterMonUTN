@@ -1,4 +1,2 @@
-﻿  Gameplay.cpp
-C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\Gameplay.cpp(23,65): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\Gameplay.cpp(840,24): warning C4552: "+": el resultado de la expresión no se usa
-  KlosterMon.vcxproj -> C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\x64\Debug\KlosterMon.exe
+﻿  MenuCreditos.cpp
+  KlosterMon.vcxproj -> D:\KlosterMonUTN\x64\Debug\KlosterMon.exe
