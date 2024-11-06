@@ -12,7 +12,6 @@ private:
 	char nombres[50][7];
 public:
 	~Enemy();
-	void atacarIA(); 
 	void randomNameSetter();
 	void forceName(String);
 	Klostermon randomKlostermonSetter();

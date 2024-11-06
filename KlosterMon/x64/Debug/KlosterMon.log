@@ -1,14 +1,4 @@
-﻿  GameLoopManager.cpp
-D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.h(7,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-  (compilando archivo de origen "GameLoopManager.cpp")
-  
-  Gameplay.cpp
-D:\KlosterMonUTN\KlosterMon\Gameplay.cpp(23,65): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-D:\KlosterMonUTN\KlosterMon\Gameplay.cpp(871,24): warning C4552: "+": el resultado de la expresión no se usa
-  main.cpp
-D:\KlosterMonUTN\KlosterMon\MenuEleccionKlostermon.h(7,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-  (compilando archivo de origen "main.cpp")
-  
-D:\KlosterMonUTN\KlosterMon\main.cpp(6,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
-  Generando código...
-  KlosterMon.vcxproj -> D:\KlosterMonUTN\x64\Debug\KlosterMon.exe
+﻿  Gameplay.cpp
+C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\Gameplay.cpp(26,65): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\KlosterMon\Gameplay.cpp(876,24): warning C4552: "+": el resultado de la expresión no se usa
+  KlosterMon.vcxproj -> C:\Users\mateo\OneDrive\Escritorio\Uni\Programacion II\Pokemon\KlosterMonUTN\KlosterMonUTN\KlosterMonUTN\x64\Debug\KlosterMon.exe

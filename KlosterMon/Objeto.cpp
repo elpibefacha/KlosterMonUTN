@@ -37,16 +37,6 @@ Objeto* Objeto::cargarObjeto(int idRecibida)
     return nullptr;
 }
 
-int Objeto::getID()
-{
-    return id_obj;
-}
-
-void Objeto::setID(int newID)
-{
-    id_obj = newID;
-}
-
 String Objeto::getNombre()
 {
     return nombre_obj;

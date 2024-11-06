@@ -20,6 +20,7 @@ void Gameplay::initKlostermons()
 
 		//se mejora al enemigo dependiendo de los combates ganados
 		enemyKlos[i].setMaxVida(enemyKlos[i].getMaxVida() + (rand() % (3 + 1 - 6) + 3)*player.getEnfrentamientosGanados());
+
 		enemyKlos[i].setMultiplicador(enemyKlos[i].getMultiplicador() + 0.4*float(player.getEnfrentamientosGanados()));
 
 		enemyKlos[i].setVida(enemyKlos[i].getMaxVida());
@@ -862,8 +863,10 @@ void Gameplay::Enemigo_PerdioPartida(String& endString)
 			player.setEnfrentamientoNum(4);
 		}
 		else
+		{
 			player.setEnfrentamientoNum(1);
-		player.setAnio(player.getAnio() + 1);
+			player.setAnio(player.getAnio() + 1);
+		}
 	}
 	else if (player.getEnfrentamiento() == 4)
 	{
