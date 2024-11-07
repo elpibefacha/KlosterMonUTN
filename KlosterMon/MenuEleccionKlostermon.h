@@ -4,7 +4,7 @@
 #include "GenerarTexto.h"
 #include "MenuManager.h"
 #include "ArchivoKlostermon.h"
-#include "ArchivoPlayer.h";
+#include "ArchivoPlayer.h"
 #include "GameplayManager.h"
 #include "Player.h"
 #include "SceneManager.h"

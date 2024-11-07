@@ -8,7 +8,6 @@ class Objeto
 {
 protected:
 	char nombre_obj[20];
-	int id_obj;
 public:
 	virtual ~Objeto() {}
 	static Objeto* cargarObjeto(int);

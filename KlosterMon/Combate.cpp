@@ -93,7 +93,7 @@ void Combate::Draw(RenderWindow& window)
 	window.draw(klostermonAliado);
 	if (interfaz == TEXTO)
 	{
-		window.draw(textoBatalla);
+		window.draw(textoBatalla); 
 	}
 	else if (interfaz == SELECCION)
 	{
@@ -142,7 +142,6 @@ void Combate::DividirTexto(const String& string, String partes[])
 	size_t inicio = 0;
 	size_t pos = 0;
 	partesEncontradas = 0;
-
 	while ((pos = string.find("/", inicio)) != String::InvalidPos)
 	{
 		if (string.substring(inicio, pos - inicio) != "/"|| string.substring(inicio, pos - inicio)!=" /")
@@ -154,7 +153,6 @@ void Combate::DividirTexto(const String& string, String partes[])
 
 	if (inicio < string.getSize())
 	{
-
 		partes[partesEncontradas++] = string.substring(inicio);
 	}
 

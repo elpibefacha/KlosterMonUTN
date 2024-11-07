@@ -216,7 +216,6 @@ String Ataque::utilizarAtaque(Klostermon& target, Klostermon& atacante)
             stringMostrado = stringMostrado + "/" + atacante.getNameKlostermon()
                 + " ahora hace un " + std::to_string(int(multPropio_k * 100)) + "% mas de daño!";
         }
-        //delete ataqueEfectuado;
         return stringMostrado;
     
 }

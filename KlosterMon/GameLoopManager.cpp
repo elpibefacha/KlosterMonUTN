@@ -39,10 +39,6 @@ void GameLoopManager::GameLoop()
                 gameplay.loadGameplay();
             }
             //CMD
-            
-            //combate.IniciarEnfrentamiento()
-            
-            //VUELVE AL MENU
             gameplay.Update();
             window.clear();
             //DRAW
@@ -55,9 +51,6 @@ void GameLoopManager::GameLoop()
                 tienda.loadTienda();
             }
             //CMD
-
-
-            //VUELVE AL MENU
             tienda.Update();
             window.clear();
             //DRAW

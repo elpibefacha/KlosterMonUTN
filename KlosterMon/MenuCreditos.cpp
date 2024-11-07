@@ -70,8 +70,6 @@ void MenuCreditos::Update()
 			case 7:
 			{
 				menuManager.setMenuID(0);
-				textoNombresCreditos.setPosition(90, 1000);
-				textoCreditos.setPosition(300, 900);
 				musica.stopMusic();
 				musica.setVolumen(50);
 				musica.playMusic("menu.ogg");

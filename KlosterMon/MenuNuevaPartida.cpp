@@ -1,5 +1,35 @@
 #include "MenuNuevaPartida.h"
 
+void MenuNuevaPartida::Load()
+{
+	archivo.ArchiveExist();
+	for (int i = 0; i < 3;i++)
+	{
+		configTexto.ConfigurarTexto(savesText[i], fuente, "", 25, Color::Black, Color::White, 1);
+		
+		player = archivo.leerArchivo(i);
+		if (player.getName() != "")
+		{
+			savesText[i].setString(std::to_string(i + 1) + " - " + player.getName());
+		}
+		else
+		{
+			savesText[i].setString(std::to_string(i + 1) + " - " + "Sin Datos");
+		}//Se fija el nombre, si no esta registrado dice sin datos
+	}
+	configTexto.CentrarTexto(savesText[0], -200);
+	configTexto.CentrarTexto(savesText[1], -100);
+	configTexto.CentrarTexto(savesText[2], 0);
+	
+
+	slotSeleccionado = 0;
+	ActualizarSeleccion();
+
+	framesCooldown = 0;
+	seleccionSlot = true;
+	IniciarSlots();
+}
+
 void MenuNuevaPartida::IniciarName()
 {
 
@@ -128,34 +158,6 @@ void MenuNuevaPartida::ActualizarSeleccion()
 	savesText[slotSeleccionado].setScale(1.2, 1.2);
 }
 
-void MenuNuevaPartida::Load()
-{
-	archivo.ArchiveExist();
-	for (int i = 0; i < 3;i++)
-	{
-		configTexto.ConfigurarTexto(savesText[i], fuente, "", 25, Color::Black, Color::White, 1);
-		
-		player = archivo.leerArchivo(i);
-		if (player.getName() != "")
-		{
-			savesText[i].setString(std::to_string(i + 1) + " - " + player.getName());
-		}
-		else
-		{
-			savesText[i].setString(std::to_string(i + 1) + " - " + "Sin Datos");
-		}//Se fija el nombre, si no esta registrado dice sin datos
-	}
-	configTexto.CentrarTexto(savesText[0], -200);
-	configTexto.CentrarTexto(savesText[1], -100);
-	configTexto.CentrarTexto(savesText[2], 0);
-	
-
-	slotSeleccionado = 0;
-	ActualizarSeleccion();
-
-	framesCooldown = 0;
-	seleccionSlot = true;
-}
 
 void MenuNuevaPartida::NameUpdate()
 {
