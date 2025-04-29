@@ -106,7 +106,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -132,7 +132,65 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ArchivoKlostermon.cpp" />
+    <ClCompile Include="ArchivoPlayer.cpp" />
+    <ClCompile Include="Ataque.cpp" />
+    <ClCompile Include="Combate.cpp" />
+    <ClCompile Include="CopyPaste.cpp" />
+    <ClCompile Include="CuracionGrande.cpp" />
+    <ClCompile Include="CuracionPequeña.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="EstructuracionCod.cpp" />
+    <ClCompile Include="FX.cpp" />
+    <ClCompile Include="Gameplay.cpp" />
+    <ClCompile Include="GameplayManager.cpp" />
+    <ClCompile Include="GenerarTexto.cpp" />
+    <ClCompile Include="InyeccionCodigo.cpp" />
+    <ClCompile Include="Klostermon.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="GameLoopManager.cpp" />
+    <ClCompile Include="MenuCreditos.cpp" />
+    <ClCompile Include="MenuEleccionKlostermon.cpp" />
+    <ClCompile Include="MenuManager.cpp" />
+    <ClCompile Include="MenuNuevaPartida.cpp" />
+    <ClCompile Include="MenuPartidas.cpp" />
+    <ClCompile Include="MusicManager.cpp" />
+    <ClCompile Include="Objeto.cpp" />
+    <ClCompile Include="Optimizacion.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="Tienda.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ArchivoKlostermon.h" />
+    <ClInclude Include="ArchivoPlayer.h" />
+    <ClInclude Include="Ataque.h" />
+    <ClInclude Include="Combate.h" />
+    <ClInclude Include="CopyPaste.h" />
+    <ClInclude Include="CuracionGrande.h" />
+    <ClInclude Include="CuracionPequeña.h" />
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="EstructuracionCod.h" />
+    <ClInclude Include="FX.h" />
+    <ClInclude Include="Gameplay.h" />
+    <ClInclude Include="GameplayManager.h" />
+    <ClInclude Include="GenerarTexto.h" />
+    <ClInclude Include="InyeccionCodigo.h" />
+    <ClInclude Include="Klostermon.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="GameLoopManager.h" />
+    <ClInclude Include="MenuCreditos.h" />
+    <ClInclude Include="MenuEleccionKlostermon.h" />
+    <ClInclude Include="MenuManager.h" />
+    <ClInclude Include="MenuNuevaPartida.h" />
+    <ClInclude Include="MenuPartidas.h" />
+    <ClInclude Include="MusicManager.h" />
+    <ClInclude Include="Objeto.h" />
+    <ClInclude Include="Optimizacion.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="Tienda.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
